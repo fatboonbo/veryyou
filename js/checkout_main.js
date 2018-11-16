@@ -1,0 +1,1 @@
+define("checkout_main",[],function(){});
