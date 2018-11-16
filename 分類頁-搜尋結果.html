@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="zh-TW">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=10" />
+	<!-- Mobile Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=1, minimal-ui">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>VARYYOU｜VARYYOU</title>
+	<meta name="theme-color" content="#000000"/>
+	<!-- Favicon -->
+	<link rel="icon" href="css/images/favicon.ico">
+	<!-- css -->
+	<link rel="stylesheet" type="text/css" href="css/style.min.css">
+	<!-- js -->
+	<script src="https://unpkg.com/jquery@2.2.0/dist/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/libs/jquery-2.2.0.min.zopfli.js.gz"><\/script>')</script>
+	<script src="js/libs/require.min.mixed.js"></script>
+	<script src="js/config.js"></script>
+</head>
+
+<body class="product_list_main">
+	<header id="nav-header" class="header">
+		<script>
+			$(document).ready(function() {
+				$("#nav-header").load("html/nav-header.html");
+			});
+		</script>
+	</header>
+	<main class="product-list wrapper">
+		<div class="wrapping-up">
+			<section class="column-main">
+				<div class="block-filter">
+
+					<ol class="breadcrumb style1" itemscope itemtype="http://schema.org/BreadcrumbList">
+						<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+							<a itemprop="item" href="index-main.html" class="alink">
+								<span itemprop="name">Home</span>
+							</a>
+							<meta itemprop="position" content="0" />
+						</li>
+						<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+							<span itemprop="item">
+								<span itemprop="name"><h1></h1></span>
+							</span>
+							<meta itemprop="position" content="1" />
+						</li>
+					</ol>
+				</div>
+				<div class="section-product-list">
+
+					<p class="no-result">
+						oops! 您的搜尋沒有結果
+					</p>
+					
+				</div>
+
+			</section>
+			<aside class="column-menu">
+				<div class="category-menu">
+					<script>
+						$(document).ready(function() {
+							$(".category-menu").load("html/category-menu.html");
+						});
+					</script>
+				</div>
+			</aside>
+		</div>
+
+		<section class="section-pagination">
+			<!--<div id="showitemcount" class="showitemcount">
+				ITEMS <span>1-40 / 247</span> <span>|</span> VIEW 
+				<a href="javascript:;" class="alink">40</a>
+				<a href="javascript:;" class="alink">80</a>
+				<a href="javascript:;" class="alink">120</a>
+			</div>-->
+			<div class="page_nav">
+				<ul>
+					<li class="pre">
+						<a href="javascript:;" alt="上一頁" title="上一頁"><i class="icon-angle-left"></i>PREV</a>
+					</li>
+					<li class="pages">
+						<a href="分類頁.html" class="alink">1</a>
+					</li>
+					<li class="pages">
+						<a href="分類頁-上衣全系列.html" class="alink">2</a>
+					</li>
+					<li class="pages">
+						<a href="分類頁-上衣-雪紡.html" class="alink">3</a>
+					</li>
+					<li class="pages">
+						<a href="分類頁-搜尋結果.html" class="alink">4</a>
+					</li>
+					<li class="pages">
+						<a href="分類頁-任任選.html" class="alink">5</a>
+					</li>
+					<li class="next">
+						<a href="javascript:;" alt="下一頁" title="下一頁">NEXT<i class="icon-angle-right"></i></a>
+					</li>
+				</ul>
+			</div>	
+		</section>
+	</main>
+    <!-- 購物車 popup 選單 -->
+	<aside id="cart-panel" class="cart-panel">
+		<script>
+			$(document).ready(function() {
+				$("#cart-panel").load("html/cart-panel.html");
+			});
+		</script>
+	</aside>
+	<!--會員mobile選單-->
+	<aside id="member-panel" class="member-panel">
+		<script>
+			$(document).ready(function() {
+				$("#member-panel").load("html/member-panel.html");
+			});
+		</script>
+	</aside>
+    <!--mobile選單-->
+	<aside id="mobile-menu" class="mobile-menu">
+		<script>
+			$(document).ready(function() {
+				$("#mobile-menu").load("html/mobile-menu.html");
+			});
+		</script>
+	</aside>
+	<div class="overlay"></div>
+	<!-- back to top -->
+	<div href="javascript:;" id="backtotop" class="backtotop"><i class="icon-chevron-up"></i></div>
+	<footer id="footer">		
+		<script>
+			$(document).ready(function() {
+				$("#footer").load("html/nav-footer.html");
+			});
+		</script>
+	</footer>
+</body>
+</html>
