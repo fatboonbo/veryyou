@@ -246,7 +246,7 @@ $(function() {
         cb = "cart-bottom",
         iss = "is-shown",
         hh = $("html"),
-        bt = $("button.close .overlay"),
+        bt = $("html button.close, html .overlay"),
         mo = "mobile-menu-open",
         Mbt = $(".btn-mobile"),
         Nhp = $(".nav-header-panel"),
@@ -296,8 +296,8 @@ $(function() {
                 Nhp.removeClass(iss);
                 Dt.enable();
             });
-            //Sp.on("click", function(c) {
-              $("button.close, .overlay").on("click", function(c) {
+            Sp.on("click", function(c) {
+            //$("button.close, .overlay").on("click", function(c) {
                 c.preventDefault();
                 hh.removeClass(allelse);
                 sm.toggleClass(ac);
