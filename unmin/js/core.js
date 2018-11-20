@@ -287,10 +287,21 @@ $(function() {
                 sm.removeClass(ac);
                 Nhp.removeClass(iss);
                 return hh.hasClass(im) ? Dt.disable():Dt.enable();
-            });
+            });/*
             bt.on("click", function(e) {
                 e.preventDefault();
                 hh.removeClass(allelse);
+                ct.removeClass(it);
+                mt.removeClass(im);
+                Nhp.removeClass(iss);
+                Dt.enable();
+            });*/
+            hh.on("click","button.close ,.overlay", function(e) {
+                e.preventDefault();
+                hh.removeClass(allelse);
+                ct.removeClass(it);
+                mt.removeClass(im);
+                Nhp.removeClass(iss);
                 Dt.enable();
             });
             Sp.on("click", function(c) {
