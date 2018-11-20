@@ -291,9 +291,6 @@ $(function() {
             bt.on("click", function(e) {
                 e.preventDefault();
                 hh.removeClass(allelse);
-                ct.removeClass(it);
-                mt.removeClass(im);
-                Nhp.removeClass(iss);
                 Dt.enable();
             });
             Sp.on("click", function(c) {
