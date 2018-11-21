@@ -1,4 +1,4 @@
-define([/*"fontloader",*/"GlobalV","libs/modules/headroom-module","libs/modules/slick-module","libs/modules/search-module", "libs/modules/lazy-module","wowwow","bmodal", "headroom", "jscrollto"], function() {
+define([/*"fontloader",*/"GlobalV","libs/modules/headroom-module","libs/modules/slick-module","libs/modules/search-module", /*"libs/modules/lazy-module",*/"wowwow","bmodal", "headroom", "jscrollto"], function() {
 /*
     var Headroom = require("headroom");
     // grab an element
