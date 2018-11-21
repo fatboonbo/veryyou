@@ -250,6 +250,8 @@ $(function() {
         mo = "mobile-menu-open",
         Mbt = $(".btn-mobile"),
         Nhp = $(".nav-header-panel"),
+        Hdd = $("#nav-header"),
+        hnt = "headroom--not-top",
         hi = "hidden",
         tt = $(".smcs-input"),
         allbutm = "is-open is-open-sale mobile-menu-open",
@@ -307,6 +309,7 @@ $(function() {
             Sp.on("click", function(c) {
             //$("button.close, .overlay").on("click", function(c) {
                 c.preventDefault();
+                Hdd.addClass(hnt);
                 hh.removeClass(allelse);
                 sm.toggleClass(ac);
                 ct.removeClass(it);

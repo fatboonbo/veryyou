@@ -9,12 +9,13 @@ paths: {
     "slick": "libs/slick.min",
     "bmodal": "libs/bootstrap3modal.min",
     "ekko": "libs/ekko-lightbox.min",
-    "lazysizes": "libs/lazysizes.min",
+    //"lazysizes": "libs/lazysizes.min",
+    "lazysizes": "libs/lazysizes",
     "unveilhooks": "libs/ls.unveilhooks.min",
     "picturefill":"libs/picturefill.min",
     "picturefill3":"libs/picturefill_3.min",
     //"headroom": "libs/Headroom",
-    "jheadroom": "libs/jQuery.headroom",
+    //"jheadroom": "libs/jQuery.headroom",
     "headroom": "libs/headroom.min",
     "jscrollto":"libs/jquery-scrollto.min",
     "stickysidebar": "libs/theia-sticky-sidebar.min",
@@ -57,12 +58,12 @@ paths: {
       deps: ["libs/modules/cache-css"]
     },
     "libs/modules/headroom-module" : {
-      deps: ["jheadroom"]
-    },
+      deps: ["headroom"]
+    },/*
     "jheadroom" : {
       deps: ["headroom"]
     },
-    /*
+    
     "index_main": {
       deps: ["core"]
     },
