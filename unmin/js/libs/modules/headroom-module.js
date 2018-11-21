@@ -1,4 +1,4 @@
-define(["headroom","jheadroom"], function() {
+define(["headroom"/*,"jheadroom"*/], function() {
 
     var Headroom = require("headroom");
     // grab an element
