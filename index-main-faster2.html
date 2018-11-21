@@ -32,17 +32,14 @@
 <!-- popup style 6 -->
 
 <script>
-        var popup = false; // false to disable popup
+        var popup = true; // false to disable popup
         if (popup)
             if (sessionStorage.getItem("hotdada") !== 'true') {
                 sessionStorage.setItem("hotdada", "true");
-                $('head').append( $('<link rel="preload" type="text/css" />').attr('href', 'css/popup.css?v='+ (new Date()).getTime()).attr('as', 'style').attr('onload', 'this.onload=null;this.rel="stylesheet"'));
                 $(document).ready(function() {
-                	if (isFirefox > 0 || isSafari > 0 || isIE > 0 || isEdge > 0) {
                 		require(["loadCSS"], function() {
                 			loadCSS( "css/popup.css?bust="+ (new Date()).getTime() ),l("act css loaded");
                 		});
-                	}
                 	var eles = '<div class="modal fade in index-popup" id="popup-default" tabindex="-1" role="dialog" aria-hidden="true" style="display: none"><div class="modal-dialog"><div class="modal-content"><div class="popup-default-content" style="visibility:hidden"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="btnclose3 icon-close"></i></button></div><div id="popgif" style="background:transparent;"><div style="display:inline-block;"><a href="https://www.veryyou.com.tw/PDSaleDiscount.asp?pi=6847006001"><img src="https://photo.eyescream.com.tw/VeryYou/banner/popupbanner/2018110801.gif" alt="Oct.18 闆娘xNIA姊妹外出服系列 本周新品2件85折" title="Oct.18 闆娘xNIA姊妹外出服系列 本周新品2件85折"></a></div></div></div></div></div><div class="modal-backdrop"></div></div>';
                 	$('main').before(eles);
                 	$("#popup-default").show(), l('#popup-default show'); 
@@ -668,19 +665,19 @@
 	<script src="js/libs/require.min.mixed.js"></script>
 	<script src="js/config.js"></script>-->
 	<script>
+		require(["//ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"], function(WebFont2) {
 
-                require(["//ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"], function(WebFont2) {
-
-                    WebFont2.load({
-                        google: {
-                          families: ['Playfair Display:400,700', 'Inconsolata:400,700']
+			WebFont2.load({
+				google: {
+					families: ['Playfair Display:400,700', 'Inconsolata:400,700']
                       }/*,
                       custom: {
                           families: ['rePlayfair Display:400,700', 'reInconsolata:400,700'],
                           urls: ['css/font.css']
                       }*/
                   });
-                });
+		});
+
 	</script>
 	<!--
 	<script>
