@@ -42,13 +42,13 @@
                 		});
                 	var eles = '<div class="modal fade in index-popup" id="popup-default" tabindex="-1" role="dialog" aria-hidden="true" style="display: none"><div class="modal-dialog"><div class="modal-content"><div class="popup-default-content" style="visibility:hidden"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="btnclose3 icon-close"></i></button></div><div id="popgif" style="background:transparent;"><div style="display:inline-block;"><a href="https://www.veryyou.com.tw/PDSaleDiscount.asp?pi=6847006001"><img src="https://photo.eyescream.com.tw/VeryYou/banner/popupbanner/2018110801.gif" alt="Oct.18 闆娘xNIA姊妹外出服系列 本周新品2件85折" title="Oct.18 闆娘xNIA姊妹外出服系列 本周新品2件85折"></a></div></div></div></div></div><div class="modal-backdrop"></div></div>';
                 	$('main').before(eles);
-                	$("#popup-default").show(), l('#popup-default show'); 
+                	$("#popup-default").show()/*, l('#popup-default show')*/; 
                 	$(".popup-default-content").addClass("fadeindownpop");
                 	setTimeout( function() {
                 		$(".modal-backdrop").addClass("fade in");
                 	},50);            
                 	$("#popup-default,button.close").click(function() {
-                		$("#popup-default").hide(), l('#popup-default hide');                   
+                		$("#popup-default").hide()/*, l('#popup-default hide')*/;                   
                 	});
                 	return false;
                 });
