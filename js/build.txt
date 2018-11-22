@@ -2,6 +2,7 @@
 config.js
 ----------------
 libs/loadCSS.js
+libs/modules/global.js
 libs/modules/cache.js
 config.js
 libs/modules/cache-css.js
@@ -22,8 +23,11 @@ libs/modules/slick-module.js
 
 libs/modules/css-module.js
 ----------------
-libs/modules/css-module.js
 libs/loadCSS.js
+libs/modules/global.js
+libs/modules/cache.js
+config.js
+libs/modules/css-module.js
 
 core.js
 ----------------
