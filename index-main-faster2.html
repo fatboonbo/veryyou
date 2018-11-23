@@ -664,11 +664,12 @@
 	</footer>
 
 	<script data-main="js/config.js" src="js/libs/require.min.mixed.js"></script>
+	<script>require(["config","//ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"],function(a,o){o.load({custom:{families:["Inconsolata:400,700","Playfair Display:400,700"]}})});</script>
+	<noscript><link rel="stylesheet" type="text/css" href="css/font2.css"></noscript>
 	<!--
 	<script src="js/libs/require.min.mixed.js"></script>
-	<script src="js/config.js"></script>-->
+	<script src="js/config.js"></script>
 	<script>
-
 		require(["config","//ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"], function(config,WebFont) {
 
 			WebFont.load({
@@ -678,8 +679,7 @@
 				}
 			});
 		});
-
-	</script>
+	</script>-->
 	<!--
 	<script>
             require(["loadCSS","text!version-css.json?vt=" + (new Date()).getTime()], function(loadCss,version) {
