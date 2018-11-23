@@ -80,8 +80,13 @@ define([""], function(Dt) {
         			$("#search-id").attr("value", savedsearch),l(savedsearch + " searched");
         			$(".breadcrumb.style1 h1").text("搜尋結果 : "+savedsearch),l(input.value+" loaded");;
         			$(".searchModal").addClass("active");
-        			var sm = $(".searchModal"),
-        			ac = "active";
+                    setTimeout(function() {
+                        $("#nav-header").addClass("headroom--pinned");
+                    }, 200);
+
+
+        			//var sm = $(".searchModal"),
+        			//ac = "active";
         			//return sm.hasClass(ac) ? Dt.disable():Dt.enable();	
         	}  
         	if (input.value == savedsearch)  {

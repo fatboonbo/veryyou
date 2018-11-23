@@ -6,7 +6,8 @@
                  // index
                  /**/
                  $(document).ready(function() {
-
+                    
+                //setTimeout(function() {
                    $('.carousel-index-banner-bind').slick({
                      infinite: true,
                      speed: 600,
@@ -36,6 +37,7 @@
                     }
                     ]
                    });
+                 //}, 6000);
 
                    $(document).on('keydown', function(e) {
                     if(e.keyCode == 37) {
@@ -48,106 +50,6 @@
 
                  });
                  
-
-                 $(document).ready(function() {
-                   var $carouselpc = $('.carousel-index-banner');
-
-                   function showSliderScreen($widthScreen) {
-                     //console.log($widthScreen);
-                     //console.log("slider launch at " + (t1 - t0) + " milliseconds.")
-
-
-                     if ($widthScreen >= "1007") {
-                       if (!$carouselpc.hasClass('slick-initialized')) {
-                           //console.log("slick initialized");
-                           
-                           $carouselpc.slick({
-                             infinite: true,
-                             speed: 600,
-                             autoplay: true,
-                             autoplaySpeed: 2200,
-                             slidesToShow: 1,
-                             slidesToScroll: 1,
-                             arrows: true,
-                             cssEase: 'ease-in-out',
-                             fade: false,
-                             pauseOnHover: false,
-                             dots: false,
-                             verticalSwiping: false,
-                             });
-                             //$(document).find('.slick-list').attr('tabindex', 0).focus();
-                             //console.log("carousel product image");
-                             $(document).on('keydown', function(e) {
-                              if(e.keyCode == 37) {
-                                $carouselpc.slick('slickPrev');                                
-                              }
-                              if(e.keyCode == 39) {
-                                $carouselpc.slick('slickNext');
-                              }
-                            });
-                             
-                         }
-
-                     } else {
-                       if ($carouselpc.hasClass('slick-initialized')) {
-                           $carouselpc.slick("unslick");
-                       }
-                   }
-               }
-
-               var widthScreen = $(window).innerWidth();
-               $(window).ready(showSliderScreen(widthScreen)).resize(
-                   function() {
-                       var widthScreen = $(window).innerWidth();
-                       showSliderScreen(widthScreen);
-                   }
-                   ),l('pc slick initialized');
-
-           });
-                 $(document).ready(function() {
-               var $carouselmm = $('.carousel-index-banner-m');
-           function showSliderScreen($widthScreen) {
-               //console.log($widthScreen);
-               l($widthScreen);
-
-               if ($widthScreen <= "1006") {
-                   if (!$carouselmm.hasClass('slick-initialized')) {
-                       $carouselmm.slick({
-                           mobileFirst:true,
-                           slidesToShow: 1,
-                           slidesToScroll: 1,
-                           infinite: true,
-                           arrows: true,
-                           dots:true,
-                           speed: 300,
-                           autoplay: true,
-                           autoplaySpeed: 3000,
-                           fade:false,
-                           //lazyLoad: 'anticipated',
-                           lazyLoad: 'progressive',
-                           cssEase: 'cubic-bezier(.8,.1,1,1)',
-                           //cssEase: 'cubic-bezier(.19,1,.22,1)',
-                           pauseOnHover:false,
-                           verticalSwiping:false
-                       });
-                   }
-
-               } else {
-                   if ($carouselmm.hasClass('slick-initialized')) {
-                       $carouselmm.slick("unslick");
-                   }
-                }   
-           }
-
-
-           var widthScreen = $(window).innerWidth();
-           $(window).ready(showSliderScreen(widthScreen)).resize(
-               function () {
-                   var widthScreen = $(window).innerWidth();
-                   showSliderScreen(widthScreen);
-               }
-           );
-           });
                  $(document).ready(function() {
                    var $carouselig = $('.carousel-instagram');
 

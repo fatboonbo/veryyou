@@ -124,17 +124,6 @@ define([], function() {
         }
     };
 }() );
-    var Dt = {
-        disable: function() {
-            $.scrollLock( true );
-            headroom.destroy();
-            $("header").addClass("headroom--not-top ffix");
-        },
-        enable: function() {
-            $.scrollLock( false );
-            headroom.init();
-        }
-    };
-    return Dt;
+    
 
 });
