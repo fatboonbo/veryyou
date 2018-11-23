@@ -71,6 +71,8 @@ if (!is_touch_device()) {
             //console.log(box.tagName);
         }
     });
+    wow.init();
+    l("wow initiate");
 /*
     //$("a.alink").click(function() {
     $(document).one("click touch", "a.alink", function(event) {
@@ -575,7 +577,6 @@ function opn2(h) {
         b.preventDefault(), sm.toggleClass(ac),bd.toggleClass(hi), Dt.disable()
     })*/
     // BACKTOTOP
-
     //$(window).scroll(function() {
     //window.addEventListener('scroll', function(){
     window.addEventListener('scroll', throttle(callback, 1000));
