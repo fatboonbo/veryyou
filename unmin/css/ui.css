@@ -8,10 +8,12 @@ html {
   -ms-text-size-adjust: 100%;
   text-rendering: geometricPrecision;
   letter-spacing: .1em;
-  font-family: /**/Inconsolata, arial,'PingFang TC', 'Hiragino Sans GB', 'Microsoft JhengHei', 'Helvetica Neue', serif,sans-serif;  
-}/*
-.webfont-loaded {font-family: Inconsolata,'PingFang TC', 'Hiragino Sans GB', 'Microsoft JhengHei', 'Helvetica Neue', serif,sans-serif;  }
-*/
+  font-family: /*Inconsolata,*/ arial,'PingFang TC', 'Hiragino Sans GB', 'Microsoft JhengHei', 'Helvetica Neue', serif,sans-serif;  
+}/**/
+.webfont-loaded, 
+.wf-active
+{font-family: Inconsolata,'PingFang TC', 'Hiragino Sans GB', 'Microsoft JhengHei', 'Helvetica Neue', serif,sans-serif;  }
+
 *, *::before, *::after {
   box-sizing: inherit;
 }
@@ -117,6 +119,10 @@ a,
   text-decoration: none;
   transition: all 0.3s ease-in-out 0s;
 }
+a.slick-slide {
+  transition:none;
+}
+
 
 a,
 a:active:not(.button) {
@@ -134,7 +140,6 @@ svg {
   height: auto;
   vertical-align: middle;
   border: none;
-  background:  transparent;
 }
 
 svg {

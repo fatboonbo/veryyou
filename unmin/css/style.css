@@ -1,3 +1,20 @@
+.section-banner>.left {
+    height: 0;
+    padding-bottom:115.625%;
+    overflow:hidden;
+}
+.section-banner {
+  webkit-animation-duration: .5s;
+  animation-duration: .5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  cursor: default;
+}
+.carousel-index-banner-bind .alink:after {
+    content:none;
+}
 .nav-header-member [class^="icon-"]:before, .nav-header-member [class*=" icon-"]:after {
   display: inline-block;
 }
@@ -57,16 +74,21 @@
 }
 /*font*/
 .member_login h3, .no-result, .headings-recommend>span, .headings-recommend>span, h2, .news_container_wrap .title  {
-    font-family: 'Playfair Display',/**/Times, 'PingFang TC', 'Hiragino Sans GB', 'Microsoft JhengHei', 'Helvetica Neue', serif, sans-serif;
-}/*
-.webfont-loaded .member_login h3, .webfont-loaded .no-result, .webfont-loaded .headings-recommend>span, .webfont-loaded .headings-recommend>span,.webfont-loaded h2, .webfont-loaded .news_container_wrap .title  {
+    font-family: /*'Playfair Display',*/Times, 'PingFang TC', 'Hiragino Sans GB', 'Microsoft JhengHei', 'Helvetica Neue', serif, sans-serif;
+}
+.wf-active .member_login h3,
+.wf-active .no-result,
+.wf-active .headings-recommend>span,
+.wf-active .headings-recommend>span,
+.wf-active h2,
+.wf-active .news_container_wrap .title  {
     font-family: 'Playfair Display', Times, 'PingFang TC', 'Hiragino Sans GB', 'Microsoft JhengHei', 'Helvetica Neue', veryyou1, serif, sans-serif;
 }
-.webfont-loaded .cart-count {font-family:  Inconsolata;}
-.webfont-loaded .column-product-description .titles_v h2 {font-family: Inconsolata, MingLiu;}
-*/
-.column-product-description .titles_v h2 { font-family: Inconsolata, Times, MingLiu }
-.cart-count {font-family:  Inconsolata;}
+.wf-active .cart-count {font-family:  Inconsolata;}
+.wf-active .column-product-description .titles_v h2 {font-family: Inconsolata, MingLiu;}
+/**/
+.column-product-description .titles_v h2 { font-family: 'Courier New'/*Inconsolata*/, Times, MingLiu }
+.cart-count {font-family:  'Courier New'/*Inconsolata*/;}
 
 .btn, .member-status h2, .accordion-account, .steps, .headings>span {
     font-family: sans-serif, 'Hiragino Sans GB', 'Microsoft JhengHei';
@@ -132,6 +154,9 @@ a.glyphicon.glyphicon-chevron-left, a.glyphicon.glyphicon-chevron-right,
   -ms-touch-action: pan-y;
   touch-action: pan-y;
   -webkit-tap-highlight-color: transparent;
+}
+.slick-slider.slick-initialized {
+  background:none;
 }
 
 .slick-list {
@@ -1166,4 +1191,46 @@ body.modal-open, body.modal-open header {
 }
 .active .clearfix>div:not(:first-child) {
     /* float:right; */
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/s/playfairdisplay/v13/nuFiD-vYSZviVYUb_rj3ij__anPXDTzYgA.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 700;
+  src: url(//fonts.gstatic.com/s/playfairdisplay/v13/nuFlD-vYSZviVYUb_rj3ij__anPXBYf9lW4e5g.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Inconsolata';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/s/inconsolata/v16/QldKNThLqRwH-OJ1UHjlKGlZ5qg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Inconsolata';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 700;
+  src: url(//fonts.gstatic.com/s/inconsolata/v16/QldXNThLqRwH-OJ1UHjlKGHiw71p5_w.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Fira Mono';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/firamono/v6/N0bX2SlFPv1weGeLZDtgJv7S.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }

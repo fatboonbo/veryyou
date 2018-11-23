@@ -101,6 +101,9 @@
     height:30px;
     transition:.18s;
 }
+.section-banner:hover .slick-arrow:after {
+    border-color:rgba(255,255,255,0.7)
+}
 .carousel-index-banner .slick-arrow:hover:after,
 .carousel-index-banner-bind .slick-arrow:hover:after {
     border-color: rgba(255,255,255,1);
