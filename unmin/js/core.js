@@ -71,8 +71,6 @@ if (!is_touch_device()) {
             //console.log(box.tagName);
         }
     });
-    wow.init();
-    l("wow initiate");
 /*
     //$("a.alink").click(function() {
     $(document).one("click touch", "a.alink", function(event) {
@@ -579,32 +577,27 @@ function opn2(h) {
     // BACKTOTOP
 
     //$(window).scroll(function() {
-    window.addEventListener('scroll', function(){
+    //window.addEventListener('scroll', function(){
+    window.addEventListener('scroll', throttle(callback, 1000));
+
+    function throttle(fn, wait) {
+      var time = Date.now();
+      return function() {
+        if ((time + wait - Date.now()) < 0) {
+          fn();
+          time = Date.now();
+      }
+      }
+    }
+    function callback() {
 
         if ($(this).scrollTop() > 300) {
             $("#backtotop").addClass("active");
         } else {
             $("#backtotop").removeClass("active");
-            //$("#backtotop").removeClass("foot");
-            //$('*[class=""]').removeAttr('class');
         }
-        /*
-                if ($(window).scrollTop() + $(window).height() < $(document).height() - $("footer.wrapper").height()) {
-                    $('#backtotop').css("position", "fixed"); //resetting it
-                    $('#backtotop').css("bottom", "80px"); // 30 px, height of #toTop
-                    $("#backtotop").removeClass("foot");
-                }
-                if ($(window).scrollTop() + $(window).height() > $(document).height() - $("footer.wrapper").height()) {
-                    if ($(window).width() < 992) {
-                        $('#backtotop').addClass("foot"); // 340 px, height of #toTop
-                        $('#backtotop').css("position", "absolute"); // make it related
-                        $('#backtotop').css("bottom", "113vh"); // 340 px, height of #toTop
-                    }
-                } else {
-                    $("#backtotop").removeClass("foot");
-                }
-        */
-    });
+    }
+    //});
     $('#backtotop').on("click", function() {
 
 
