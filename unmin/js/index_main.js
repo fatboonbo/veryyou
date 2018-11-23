@@ -1,4 +1,4 @@
-define([/*"text!version-css.json?bust=" + (new Date()).getTime()*/], function(/*version*/) {
+define([/*"text!version-css.json?bust=" + (new Date()).getTime()*/"libs/modules/slick-module"], function(/*version*/) {
     // Convert text to JSON
     //require(["grid_main"]);
 /*

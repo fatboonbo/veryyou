@@ -1,4 +1,4 @@
-define(["stickysidebar","fgallery", "ekko"], function(stickysidebar,fgallery,ekko) {    
+define(["libs/modules/slick-module","fgallery", "ekko"], function() {    
 // Convert text to JSON
 /*    version = JSON.parse(version);
 
@@ -192,11 +192,12 @@ define(["stickysidebar","fgallery", "ekko"], function(stickysidebar,fgallery,ekk
     $('.category-menu>section>ul>li:has(.accordion-content li .alink.selected)').addClass('expand'); 
   });
   $("img.lazyload").lazyload({ threshold : 400,placeholder : "css/images/blank.gif",effect : "fadeIn",effectspeed: 100 });
+  /*
   $('.column-main-product, .column-menu, .column-product-description')
   .theiaStickySidebar({
     additionalMarginTop: 95,
     minWidth: 768
-  });
+  });*/
   $(document).ready(function() {
 
         NewsPosition(); // check from the start

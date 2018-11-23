@@ -1,4 +1,4 @@
-define(["stickysidebar","jsflip"], function(stickysidebar,jsflip) {
+define(["jsflip"], function(jsflip) {
 // Convert text to JSON
   /*  version = JSON.parse(version);
 
@@ -51,11 +51,13 @@ if (is_touch_device()) {
         }
       })
     }
+    /*
   $('.column-main-old, .column-menu-old')
   .theiaStickySidebar({
     additionalMarginTop: 95,
     minWidth: 768
   });
+  */
   $(".flipper").flip({
     trigger: 'manual',
     axis: 'y'

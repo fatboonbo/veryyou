@@ -1,4 +1,4 @@
-define(["stickysidebar"], function(stickysidebar) {    
+define([], function() {    
 // Convert text to JSON
 /*
     version = JSON.parse(version);
@@ -37,11 +37,12 @@ if (is_touch_device()) {
         }
       })
     }
+    /*
   $('.column-main-old, .column-menu-old')
   .theiaStickySidebar({
     additionalMarginTop: 210,
     minWidth: 768
-  });
+  });*/
 //if (is_touch_device()) {
   $('.accordion-faq').on('click', function(){
     if($(this).parent().hasClass('expand')){

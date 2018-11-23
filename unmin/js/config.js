@@ -31,7 +31,7 @@ paths: {
     "text": "libs/text.min",
     //"csspreload": "libs/cssrelpreload",
     "loadCSS": "libs/loadCSS",
-    "GlobalV": "libs/modules/global",
+    //"GlobalV": "libs/modules/global",
     //"css":"libs/require.css",
     "css":"libs/css",
     "syotimer":"libs/jquery.syotimer.min",
@@ -59,6 +59,9 @@ paths: {
     },
     "libs/modules/headroom-module" : {
       deps: ["headroom"]
+    },
+    "libs/modules/css-module" : {
+      deps: ["config"]
     },/*
     "jheadroom" : {
       deps: ["headroom"]
@@ -116,6 +119,7 @@ paths: {
 define("jquery", [], function() {
   return jQuery;
 });
+
 //define("domrouter", [], function() {
 //  return domrouter;
 //})
@@ -129,15 +133,20 @@ function bust(path) {
 function is_touch_device() {
     return "ontouchstart" in window || navigator.maxTouchPoints;
 } // works on IE10/11 and Surface || works on most browsers 
+
 /**/
+    var ua = window.navigator.userAgent;
+    var iOS = !!ua.match(/iPad/i) || !!ua.match(/iPhone/i);
+    var webkit = !!ua.match(/WebKit/i);
+    var iOSSafari = iOS && webkit && !ua.match(/CriOS/i);
+    // Safari 3.0+ "[object HTMLElementConstructor]" 
+    var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || safari.pushNotification);
+
     // Opera 8.0+
     var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
 
     // Firefox 1.0+
     var isFirefox = typeof InstallTrigger !== 'undefined';
-
-    // Safari 3.0+ "[object HTMLElementConstructor]" 
-    var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || safari.pushNotification);
 
 
     // Edge 20+
@@ -151,6 +160,7 @@ function is_touch_device() {
     
     // Internet Explorer 6-11
     var isIE = false || !!document.documentMode;//@cc_on!@false || !!document.documentMode;
+    
 // Custom console log wrapper
 // 
 // Usage: l("message");
@@ -196,20 +206,24 @@ $(document).ready(function(){
     
 });
 
-require(["loadCSS","text!version-css.json?vt=" + (new Date()).getTime()], function(loadCss,version) {
+require(["text!version-css.json?vt=" + (new Date()).getTime()], function(version) {
     version = JSON.parse(version);
     requirejs.config({
         urlArgs: "v=" + version.v
     });
-    $('head').append( $('<link rel="preload" type="text/css" />').attr('href', 'css/common.css?t='+ version.v).attr('as', 'style').attr('onload', 'this.onload=null;this.rel="stylesheet"'),l("append act.css") );
+    /*
+        require(["loadCSS"], function(loadCss) {
+            loadCSS( "css/common.css?v="+ version.v ),l("request index.css");
+        });*/
+    $('head').append( $('<link rel="preload" type="text/css" />').attr('href', 'css/common.css?v='+ version.v).attr('as', 'style').attr('onload', 'this.onload=null;this.rel="stylesheet"'),l("append act.css") );
 
-    if (isFirefox > 0 || isSafari > 0 || isIE > 0 || isEdge > 0) {
-        require(["loadCSS"], function() {
-            loadCSS( "css/common.css?c="+ version.v ),l("request index.css");
+    if (isFirefox > 0 || isSafari > 0 || iOSSafari > 0 || isIE > 0 || isEdge > 0) {
+        require(["loadCSS"], function(loadCss) {
+            loadCSS( "css/common.css?v="+ version.v ),l("request index.css");
         });
     }
 });
-require(["jquery", "libs/modules/cache"], function() {
+require(["jquery","libs/modules/cache"], function() {
     //define(["jquery", "domrouter"], function() {
 
     $(document).ready(function() {

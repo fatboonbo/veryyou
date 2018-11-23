@@ -1,4 +1,4 @@
-define(["stickysidebar"/*,"csspreload","text!version-css.json?bust=" + (new Date()).getTime()*/], function(stickysidebar/*,csspreload,version*/) {
+define([/*,"csspreload","text!version-css.json?bust=" + (new Date()).getTime()*/], function(/*,csspreload,version*/) {
 // Convert text to JSON
 /*
     version = JSON.parse(version);
@@ -157,11 +157,12 @@ $(document).ready(function(){
    window.saveScroll();
  });
 });
+/*
   $('.column-main-product, .column-menu')
   .theiaStickySidebar({
     additionalMarginTop: 95,
     minWidth: 768
-  });
+  });*/
   $(document).ready(function(){
     $('.accordion-category').on('click', function(){
       if($(this).parent().hasClass('expand')){
