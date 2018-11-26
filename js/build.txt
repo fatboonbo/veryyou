@@ -30,7 +30,6 @@ libs/loadCSS.js
 core.js
 ----------------
 libs/headroom.min.js
-libs/modules/headroom-module.js
 libs/modules/search-module.js
 libs/lazysizes.js
 libs/ls.unveilhooks.min.js
