@@ -1,5 +1,5 @@
-define([/*"fontloader",*/"libs/modules/headroom-module","libs/modules/search-module", /**/"libs/modules/lazy-module","wowwow","bmodal", "headroom","libs/modules/sticky-module", "jscrollto"], function() {
-/*
+define([/*"fontloader",*/"headroom","libs/modules/search-module", /**/"libs/modules/lazy-module","wowwow","bmodal", "headroom","libs/modules/sticky-module", "jscrollto"], function() {
+
     var Headroom = require("headroom");
     // grab an element
     var myElement = document.querySelector("header");
@@ -8,9 +8,17 @@ define([/*"fontloader",*/"libs/modules/headroom-module","libs/modules/search-mod
     // initialise
     headroom.init();
     
-    */
-    
+    /*
+    (function() {
+        new Headroom(document.querySelector("header"), {
+            tolerance: 10,
+            offset : 205
+      }).init();
+
+    }());*/
+        
 /*
+
 if (!is_touch_device()) {
     var font0 = new FontFaceObserver('veryyou', {
         weight: 400
@@ -188,6 +196,7 @@ if (!is_touch_device()) {
     }
 });
 */
+
 $.scrollLock = ( function scrollLockClosure() {
     'use strict';
 
@@ -315,15 +324,14 @@ $.scrollLock = ( function scrollLockClosure() {
     var Dt = {
         disable: function() {
             $.scrollLock( true );
-            //headroom.destroy();
-            //$("header").addClass("headroom--not-top ffix");
+            headroom.destroy();
+            $("header").addClass("headroom--not-top ffix");
         },
         enable: function() {
             $.scrollLock( false );
-            //headroom.init();
+            headroom.init();
         }
     };
-
     /*
     var Dt = {
         disable: function() {
@@ -591,16 +599,17 @@ function opn2(h) {
       }
     }
     function callback() {
-
-        if ($(this).scrollTop() > 300) {
+        var topped = false;
+        if (!topped && $(this).scrollTop() > 300) {
             $("#backtotop").addClass("active");
+            topped = true;
         } else {
             $("#backtotop").removeClass("active");
+            topped = false;
         }
     }
     //});
-    $('#backtotop').on("click", function() {
-
+    $('#backtotop').on("click touchstart", function() {
 
         if (isIE > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) // If Internet Explorer, return version number
         {
@@ -641,7 +650,7 @@ function opn2(h) {
           $(this).parent().siblings('.expand').find('.accordion-content').slideUp(500);
           $(this).parent().siblings('.expand').removeClass('expand').find('.expand').removeClass('expand');
         }
-      })
+      });
       $("a.accordion-mobile").each(function(){
         //if($(this).next(".accordion-content").not('ul.accordion-content')) {
         if($(this).next().is("ul.accordion-content")) {
@@ -733,6 +742,8 @@ $(function() {
                 data: $('#email_form').serialize(),
                 success: function(data) {
                     $(".input-subscribe").val('');
+                    var alas = '<div class="modal fade" id="email_subscribe" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true"> <div class="modal-dialog"> <div class="modal-content"> <div id="notice"> <div class="notice-wrapper"> <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="btnclose icon-close"></i></button> <div class="title-wrapper"> <br><div> <div>Thank You!</div><h2>訂閱成功!</h2> </div></div><p>感謝您的喜愛與支持，<br>VERYYOU電子報訂閱成功!<br>每週定期給你最新VERYYOU消息與優惠❤ </p><div class="newsletter-form2" > <div class="button-group-2 button-row" style="margin:0"> <div> <button type="submit" class="btn btn-confirm" data-dismiss="modal">確認</button> </div></div></div></div></div></div></div></div>';
+                    $("body").before(alas);
                     $("#email_subscribe").modal('show');
                     $(".error-subscribe").hide();
                     e.preventDefault();
@@ -740,7 +751,7 @@ $(function() {
             });
             return false;
         } else {
-            $(".block-subscribe").append($('<div class="error-subscribe" style="color:#DC5168">請輸入正確的電子信箱格式! ex: example@gmail.com</div>'));
+            $(".block-subscribe").append($('<div class="error-subscribe" style="color:#DC5168;font-size:.9em">請輸入正確的電子信箱格式! ex: example@gmail.com</div>'));
             //$(".error-subscribe").show();
         }
     });
