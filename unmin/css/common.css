@@ -2000,12 +2000,13 @@ div#notice button.close {
     }
     .sales-link li:not(:last-child):after {
         content:'/';
-        font-family:Inconsolata;
+        font-family:Arial;
         color:#C0C0C0;
         font-size:.85rem;
         position:relative;
         margin:0 15px;
     }
+    .wf-active .sales-link li:not(:last-child):after {font-family:Inconsolata;}
     .section-pagination .showitemcount {
         margin-bottom:1em;
     }

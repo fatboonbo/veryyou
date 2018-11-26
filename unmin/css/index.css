@@ -21,6 +21,10 @@
 .news_container_wrap .blink {
     display:inline-block;
 }
+.section-index-news {
+    visibility: visible;
+    opacity: 1;
+}
 .index-main h2 {
     text-align: center;
     font-weight: bold;

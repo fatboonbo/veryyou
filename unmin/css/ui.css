@@ -528,7 +528,8 @@ main {
 .section-member-pws, .section-member-detail,
 .section-pagination,
 .checkout select, .default_select, .btn-select,
-.index-main section .wrapper {
+.index-main section .wrapper,
+.section-index-news {
     visibility: hidden;
     opacity: 0;
     transition:.1s;

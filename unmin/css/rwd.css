@@ -106,9 +106,9 @@
         transform: translateY(-110px);
         /* height: 80px; */
     }
-    .section-banner>.left {
+    .carousel-index-banner-bind {
         padding-bottom:57.446%;
-        padding-bottom: 44.136%;
+        /* padding-bottom: 44.136%; */
     }
 
     .touchevents.is-open .headroom--not-bottom, .touchevents.is-open-m .headroom--not-bottom, .touchevents.is-open-sale .headroom--not-bottom, .mobile-menu-open .headroom--not-bottom {
@@ -193,7 +193,7 @@
     .list-style-nav-header > li {
         /* position:relative; */
     }
-    .section-banner>.left {
+    .section-banner .left {
         max-width: 77%;
     }
     .section-banner>.right {
