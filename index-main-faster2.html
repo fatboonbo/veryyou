@@ -17,33 +17,31 @@
 	<!-- Favicon -->
 	<link rel="icon" href="css/images/favicon.ico">
 	<!-- css -->
-	<!--
-	<link rel="stylesheet" href="css/style.min.css?v=6" media="none" onload="if(media!='all')media='all'">
-	<link rel="preload" href="css/style.min.css?v=5" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="css/style.min.css?v=5"></noscript>
-    -->
-    <!--
-	<style>@font-face {font-family: 'veryyou';font-display: block;src: url('https://fatboonbo.github.io/fatboonbo/veryyou/css/fonts/veryyou.eot#iefix') format('embedded-opentype'), url('https://fatboonbo.github.io/fatboonbo/veryyou/css/fonts/veryyou.eot') format('eot'), url('https://fatboonbo.github.io/fatboonbo/veryyou/css/fonts/veryyou.woff2') format('woff2'), url('https://fatboonbo.github.io/fatboonbo/veryyou/css/fonts/veryyou.woff') format('woff'), url('https://fatboonbo.github.io/fatboonbo/veryyou/css/fonts/veryyou.ttf') format('truetype'), url('https://fatboonbo.github.io/fatboonbo/veryyou/css/fonts/veryyou.svg#veryyou') format('svg');font-weight: normal;font-style: normal;text-rendering: optimizeLegibility;}</style>-->
 	<link rel="stylesheet" type="text/css" href="css/style.min.css?v=5">
-	<!-- js 
-	<script src="js/libs/headroom.min.js"></script>
-	<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/101702/headroom.min.js"></script>
-	<script src="js/libs/jQuery.headroom.js"></script>-->
+	<!-- js -->
 	<script src="https://unpkg.com/jquery@3.3.1/dist/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="js/libs/jquery-3.3.1.min.zopfli.js.gz"><\/script>')</script>
 	<script>
-		/*
-		$("header#nav-header").headroom(), {
-			classes: {
-				initial: "slide"
-			}
-		};
-		
-$(document).ready(function() {  
-
-		$("header#nav-header").headroom();
-});*/
-	</script>
+		var fontlink = ["css/fonts/veryyou.woff?v=1235","css/fonts/veryyou.woff2",
+		"//fonts.gstatic.com/s/playfairdisplay/v13/nuFiD-vYSZviVYUb_rj3ij__anPXDTzYgA.woff2",
+		"//fonts.gstatic.com/s/playfairdisplay/v13/nuFlD-vYSZviVYUb_rj3ij__anPXBYf9lW4e5g.woff2",
+		"//fonts.gstatic.com/s/inconsolata/v16/QldKNThLqRwH-OJ1UHjlKGlZ5qg.woff2",
+		"http://fonts.gstatic.com/s/inconsolata/v16/QldXNThLqRwH-OJ1UHjlKGHiw71p5_w.woff2"];
+		var fontstyle = ["font1","font2","font3","font4","font5","font6"];//var anonymous = anonymous;
+		for (var i = 0,y = 0; i < fontlink.length &&  y < fontstyle.length; i++, y++) {
+			var preloadLink = document.createElement("link");
+			document.head.appendChild(preloadLink);
+			preloadLink.href = fontlink[i];
+			preloadLink.as = "font";
+			preloadLink.crossOrigin = 'anonymous';
+			preloadLink.rel = "preload";
+			preloadLink.id = fontstyle[y];
+		}
+		$(document).ready(function() {
+			$("html").addClass("wf-active");
+		});		
+	</script>	
+	<noscript><link rel="stylesheet" href="css/font.css"></noscript>
 
 </head>
 <!-- popup style 6 -->
@@ -683,8 +681,10 @@ $(document).ready(function() {
 	</footer>
 
 	<script data-main="js/config.js?v=20181121" src="js/libs/require.min.mixed.js"></script>
+	<!--
 	<script>require(["//ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"],function(WebFont){WebFont.load({custom:{families:['Inconsolata:400,700','Playfair Display:400,700']}});});</script>
 	<noscript><link rel="stylesheet" type="text/css" href="css/font2.css"></noscript>
+    -->
 	<!--
 	<script src="js/libs/require.min.mixed.js"></script>
 	<script src="js/config.js"></script>
@@ -699,7 +699,10 @@ $(document).ready(function() {
 				}
 			});
 		});
-	</script>-->
+	</script>
+
+
+-->
 	<!--
 	<script>
             require(["loadCSS","text!version-css.json?vt=" + (new Date()).getTime()], function(loadCss,version) {
