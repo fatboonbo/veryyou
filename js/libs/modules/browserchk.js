@@ -1,0 +1,1 @@
+define([],function(){function o(){var o=!!window.opr&&!!opr.addons||!!window.opera||navigator.userAgent.indexOf(" OPR/")>=0,n=(/constructor/i.test(window.HTMLElement)||function(o){o.toString()}(!window.safari||safari.pushNotification),!i&&window.StyleMedia,!!window.chrome&&!!window.chrome.webstore),i=((n||o)&&window.CSS,!!document.documentMode)}return o});
