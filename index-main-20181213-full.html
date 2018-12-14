@@ -155,7 +155,10 @@ return false;
 			<div class="left"><!--  -->
 				<div id="carousel-index-banner" class="carousel-index-banner">
 					<a href="https://www.veryyou.com.tw/PDSaleDiscount.asp?pi=6899001801">
-						<div id="bg-carousel1" class="bg-carousel" style="background-image: url(https://photo.eyescream.com.tw/VeryYou/banner/IndexBanner/banner-20181213-01.jpg);" data-stellar-background-ratio="0.2"></div>
+						<div id="bg-carousel1" class="bg-carousel desktop" style="background-image: url(https://photo.eyescream.com.tw/VeryYou/banner/IndexBanner/banner-20181213-01.jpg);" data-stellar-background-ratio="0.2"></div>
+						<div class="mobile">
+							<img src="https://photo.eyescream.com.tw/VeryYou/banner/IndexBanner/banner-20181213-01-m.jpg">
+						</div>
 					</a>
 					<a href="https://www.veryyou.com.tw/PDList2.asp?item=all&ob=D3">
 						<div id="bg-carousel2" class="bg-carousel" data-stellar-background-ratio="0.2">
@@ -173,6 +176,55 @@ return false;
 						<div id="bg-carousel4" class="bg-carousel" data-stellar-background-ratio="0.2">
 							<span data-src="https://photo.eyescream.com.tw/VeryYou/banner/IndexBanner/banner-20181213-04-m.jpg" data-media="(min-width: 0px)"></span>
 							<span data-src="https://photo.eyescream.com.tw/VeryYou/banner/IndexBanner/banner-20181213-04.jpg" data-media="(min-width: 1024px)"></span>
+						</div>
+					</a>
+					<!--
+					<a>
+						<div class="bg-carousel" style="background-image: url(sample5/02.jpg);" data-stellar-background-ratio="0.2">
+							<div class="absol">
+								<div class="relate3" data-stellar-ratio="0.6">
+									<img src="sample5/coat01.jpg">
+								</div>
+								<div class="vutt">
+									<img src="sample5/tt01.svg">
+								</div>
+								<div class="vutt_ver">
+									<img src="sample5/tt01.svg">
+								</div>
+								<div class="relate3a">
+									<img src="sample5/shape02.svg">
+								</div>
+								<div class="relate4" data-stellar-ratio="0.5">
+									<img src="sample5/coat02.jpg">
+								</div>
+								<div class="ttline">
+									<img src="sample5/line01.svg">
+								</div>
+								<div class="relate4a" data-stellar-ratio="0.8">
+									<img src="sample5/shape01.svg">
+								</div>
+								<div class="relate5" data-stellar-ratio="0.4">
+									<img src="sample5/coat03.jpg">
+								<div class="ttt">In love with coats</div>
+								<div class="ttlink">Full Collection</div>
+								</div>
+							</div>
+						</div>
+					</a>
+					<a>
+						<div class="bg-carousel" style="background-image: url(sample5/01a.jpg);" data-stellar-background-ratio="0.2">
+							<div class="relate relate1" data-stellar-ratio="0.5">
+								<div>
+									<img src="sample4/tt05.png">
+								</div>
+							</div>
+						</div>
+					</a>
+				-->
+					<a>
+						<div id="bg-carousel4" class="bg-carousel" data-stellar-background-ratio="0.2">
+							<span data-src="sample5/03.jpg" data-media="(min-width: 0px)"></span>
+							<span data-src="sample5/03.jpg" data-media="(min-width: 1024px)"></span>
 						</div>
 					</a>
 					<!--   data-stellar-background-ratio="0.2"
@@ -193,21 +245,6 @@ return false;
 						<div class="bg-carousel" style="background-image: url(https://photo.eyescream.com.tw/VeryYou/banner/IndexBanner/banner-20181213-04.jpg);">
 						</div>
 					</a>  -->
-				</div>
-				<!-- m -->
-				<div id="carousel-index-banner-m" class="carousel-index-banner-m">
-					<a href="https://www.veryyou.com.tw/PDSaleDiscount.asp?pi=6899001801">
-						<img src="css/images/blank.gif" data-lazy="https://photo.eyescream.com.tw/VeryYou/banner/IndexBanner/banner-20181213-01-m.jpg">
-					</a>
-					<a href="https://www.veryyou.com.tw/PDList2.asp?item=all&ob=D3">
-						<img src="css/images/blank.gif" data-lazy="https://photo.eyescream.com.tw/VeryYou/banner/IndexBanner/banner-20181213-02-m.jpg">
-					</a>
-					<a href="https://www.veryyou.com.tw/PDSaleDiscount.asp?pi=6899001901">
-						<img src="css/images/blank.gif" data-lazy="https://photo.eyescream.com.tw/VeryYou/banner/IndexBanner/banner-20181213-03-m.jpg">
-					</a>
-					<a href="https://www.veryyou.com.tw/PDSaleDiscount.asp?pi=6899002001">
-						<img src="css/images/blank.gif" data-lazy="https://photo.eyescream.com.tw/VeryYou/banner/IndexBanner/banner-20181213-04-m.jpg">
-					</a>
 				</div>
 			</div>
 		</section>
@@ -250,6 +287,26 @@ return false;
 				</div>
 			</div>
 		</section>
+		<div class="marquee_wrapper">
+			<div class="marquee">
+				<img src="https://image.mercci22.tw/img/mainpage/2018SS/index/121018/b-01.jpg" alt="" width="3838" height="auto" />
+			</div>
+		</div>
+			<script>
+				$(document).ready(function() {
+					require(["https://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"], function() {
+						$('.marquee img').clone().appendTo(".marquee");
+
+						TweenMax.to( $(".marquee"), 35, 
+						{
+							x: +( $('.marquee img').width() ), 
+							ease: Linear.easeNone,
+							repeat: -1
+						}
+						);
+					});
+				});
+			</script>
 
 		<section id="section-best-dress" class="section-best-dress">
 
