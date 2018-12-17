@@ -14,6 +14,7 @@ paths: {
     "unveilhooks": "libs/ls.unveilhooks.min",
     "picturefill":"libs/picturefill.min",
     "picturefill3":"libs/picturefill_3.min",
+    "picturefillbg":"libs/picturefill-background",
     //"headroom": "libs/Headroom",
     "jheadroom": "libs/jQuery.headroom",
     "headroom": "libs/headroom.min",
@@ -135,11 +136,25 @@ function bust(path) {
     //return path + "?v=" + (new Date()).getTime();
     return path + "?v=" + (new Date()).getFullYear() + (new Date()).getMonth() + (new Date()).getDate() + (new Date()).getHours();
 }
-*/
+
 function is_touch_device() {
     return "ontouchstart" in window || navigator.maxTouchPoints;
-} // works on IE10/11 and Surface || works on most browsers 
+} // works on IE10/11 and Surface || works on most browsers */
+function is_touch_device() {
+  var prefixes = ' -webkit- -moz- -o- -ms- '.split(' ');
+  var mq = function(query) {
+    return window.matchMedia(query).matches;
+  }
 
+  if (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch) {
+    return true;
+  }
+
+  // include the 'heartz' as a way to have a non matching MQ to help terminate the join
+  // https://git.io/vznFH
+  var query = ['(', prefixes.join('touch-enabled),('), 'heartz', ')'].join('');
+  return mq(query);
+}
 /**/
     var ua = window.navigator.userAgent;
     var iOS = !!ua.match(/iPad/i) || !!ua.match(/iPhone/i);
@@ -192,7 +207,7 @@ window.l = function(message) {
 if (is_touch_device()) {
     $("html").removeClass("no-touchevents");
     $("html").addClass("touchevents");
-    l("mobile");
+    l("touch device");
 } else {
     $("html").removeClass("touchevents");
     $("html").addClass("no-touchevents");
@@ -210,7 +225,7 @@ $(document).ready(function(){
         if(currentDiff*initialDiff < 0) {         
             location.reload();
         } 
-            l("reloaded");
+            l("Site refreshed");
     });
     
 });
@@ -225,7 +240,7 @@ define("version", ["text!version-css.json?bust=" + (new Date()).getTime()], func
 require(["version"], function(version) {
         var csscommon = "css/common.css?p="+ version.v;
         var preloadLink = window.document.createElement("link");
-        document.body.appendChild(preloadLink),l("common.css appended");
+        document.body.appendChild(preloadLink),l("%ccommon.css appended","color:#ff00ff");
         preloadLink.href = csscommon;
         preloadLink.as = "style";
         preloadLink.rel = "preload";

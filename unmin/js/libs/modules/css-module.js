@@ -91,7 +91,7 @@ loadCSS( "css/common.css?="+ version.v ),l("common css loaded");*/
             require(["loadCSS"], function() {
                 loadCSS( "css/index.css?v="+ version.v ),l("request index.css");
             });
-        */
+        
             $('head').append( $('<link rel="preload" type="text/css" />').attr('href', 'css/index.css?o='+ version.v).attr('as', 'style').attr('onload', 'this.onload=null;this.rel="stylesheet"'),l("append act.css") );
 
             if (isFirefox > 0 || isSafari > 0 || iOSSafari > 0 || isIE > 0 || isEdge > 0) {
@@ -99,7 +99,7 @@ loadCSS( "css/common.css?="+ version.v ),l("common css loaded");*/
                     loadCSS( "css/index.css?v="+ version.v ),l("request index.css");
                 });
             }
-
+*/
         },
         product_list_main: function() {
             require(["loadCSS"], function() {

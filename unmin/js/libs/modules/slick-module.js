@@ -8,17 +8,18 @@
                  $(document).ready(function() {
                     
                 //setTimeout(function() {
-                   $('.carousel-index-banner-bind').slick({
+                   $('.carousel-index-banner').slick({
                      infinite: true,
                      speed: 600,
                      autoplay: true,
-                     autoplaySpeed: 2200,
+                     autoplaySpeed: 2800,
                      slidesToShow: 1,
                      slidesToScroll: 1,
                      //lazyLoad: 'anticipated',
                      arrows: true,
                      cssEase: 'ease-in-out',
-                     fade: false,
+                     //fade: false,
+                     fade: true,
                      pauseOnHover: false,
                      dots: false,
                      mobileFirst: false,
@@ -32,7 +33,8 @@
                     },{
                       breakpoint: 769,
                       settings: {
-                        dots: true
+                        dots: true,
+                        fade: false
                       }
                     }
                     ]
@@ -41,10 +43,10 @@
 
                    $(document).on('keydown', function(e) {
                     if(e.keyCode == 37) {
-                      $('.carousel-index-banner-bind').slick('slickPrev');
+                      $('.carousel-index-banner').slick('slickPrev');
                     }
                     if(e.keyCode == 39) {
-                      $('.carousel-index-banner-bind').slick('slickNext');
+                      $('.carousel-index-banner').slick('slickNext');
                     }
                   }),l('index slick banner');
 
