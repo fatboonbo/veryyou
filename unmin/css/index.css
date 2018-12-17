@@ -7,7 +7,7 @@
     padding: 15px;
 }
 .news_container_wrap {
-    border: 1px solid #313131;
+    border: 1px solid rgba(255, 255, 255, .5);
     padding: 1em;
 }
 .news_container_wrap .title {
@@ -318,10 +318,15 @@ svg:not(:root) {
         border:none;
     }
     .section-index-news.wrapper {
-        margin: 15px auto;
-        padding: 0;
+        margin: 0 auto;
+        padding: 15px 0;
         width: 100%;
         /* max-width: 100%; */
+    }
+    .news_container_wrap.wrapper {
+        max-width: 1260px;
+        overflow: hidden;
+        width: 90%;
     }
     .news_container_wrap {
         /* border:0; */
