@@ -30,8 +30,6 @@ libs/modules/slick-module.js
 
 libs/modules/css-module.js
 ----------------
-libs/modules/cache.js
-config.js
 libs/modules/css-module.js
 libs/loadCSS.js
 
