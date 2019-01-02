@@ -1,4 +1,12 @@
 
+addon/base.css
+----------------
+addon/base.css
+
+addon/demo2.css
+----------------
+addon/demo2.css
+
 config.js
 ----------------
 libs/modules/cache.js
@@ -41,19 +49,6 @@ libs/theia-sticky-sidebar.min.js
 libs/modules/sticky-module.js
 libs/jquery-scrollto.min.js
 core.js
-
-grid_main.js
-----------------
-addon/imagesloaded.pkgd.min.js
-addon/TweenMax.min.js
-grid_main.js
-
-grid_main2.js
-----------------
-addon/imagesloaded.pkgd.min.js
-addon/masonry.pkgd.min.js
-addon/TweenMax.min.js
-grid_main2.js
 
 index_main.js
 ----------------
