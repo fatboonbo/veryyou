@@ -555,9 +555,9 @@ function globalmenu() {
         Nhp.removeClass(iss);
         return hh.hasClass(mo) ? Dt.disable():Dt.enable();
     });
-    return globalmenu();
+    
 };
-//globalmenu();
+globalmenu();
 /*
 function stopScrolling (e) {
     e.preventDefault();
@@ -741,9 +741,9 @@ $(function(){
            }
        });
     });
-});*/
-
-function subscribeFooter() {
+});
+return {
+subscribeFooter: function() {
     $('#email_form').on('submit', function(e) {
         e.preventDefault();
         var $this = $(this);
@@ -771,8 +771,10 @@ function subscribeFooter() {
             //$(".error-subscribe").show();
         }
     });
-};
-subscribeFooter();
+     
+}
+}
+
 function subscribePopup() {
     $('#email_form2').on('submit', function(d) {
         d.preventDefault();
@@ -801,8 +803,22 @@ function subscribePopup() {
             //$(".error-subscribe").show();
         }
     });
+     
 };
-subscribePopup();
+*/
+require(['js/libs/modules/subscribe-footer.js'], function(subscribeFooter) {
+    $('.btn-subscribe').on('click', function() {
+        subscribeFooter.subscribeFooter();
+    });
+});
+require(['js/libs/modules/subscribe-email.js'], function(subscribePopup) {
+    $('#btnNewletter').on('click', function() {
+        subscribePopup.subscribePopup();
+    });
+});
+//return {subscribeFooter:subscribeFooter};
+//subscribeFooter();
+//subscribePopup();
 l("core plugin fully loaded");
 
   // invalid email
