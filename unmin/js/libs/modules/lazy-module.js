@@ -1,6 +1,7 @@
 define(["lazysizes", "unveilhooks", "picturefill"], function() {
 
   $(document).ready(function() {
+
     $(document).router({
         index_main: function() {
             window.lazySizesConfig = window.lazySizesConfig || {};

@@ -12,7 +12,7 @@ define(["stickysidebar"], function() {
         product_main: function() {
           $('.column-main-product, .column-menu, .column-product-description')
           .theiaStickySidebar({
-            additionalMarginTop: 95,
+            additionalMarginTop: 85,
             minWidth: 768
           });
         },
@@ -24,11 +24,13 @@ define(["stickysidebar"], function() {
           });
         },
         about_main: function() {
+          /*
           $('.column-main-old, .column-menu-old')
           .theiaStickySidebar({
             additionalMarginTop: 210,
             minWidth: 768
-          });
+          });*/
+
         }
     });
 });

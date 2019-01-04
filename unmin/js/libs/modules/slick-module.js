@@ -8,11 +8,11 @@
                  $(document).ready(function() {
                     
                 //setTimeout(function() {
-                   $('.carousel-index-banner').slick({
+                   $('.carousel-index-banner-bind').slick({
                      infinite: true,
                      speed: 600,
                      autoplay: true,
-                     autoplaySpeed: 2800,
+                     autoplaySpeed: 3300,
                      slidesToShow: 1,
                      slidesToScroll: 1,
                      //lazyLoad: 'anticipated',
@@ -21,7 +21,7 @@
                      //fade: false,
                      fade: true,
                      pauseOnHover: false,
-                     dots: false,
+                     dots: true,
                      mobileFirst: false,
                      verticalSwiping: false,
                      responsive: [
@@ -43,10 +43,10 @@
 
                    $(document).on('keydown', function(e) {
                     if(e.keyCode == 37) {
-                      $('.carousel-index-banner').slick('slickPrev');
+                      $('.carousel-index-banner-bind').slick('slickPrev');
                     }
                     if(e.keyCode == 39) {
-                      $('.carousel-index-banner').slick('slickNext');
+                      $('.carousel-index-banner-bind').slick('slickNext');
                     }
                   }),l('index slick banner');
 
@@ -254,7 +254,7 @@
                      speed: 500,
                      arrows: false,
                      autoplay: false,
-                     //slidesToShow: 3,
+                     slidesToShow: 3,
                      slidesToScroll: 3,
                      lazyLoad: 'ondemand',
                      cssEase: 'ease-in-out',
@@ -301,6 +301,7 @@
                                verticalSwiping: false,
                                autoplay: false,
                                //slidesToShow: 3,
+                               slidesToShow: 4,
                                //slidesToScroll: true,
                                fade: false,
                                lazyLoad: 'ondemand',

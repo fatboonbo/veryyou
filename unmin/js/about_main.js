@@ -24,6 +24,7 @@ define([], function() {
 
        }
 */
+
 if (is_touch_device()) {
       $('.accordion-account').on('click', function(){
         if($(this).parent().hasClass('expand')){

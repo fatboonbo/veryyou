@@ -36,19 +36,16 @@ paths: {
     //"css":"libs/require.css",
     "css":"libs/css",
     "syotimer":"libs/jquery.syotimer.min",
-    "imagesLoaded":"addon/imagesloaded.pkgd.min",
-    "masonry":"addon/masonry.pkgd.min",
-    "charming":"addon/charming.min",
+    //"imagesLoaded":"addon/imagesloaded.pkgd.min",
+    //"masonry":"addon/masonry.pkgd.min",
+    //"charming":"addon/charming.min",
     //"charming":"addon/charming",
-    "tweenmax":"addon/TweenMax.min",
+    //"tweenmax":"addon/TweenMax.min",
     "demo":"libs/demo",
     //"core":bust('core.js'),
     "typewriter":"libs/jquerytypewriter.min"
   },
   "shim": {
-    "about_main": {
-      deps: []
-    },
     "product_main": {
       deps: ["lazy2"]
     },
@@ -66,10 +63,10 @@ paths: {
     },
     "headroom" : {
       deps: ["jquery"]
-    },
+    },/*
     "libs/modules/css-module" : {
       deps: ["config"]
-    },/*
+    },
     "jheadroom" : {
       deps: ["headroom"]
     },
@@ -140,6 +137,7 @@ function bust(path) {
 function is_touch_device() {
     return "ontouchstart" in window || navigator.maxTouchPoints;
 } // works on IE10/11 and Surface || works on most browsers */
+/*
 function is_touch_device() {
   var prefixes = ' -webkit- -moz- -o- -ms- '.split(' ');
   var mq = function(query) {
@@ -154,8 +152,8 @@ function is_touch_device() {
   // https://git.io/vznFH
   var query = ['(', prefixes.join('touch-enabled),('), 'heartz', ')'].join('');
   return mq(query);
-}
-/**/
+}*/
+/*
     var ua = window.navigator.userAgent;
     var iOS = !!ua.match(/iPad/i) || !!ua.match(/iPhone/i);
     var webkit = !!ua.match(/WebKit/i);
@@ -184,7 +182,7 @@ function is_touch_device() {
     
     // Internet Explorer 6-11
     var isIE = false || !!document.documentMode;//@cc_on!@false || !!document.documentMode;
-    
+    */
 // Custom console log wrapper
 // 
 // Usage: l("message");
@@ -252,7 +250,7 @@ require(["version"], function(version) {
         },l("common.css loaded");
         if (isFirefox > 0 || isSafari > 0 || iOSSafari > 0 || isIE > 0 || isEdge > 0) {
             require(["loadCSS"], function(loadCss) {
-                loadCSS( "css/common.css?v="+ version.v ),l("request index.css");
+                loadCSS( "css/common.css?v="+ version.v ),l("request common.css");
             });
         }
         //$('#csscommon').attr('onload', 'this.onload=null;this.rel="stylesheet";this.media="all"'),l("common.css applied");
