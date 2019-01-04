@@ -46,6 +46,7 @@
     width: 100vw;
     display: flex;
     float:none;
+    position: relative;
 }
 .index_main .carousel-index-banner .bg-carousel {
     width: 100vw;
@@ -99,7 +100,7 @@
     left: 0;
     right: 0;
     position:relative;
-    top: 2%;
+    top: 3%;
     bottom: 0;
     display: block!important;
     /* line-height: 0; */
@@ -121,10 +122,13 @@
   animation:bounceOutDown .8s both;
 }
 a.slick-active .relate3,
-a.slick-active .vutt,
-a.slick-active .ttlink {
+a.slick-active .vutt {
   -webkit-animation:bounceInUp .5s both .5s;
           animation:bounceInUp .5s both .5s;
+}
+a.slick-active .ttlink {
+  -webkit-animation:bounceInUp 1.8s both .3s;
+          animation:bounceInUp 1.8s both .3s;
 }
 a.slick-active .relate5 {
   -webkit-animation:bounceInUp .6s both .5s;
@@ -143,16 +147,16 @@ a.slick-active .relate4a {
           animation:bounceInUp 1.4s both .5s;
 }
 a.slick-active .ttt {
-  -webkit-animation:fadeInRight .9s both .5s;
-          animation:fadeInRight .9s both .5s;
+  -webkit-animation:bounceInUp 2.0s both .2s;
+          animation:bounceInUp 2.0s both .2s;
 }
 a.slick-active .ttline {
-  -webkit-animation:fadeInDown 2.2s both .5s;
-  animation:fadeInDown 2.2s both .5s;
+  -webkit-animation:fadeInDown 1.2s both 1.5s;
+  animation:fadeInDown 1.2s both 1.5s;
 }
 .relate3 {
     width: 21%;
-    left: 13.2%;
+    left: 12%;
     top: 10.5em;
     position:absolute;
     z-index: 3;
@@ -170,42 +174,42 @@ a.slick-active .ttline {
     z-index: 3;
 }
 .relate3a {
-    top: 12.9em;
-    left: 21%;
+    top: -1.2em;
+    left: 20.4%;
     width: 19.5%;
     z-index: 2;
 }
 .relate4a {
-    top: 15em;
-    right: 27%;
+    top: -1em;
+    right: 26%;
     width: 16%;
     z-index: 2;
 }
 .ttline {
     z-index: 6;
-    left: 38%;
-    top: 5em;
+    left: 39%;
+    top: 1em;
 }
 .vutt {
-    bottom: 14em;
+    bottom: 14.5em;
     left: 16.7%;
     z-index: 6;
 }
 .vutt_ver {
     bottom: 29em;
-    left: 5%;
+    left: 3%;
     z-index: 6;
     transform:rotate(90deg);
 }
 .ttt {
     font-family: 'Times New Roman';
     font-style: italic;
-    font-size: 5em;
+    font-size: 5.7em;
     color: #3E413F;
     right: -45%;
     max-width: 440px;
     height: auto;
-    bottom: -1.16em;
+    bottom: -1.1em;
     line-height: .72em;
     text-align: left;
     z-index: 6;
@@ -213,7 +217,7 @@ a.slick-active .ttline {
     /* bottom: auto; */
     /* top: 0; */
     width: 100vw;
-    right: -2em;
+    right: -1.3em;
 }
 .ttlink {
     color: #B05842;
@@ -221,7 +225,7 @@ a.slick-active .ttline {
     height: auto;
     font-size: 1.2em;
     line-height: .5em;
-    right: -.8em;
+    right: -.6em;
     max-width: 12em;
     font-style: italic;
     bottom: 8.2em;
@@ -240,7 +244,7 @@ a.slick-active .ttline {
     background-color: #B05842;
     height: 1px;
     position: absolute;
-    top: .9em;
+    top: 1.1em;
     left: -.5em;
 }
 @media (min-width: 1024px) {
@@ -444,7 +448,6 @@ a.slick-active .ttline {
     opacity: 1;
   }
 }
-
 @keyframes zoomIn {
   from {
     opacity: 0;
@@ -799,10 +802,14 @@ a.slick-active .tt03 {
   -webkit-animation:fadeInLeft .4s both 1.1s;
           animation:fadeInLeft .4s both 1.1s;
 }
-a.slick-active:nth-child(2) .imgimg {
+a.slick-active:nth-child(2) .imgimg,
+a.slick-active:nth-child(4) .imgimg {
   -webkit-animation:zoomIn .4s both 0s;
-          animation:zoomIn .4s both 0s;    
+          animation:zoomIn .4s both 0s;          
 }
+/*
+a:first-child .imgimg {filter: blur(3px);transition:.2s;}
+a.slick-active:first-child .imgimg {filter: blur(0px);}*/
 a.slick-active:nth-child(3) .imgimg {
   -webkit-animation:zoomIn .4s both 0s;
           animation:zoomIn .4s both 0s;    

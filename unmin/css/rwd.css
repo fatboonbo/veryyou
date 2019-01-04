@@ -181,7 +181,7 @@
     .headroom--not-top .section-slogan {
         display:  none;
     }
-    .headroom--not-top ~ .cart-panel {
+    .headroom--not-top ~ .cart-panel, .headroom--not-top ~ .member-panel {
         top: 3.5em;
     }
     .nav-header-member .icon-account {

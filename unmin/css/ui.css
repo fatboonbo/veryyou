@@ -13,7 +13,7 @@ html {
 .webfont-loaded, 
 .wf-active
 {font-family: Inconsolata,'PingFang TC', 'Hiragino Sans GB', 'Microsoft JhengHei', 'Helvetica Neue', serif,sans-serif;  }
-
+.wow, .about_main .wow {visibility: hidden;}
 *, *::before, *::after {
   box-sizing: inherit;
 }
@@ -371,8 +371,16 @@ input[type='checkbox'] {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.icon-search:before {content:'';min-height:27px;}
 
+.icon-ticket-frame:before {
+  content: "\e914";
+}
+.icon-arrow-u-turn:before {
+  content: "\e917";
+}
+.icon-delete-circle:before {
+  content: "\e920";
+}
 .icon-earth:before {
   content: "\e91d";
 }

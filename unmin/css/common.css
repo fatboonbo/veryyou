@@ -467,15 +467,6 @@ ul.slick-dots {
     overflow:  hidden;
     white-space:  nowrap;
 }
-.titles_v h2 {
-    background: #fff;
-    padding: 0 .5em;
-    font-size: 1rem;
-    z-index: 1;
-    color: #444;
-    letter-spacing: .06em;
-    top: -.3em;
-}
 div.titles_v:after, div.topics.tips:after {
     content: "";
     background: #efefef;
@@ -1098,6 +1089,15 @@ footer {visibility: visible!important;}
     display: table;
     margin: 0 auto;
     background: transparent;
+}
+.titles_v h2 {
+    background: #fff;
+    padding: 0 .5em;
+    font-size: 1rem;
+    z-index: 1;
+    color: #444;
+    letter-spacing: .06em;
+    top: -.3em;
 }
 .no-result {
     width: 100%;

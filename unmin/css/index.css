@@ -7,8 +7,9 @@
     padding: 15px;
 }
 .news_container_wrap {
-    border: 1px solid rgba(255, 255, 255, .5);
+    border: 1px solid rgba(0, 0, 0, .5);
     padding: 1em;
+    overflow: hidden;
 }
 .news_container_wrap .title {
     font-size: 1.3125rem;
@@ -518,4 +519,9 @@ svg:not(:root) {
     .section-instagram.wrapper {
         max-width: 900px;
     }   
+}
+@media (min-width: 1600px) {
+    .index_main .section-category-banner {
+        padding-bottom: 38%;
+    }
 }
