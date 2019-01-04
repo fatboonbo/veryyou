@@ -330,6 +330,7 @@ $.scrollLock = ( function scrollLockClosure() {
         enable: function() {
             $.scrollLock( false );
             headroom.init();
+            $("header").addClass("headroom--not-top ffix headroom--pinned");
         }
     };
     /*
@@ -554,8 +555,9 @@ function globalmenu() {
         Nhp.removeClass(iss);
         return hh.hasClass(mo) ? Dt.disable():Dt.enable();
     });
+    return globalmenu();
 };
-globalmenu();
+//globalmenu();
 /*
 function stopScrolling (e) {
     e.preventDefault();
