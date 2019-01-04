@@ -357,7 +357,7 @@ $.scrollLock = ( function scrollLockClosure() {
             })
         }
     };*/
-$(function() {
+function globalmenu() {
     "use strict";
     //shopping cart popup
     //var $this = $(this);
@@ -554,7 +554,8 @@ $(function() {
         Nhp.removeClass(iss);
         return hh.hasClass(mo) ? Dt.disable():Dt.enable();
     });
-});
+};
+globalmenu();
 /*
 function stopScrolling (e) {
     e.preventDefault();
@@ -740,7 +741,7 @@ $(function(){
     });
 });*/
 
-$(function() {
+function subscribeFooter() {
     $('#email_form').on('submit', function(e) {
         e.preventDefault();
         var $this = $(this);
@@ -768,8 +769,9 @@ $(function() {
             //$(".error-subscribe").show();
         }
     });
-});
-$(function() {
+};
+subscribeFooter();
+function subscribePopup() {
     $('#email_form2').on('submit', function(d) {
         d.preventDefault();
         var $this = $(this);
@@ -797,7 +799,8 @@ $(function() {
             //$(".error-subscribe").show();
         }
     });
-});
+};
+subscribePopup();
 l("core plugin fully loaded");
 
   // invalid email
