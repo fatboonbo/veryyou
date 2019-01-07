@@ -21,7 +21,7 @@ define([/*"fontloader",*/"headroom","libs/modules/search-module", /**/"libs/modu
     };
     var headroom = new Headroom(myElement,options);
     headroom.init();
-    
+
     //globalmenu.globalmenu();
     /*
     (function() {
@@ -353,7 +353,7 @@ var Dt = {
     "use strict";
     //shopping cart popup
     //var $this = $(this);
-    var alink = $("a.alink", $(this));
+    //var alink = $("a.alink", $(this));
     var timer;
     var delay = 150;
     var Cp = $(".cart-pop"),
@@ -678,7 +678,7 @@ function opn2(h) {
         //if($(this).next(".accordion-content").not('ul.accordion-content')) {
         if($(this).next().is("ul.accordion-content")) {
         //if($(this).next("ul")[0]) {
-            //return false;
+            return false;
         } else {
           $(this).find("span.x").removeClass("x").addClass("icon-angle-right");
           }
