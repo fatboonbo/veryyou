@@ -1,15 +1,21 @@
-define(["headroom","jheadroom"/**/], function() {
+define("headroomini",["jheadroom"], function(headroom,headroomini) {
 //define("headroom",["headroom","jheadroom"/**/], function(headroom) {
 	/**/
-    var Headroom = require("headroom");
-    // grab an element
-    var myElement = document.querySelector("header#nav-header");
-    // construct an instance of Headroom, passing the element
-    var headroom = new Headroom(myElement);
-    // initialise
-    headroom.init();
-    //return headroom;
-    //l(headroom);
+   //return {
+        //headroomini: function() {
+        function headroomini () {
+            var Headroom = require("headroom");
+            // grab an element
+            var myElement = document.querySelector("header#nav-header");
+            // construct an instance of Headroom, passing the element
+            var headroom = new Headroom(myElement);
+            // initialise
+            headroom.init();
+            //return headroom;
+            //l(headroom);
+            return headroomini;
+        }
+    //}
 
 
 

@@ -1,13 +1,28 @@
-define([/*"fontloader",*/"headroom","libs/modules/search-module", /**/"libs/modules/lazy-module","wowwow","bmodal", "headroom","libs/modules/sticky-module", "jscrollto"], function() {
-
+define([/*"fontloader",*/"headroom","libs/modules/search-module", /**/"libs/modules/lazy-module","wowwow","bmodal",/*"libs/modules/global-menu",*/"libs/modules/sticky-module", "jscrollto"], function(headroom,search,lazy,wowwow,bmodal,/*globalmenu,*/sticky,jscrollto) {
+    /**/
+    function isNavVisible(nav) {
+      return ( nav.classList.contains('visible') ? true : false );
+    }
     var Headroom = require("headroom");
+    var nav = document.getElementById('nav-header');
     // grab an element
     var myElement = document.querySelector("header");
     // construct an instance of Headroom, passing the element
-    var headroom = new Headroom(myElement);
-    // initialise
+    var options = {
+        onUnpin: function() {
+            if (isNavVisible(nav)) {
+                this.elem.classList.remove(this.classes.unpinned);
+                this.elem.classList.add(this.classes.pinned);
+            } else {
+                this.elem.classList.add(this.classes.unpinned);
+                this.elem.classList.remove(this.classes.pinned);
+            }
+        }
+    };
+    var headroom = new Headroom(myElement,options);
     headroom.init();
     
+    //globalmenu.globalmenu();
     /*
     (function() {
         new Headroom(document.querySelector("header"), {
@@ -194,27 +209,27 @@ if (!is_touch_device()) {
         $this.scrollTop(0);
         return prevent();
     }
-});
-*/
-
+    });
+    */
+/**/
 $.scrollLock = ( function scrollLockClosure() {
     'use strict';
 
     var $html      = $( 'html' ),
-        // State: unlocked by default
-        locked     = false,
-        // State: scroll to revert to
-        prevScroll = {
-            scrollLeft : $( window ).scrollLeft(),
-            scrollTop  : $( window ).scrollTop()
-        },
-        // State: styles to revert to
-        prevStyles = {},
-        lockStyles = {
-            'overflow-y' : 'scroll',
-            'position'   : 'fixed',
-            'width'      : '100%'
-        };
+    // State: unlocked by default
+    locked     = false,
+    // State: scroll to revert to
+    prevScroll = {
+        scrollLeft : $( window ).scrollLeft(),
+        scrollTop  : $( window ).scrollTop()
+    },
+    // State: styles to revert to
+    prevStyles = {},
+    lockStyles = {
+        'overflow-y' : 'scroll',
+        'position'   : 'fixed',
+        'width'      : '100%'
+    };
 
     // Instantiate cache in case someone tries to unlock before locking
     saveStyles();
@@ -320,8 +335,9 @@ $.scrollLock = ( function scrollLockClosure() {
             }
         }
     };
-}() );
-    var Dt = {
+}() 
+);
+var Dt = {
         disable: function() {
             $.scrollLock( true );
             headroom.destroy();
@@ -333,32 +349,7 @@ $.scrollLock = ( function scrollLockClosure() {
             $("header").addClass("headroom--not-top ffix headroom--pinned");
         }
     };
-    /*
-    var Dt = {
-        disable: function() {
-            $(".overlay, #nav-header").on("scroll mousewheel touchmove", function(t) {
-                t.preventDefault(), t.stopPropagation()
-            })
-        },
-        enable: function() {
-            $(".overlay, #nav-header").off("scroll mousewheel touchmove")
-        }
-    };
-    var Dt = {
-        disable: function() {
-            $('html, body').css({
-                overflow: 'hidden',
-                height: '100%'
-            })
-        },
-        enable: function() {
-            $('body').css({
-                overflow: 'auto',
-                height: 'auto'
-            })
-        }
-    };*/
-function globalmenu() {
+    function globalmenu() {
     "use strict";
     //shopping cart popup
     //var $this = $(this);
@@ -402,7 +393,7 @@ function globalmenu() {
         //bdd = $("body");
         //hep = "headroom--top";
         //nav = $("#nav-header");
-//open sale temp cart to edit
+        //open sale temp cart to edit
         if (is_touch_device()) {
             Cp.on("click", function(c) {
                 c.preventDefault(c);
@@ -423,15 +414,7 @@ function globalmenu() {
                 sm.removeClass(ac);
                 Nhp.removeClass(iss);
                 return hh.hasClass(im) ? Dt.disable():Dt.enable();
-            });/*
-            bt.on("click", function(e) {
-                e.preventDefault();
-                hh.removeClass(allelse);
-                ct.removeClass(it);
-                mt.removeClass(im);
-                Nhp.removeClass(iss);
-                Dt.enable();
-            });*/
+            });
             hh.on("click","button.close", function(e) {
                 e.preventDefault();
                 hh.removeClass(allelse);
@@ -459,7 +442,7 @@ function globalmenu() {
                 ct.removeClass(it);
                 mt.removeClass(im);
                 Nhp.removeClass(iss);
-                /*bd.toggleClass(hi);*/
+                //bd.toggleClass(hi);
                 Dt.enable();
                 //return sm.hasClass(ac) ? Dt.disable():Dt.enable();
             });
@@ -523,7 +506,7 @@ function globalmenu() {
                 Nhp.removeClass(iss);
                 sm.toggleClass(ac);
                 tt.focus();
-                /*bd.toggleClass(hi),*/
+                //bd.toggleClass(hi),
                 Dt.enable();
             });
             mlink.on("mouseenter", function(event) {
@@ -558,6 +541,32 @@ function globalmenu() {
     
 };
 globalmenu();
+    /*
+    var Dt = {
+        disable: function() {
+            $(".overlay, #nav-header").on("scroll mousewheel touchmove", function(t) {
+                t.preventDefault(), t.stopPropagation()
+            })
+        },
+        enable: function() {
+            $(".overlay, #nav-header").off("scroll mousewheel touchmove")
+        }
+    };
+    var Dt = {
+        disable: function() {
+            $('html, body').css({
+                overflow: 'hidden',
+                height: '100%'
+            })
+        },
+        enable: function() {
+            $('body').css({
+                overflow: 'auto',
+                height: 'auto'
+            })
+        }
+    };
+*/
 /*
 function stopScrolling (e) {
     e.preventDefault();
@@ -806,6 +815,7 @@ function subscribePopup() {
      
 };
 */
+
 require(['js/libs/modules/subscribe-footer.js'], function(subscribeFooter) {
     $('.btn-subscribe').on('click', function() {
         subscribeFooter.subscribeFooter();

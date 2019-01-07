@@ -52,11 +52,17 @@ paths: {
     "masonry": {
       deps: ["jquery"]
     },
+    "libs/modules/global-menu": {
+      deps: ["libs/modules/dt"]
+    },
     "css/common.css": {
       deps: ["libs/modules/cache-css"]
     },
     "libs/modules/headroom-module" : {
       deps: ["jheadroom"]
+    },
+    "libs/modules/dt" : {
+      deps: ["headroom"]
     },
     "jheadroom" : {
       deps: ["headroom"]
@@ -188,10 +194,10 @@ function is_touch_device() {
 // Usage: l("message");
 // 
 // To turn logging on with: 
-//localStorage.setItem("debug", true);
+localStorage.setItem("debug", true);
 // 
 // Turn logging off with: 
-localStorage.setItem("debug", false);
+//localStorage.setItem("debug", false);
 
 var timerStart = Date.now();
 window.l = function(message) {

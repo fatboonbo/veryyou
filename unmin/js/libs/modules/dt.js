@@ -1,0 +1,154 @@
+define("Dt", function(Dt) {
+
+
+$.scrollLock = ( function scrollLockClosure() {
+    'use strict';
+
+    var $html      = $( 'html' ),
+    // State: unlocked by default
+    locked     = false,
+    // State: scroll to revert to
+    prevScroll = {
+        scrollLeft : $( window ).scrollLeft(),
+        scrollTop  : $( window ).scrollTop()
+    },
+    // State: styles to revert to
+    prevStyles = {},
+    lockStyles = {
+        'overflow-y' : 'scroll',
+        'position'   : 'fixed',
+        'width'      : '100%'
+    };
+
+    // Instantiate cache in case someone tries to unlock before locking
+    saveStyles();
+
+    // Save context's inline styles in cache
+    function saveStyles() {
+        var styleAttr = $html.attr( 'style' ),
+        styleStrs = [],
+        styleHash = {};
+
+        if( !styleAttr ){
+            return;
+        }
+
+        styleStrs = styleAttr.split( /;\s/ );
+
+        $.each( styleStrs, function serializeStyleProp( styleString ){
+            if( !styleString ) {
+                return;
+            }
+
+            var keyValue = styleString.split( /\s:\s/ );
+
+            if( keyValue.length < 2 ) {
+                return;
+            }
+
+            styleHash[ keyValue[ 0 ] ] = keyValue[ 1 ];
+        } );
+
+        $.extend( prevStyles, styleHash );
+    }
+
+    function lock() {
+        var appliedLock = {};
+
+        // Duplicate execution will break DOM statefulness
+        if( locked ) {
+            return;
+        }
+
+        // Save scroll state...
+        prevScroll = {
+            scrollLeft : $( window ).scrollLeft(),
+            scrollTop  : $( window ).scrollTop()
+        };
+
+        // ...and styles
+        saveStyles();
+
+        // Compose our applied CSS
+        $.extend( appliedLock, lockStyles, {
+            // And apply scroll state as styles
+            'left' : - prevScroll.scrollLeft + 'px',
+            'top'  : - prevScroll.scrollTop  + 'px'
+        } );
+
+        // Then lock styles...
+        $html.css( appliedLock );
+
+        // ...and scroll state
+        $( window )
+        .scrollLeft( 0 )
+        .scrollTop( 0 );
+
+        locked = true;
+    }
+
+    function unlock() {
+        // Duplicate execution will break DOM statefulness
+        if( !locked ) {
+            return;
+        }
+
+        // Revert styles
+        $html.attr( 'style', $( '<x>' ).css( prevStyles ).attr( 'style' ) || '' );
+
+        // Revert scroll values
+        $( window )
+        .scrollLeft( prevScroll.scrollLeft )
+        .scrollTop(  prevScroll.scrollTop );
+
+        locked = false;
+    }
+
+    return function scrollLock( on ) {
+        // If an argument is passed, lock or unlock depending on truthiness
+        if( arguments.length ) {
+            if( on ) {
+                lock();
+            }
+            else {
+                unlock();
+            }
+        }
+        // Otherwise, toggle
+        else {
+            if( locked ){
+                unlock();
+            }
+            else {
+                lock();
+            }
+        }
+    };
+}() 
+);
+    var Dt = {
+        disable: function() {
+            $.scrollLock( true );
+            //headroom.destroy();
+            //$("header").addClass("headroom--not-top ffix headroom--pinned");
+            //$('#nav-header').removeClass('headroom--unpinned').addClass('headroom--pinned');
+            //$("header").addClass("header headroom headroom--not-top headroom--not-bottom headroom--pinned");
+        },
+        enable: function() {
+            $.scrollLock( false );
+            //headroom.init();
+            //$("header").addClass("headroom--not-top ffix headroom--pinned");
+            //$("header").addClass("headroom--pinned");
+            /*
+            setTimeout(function() { 
+                $('#nav-header').addClass('headroom--pinned');
+            }, 0);
+            */
+                /*
+            if ($("#nav-header").hasClass("headroom--unpinned")) {
+              $('#nav-header').removeClass('headroom--unpinned').addClass('headroom--pinned');
+            }*/
+        }
+    };
+    return Dt;
+});

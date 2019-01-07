@@ -1,4 +1,4 @@
-define([""], function(Dt) {
+define(["jquery"], function($) {
    /* clear search */
     (function($) {
         $.fn.clearSearch = function(options) {
