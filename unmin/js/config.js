@@ -258,7 +258,7 @@ require(["version"], function(version) {
             require(["loadCSS"], function(loadCss) {
                 loadCSS( "css/common.css?v="+ version.v ),l("request common.css");
             });
-        }
+        };l("current css version "+version.v)
         //$('#csscommon').attr('onload', 'this.onload=null;this.rel="stylesheet";this.media="all"'),l("common.css applied");
     //$('head').append( $('<link rel="preload" type="text/css" />').attr('href', 'css/common.css?v='+ version.v).attr('as', 'style').attr('onload', 'this.onload=null;this.rel="stylesheet"'),l("append act.css") );
 /*

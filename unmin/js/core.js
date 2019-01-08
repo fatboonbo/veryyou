@@ -1,5 +1,5 @@
-define([/*"fontloader",*/"headroom","libs/modules/search-module", /**/"libs/modules/lazy-module","wowwow","bmodal",/*"libs/modules/global-menu",*/"libs/modules/sticky-module", "jscrollto"], function(headroom,search,lazy,wowwow,bmodal,/*globalmenu,*/sticky,jscrollto) {
-    /**/
+define([/*"fontloader","libs/modules/headroom-module",*/"libs/modules/search-module", /**/"libs/modules/lazy-module","wowwow","bmodal",/*"libs/modules/global-menu",*/"libs/modules/sticky-module", "jscrollto"], function(search,lazy,wowwow,bmodal,/*globalmenu,*/sticky,jscrollto) {
+    /*
     function isNavVisible(nav) {
       return ( nav.classList.contains('visible') ? true : false );
     }
@@ -21,8 +21,13 @@ define([/*"fontloader",*/"headroom","libs/modules/search-module", /**/"libs/modu
     };
     var headroom = new Headroom(myElement,options);
     headroom.init();
-
+*/
     //globalmenu.globalmenu();
+    require(["libs/modules/headroom-module"], function(Headroom) {
+        //headroominit.headroominit();
+        l("headroom module"+Headroom)
+    });
+    
     /*
     (function() {
         new Headroom(document.querySelector("header"), {
@@ -337,7 +342,7 @@ $.scrollLock = ( function scrollLockClosure() {
     };
 }() 
 );
-var Dt = {
+    var Dt = {
         disable: function() {
             $.scrollLock( true );
             headroom.destroy();
