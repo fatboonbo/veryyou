@@ -1,12 +1,13 @@
-define([/*"fontloader","libs/modules/headroom-module",*/"libs/modules/search-module", /**/"libs/modules/lazy-module","wowwow","bmodal",/*"libs/modules/global-menu",*/"libs/modules/sticky-module", "jscrollto"], function(search,lazy,wowwow,bmodal,/*globalmenu,*/sticky,jscrollto) {
-    /*
+define([/*"fontloader","libs/modules/headroom-module",*/"headroom","libs/modules/search-module", /**/"libs/modules/lazy-module","wowwow","bmodal",/*"libs/modules/global-menu",*/"libs/modules/sticky-module", "jscrollto","libs/modules/subscribe-footer"], function(headroom,search,lazy,wowwow,bmodal,/*globalmenu,*/sticky,jscrollto,subscribeFooter) {
+    /**/
+    l(headroom);
     function isNavVisible(nav) {
       return ( nav.classList.contains('visible') ? true : false );
     }
     var Headroom = require("headroom");
     var nav = document.getElementById('nav-header');
     // grab an element
-    var myElement = document.querySelector("header");
+    //var myElement = document.querySelector("header");
     // construct an instance of Headroom, passing the element
     var options = {
         onUnpin: function() {
@@ -19,14 +20,9 @@ define([/*"fontloader","libs/modules/headroom-module",*/"libs/modules/search-mod
             }
         }
     };
-    var headroom = new Headroom(myElement,options);
+    var headroom = new Headroom(document.querySelector("header"),options);    
     headroom.init();
-*/
     //globalmenu.globalmenu();
-    require(["libs/modules/headroom-module"], function(Headroom) {
-        //headroominit.headroominit();
-        l("headroom module"+Headroom)
-    });
     
     /*
     (function() {
@@ -820,7 +816,10 @@ function subscribePopup() {
      
 };
 */
-
+    $('.btn-subscribe').on('click', function() {
+        subscribeFooter.subscribeFooter();
+    });
+    /*
 require(['js/libs/modules/subscribe-footer.js'], function(subscribeFooter) {
     $('.btn-subscribe').on('click', function() {
         subscribeFooter.subscribeFooter();
@@ -830,7 +829,7 @@ require(['js/libs/modules/subscribe-email.js'], function(subscribePopup) {
     $('#btnNewletter').on('click', function() {
         subscribePopup.subscribePopup();
     });
-});
+});*/
 //return {subscribeFooter:subscribeFooter};
 //subscribeFooter();
 //subscribePopup();

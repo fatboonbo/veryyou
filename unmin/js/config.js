@@ -15,9 +15,9 @@ paths: {
     "picturefill":"libs/picturefill.min",
     "picturefill3":"libs/picturefill_3.min",
     "picturefillbg":"libs/picturefill-background",
-    //"headroom": "libs/Headroom",
+    "headroom": "libs/Headroom",
     "jheadroom": "libs/jQuery.headroom",
-    "headroom": "libs/headroom.min",
+    //"headroom": "libs/headroom.min",
     "jscrollto":"libs/jquery-scrollto.min",
     "stickysidebar": "libs/theia-sticky-sidebar.min",
     "wowwow": "libs/wow.min",
@@ -58,17 +58,8 @@ paths: {
     "css/common.css": {
       deps: ["libs/modules/cache-css"]
     },
-    "libs/modules/headroom-module" : {
-      deps: ["jheadroom"]
-    },
     "libs/modules/dt" : {
       deps: ["headroom"]
-    },
-    "jheadroom" : {
-      deps: ["headroom"]
-    },
-    "headroom" : {
-      deps: ["jquery"]
     },/*
     "libs/modules/css-module" : {
       deps: ["config"]
@@ -194,10 +185,10 @@ function is_touch_device() {
 // Usage: l("message");
 // 
 // To turn logging on with: 
-localStorage.setItem("debug", true);
+//localStorage.setItem("debug", true);
 // 
 // Turn logging off with: 
-//localStorage.setItem("debug", false);
+localStorage.setItem("debug", false);
 
 var timerStart = Date.now();
 window.l = function(message) {
