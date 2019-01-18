@@ -35,7 +35,7 @@ libs/loadCSS.js
 
 core.js
 ----------------
-libs/headroom.min.js
+libs/Headroom.js
 libs/modules/search-module.js
 libs/lazysizes.js
 libs/ls.unveilhooks.min.js
@@ -45,7 +45,9 @@ libs/wow.min.js
 libs/bootstrap3modal.min.js
 libs/theia-sticky-sidebar.min.js
 libs/modules/sticky-module.js
+libs/modules/line-helper.js
 libs/jquery-scrollto.min.js
+libs/modules/subscribe-footer.js
 core.js
 
 index_main.js
