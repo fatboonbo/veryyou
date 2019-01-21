@@ -1,19 +1,9 @@
 
-addon/base.css
-----------------
-addon/base.css
-
-addon/demo2.css
-----------------
-addon/demo2.css
-
 config.js
 ----------------
 libs/modules/cache.js
 config.js
-libs/modules/cache-css.js
 libs/text.min.js
-libs/modules/css-module.js
 libs/loadCSS.js
 
 libs/modules/lazy-module.js
@@ -27,11 +17,6 @@ libs/modules/slick-module.js
 ----------------
 libs/slick.min.js
 libs/modules/slick-module.js
-
-libs/modules/css-module.js
-----------------
-libs/modules/css-module.js
-libs/loadCSS.js
 
 core.js
 ----------------
