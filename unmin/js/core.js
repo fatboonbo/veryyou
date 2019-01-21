@@ -1,6 +1,9 @@
-define([/*"fontloader","libs/modules/headroom-module",*/"headroom","libs/modules/search-module", /**/"libs/modules/lazy-module","wowwow","bmodal",/*"libs/modules/global-menu",*/"libs/modules/sticky-module", "jscrollto","libs/modules/subscribe-footer"], function(headroom,search,lazy,wowwow,bmodal,/*globalmenu,*/sticky,jscrollto,subscribeFooter) {
+define([
+      "jquery","headroom","libs/modules/search-module","libs/modules/lazy-module","wowwow","bootstrap3modal","libs/modules/sticky-module","libs/modules/line-helper", "jscrollto","libs/modules/subscribe-footer"
+    ], function($,headroom,search,lazy,wowwow,bootstrap3modal,/*globalmenu,*/sticky,lineHelpermenu,jscrollto,subscribeFooter) {
     /**/
     l(headroom);
+    
     function isNavVisible(nav) {
       return ( nav.classList.contains('visible') ? true : false );
     }
@@ -354,7 +357,7 @@ $.scrollLock = ( function scrollLockClosure() {
     "use strict";
     //shopping cart popup
     //var $this = $(this);
-    //var alink = $("a.alink", $(this));
+    var alink = $("a.alink", $(this));
     var timer;
     var delay = 150;
     var Cp = $(".cart-pop"),
@@ -480,8 +483,9 @@ $.scrollLock = ( function scrollLockClosure() {
                     ct.addClass(it);
                     hh.addClass(it);
                     mt.removeClass(im);
+                    $("#line-helper").removeClass(ac);
                     Nhp.removeClass(iss);
-                    Dt.enable();
+                    //Dt.enable();
                 }, 200));
             }).mouseleave(function() {
                 clearTimeout($(this).data('timeout'));
@@ -490,12 +494,12 @@ $.scrollLock = ( function scrollLockClosure() {
                 ct.removeClass(it);
                 hh.removeClass(it);
                 mt.removeClass(im);
-                Dt.enable();
+                //Dt.enable();
             });
             ct.on("mouseleave", function(c) {
                 ct.removeClass(it);
                 hh.removeClass(it);
-                Dt.enable();
+                //Dt.enable();
             });
             //Mp.on("click", function(p) {});
             Sp.on("click", function(c) {
@@ -508,13 +512,15 @@ $.scrollLock = ( function scrollLockClosure() {
                 sm.toggleClass(ac);
                 tt.focus();
                 //bd.toggleClass(hi),
-                Dt.enable();
+                //Dt.enable();
+                $("#line-helper").removeClass(ac);
             });
             mlink.on("mouseenter", function(event) {
                 var alink = $("a.alink", $(this));
                 timer = setTimeout(function() {
                     alink.next(Nhp).addClass(iss);
                     hh.addClass(so);
+                    $("#line-helper").removeClass(ac);
                 }, delay);
             }).mouseleave(function(event) {
                 clearTimeout(timer);
@@ -542,6 +548,7 @@ $.scrollLock = ( function scrollLockClosure() {
     
 };
 globalmenu();
+lineHelpermenu.lineHelpermenu();
     /*
     var Dt = {
         disable: function() {
@@ -679,7 +686,7 @@ function opn2(h) {
         //if($(this).next(".accordion-content").not('ul.accordion-content')) {
         if($(this).next().is("ul.accordion-content")) {
         //if($(this).next("ul")[0]) {
-            return false;
+            return true;
         } else {
           $(this).find("span.x").removeClass("x").addClass("icon-angle-right");
           }
@@ -819,6 +826,17 @@ function subscribePopup() {
     $('.btn-subscribe').on('click', function() {
         subscribeFooter.subscribeFooter();
     });
+
+
+    
+    /*
+    require(['libs/modules/title-module'], function(titleChange) {
+        titleChange.titleChange();
+    });
+    require(['libs/modules/line-module'], function(lineContact) {
+        lineContact.lineContact();
+    });
+    */
     /*
 require(['js/libs/modules/subscribe-footer.js'], function(subscribeFooter) {
     $('.btn-subscribe').on('click', function() {

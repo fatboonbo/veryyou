@@ -7,7 +7,7 @@ paths: {
     //"jquery": "//unpkg.com/jquery@2.2.0/dist/jquery.min.js",
     "fontloader": "libs/fontfaceobserver2",
     "slick": "libs/slick.min",
-    "bmodal": "libs/bootstrap3modal.min",
+    "bootstrap3modal": "libs/bootstrap3modal.min",
     "ekko": "libs/ekko-lightbox.min",
     //"lazysizes": "libs/lazysizes.min",
     "lazysizes": "libs/lazysizes",
@@ -48,7 +48,7 @@ paths: {
   "shim": {
     "product_main": {
       deps: ["lazy2"]
-    },
+    },/*
     "masonry": {
       deps: ["jquery"]
     },
@@ -60,7 +60,7 @@ paths: {
     },
     "libs/modules/dt" : {
       deps: ["headroom"]
-    },/*
+    },
     "libs/modules/css-module" : {
       deps: ["config"]
     },
@@ -79,10 +79,10 @@ paths: {
     },
     "core": {
       deps: ["libs/modules/css-module"]
-    },*/
+    },*//*
     "rwdmap": {
       deps: ["lazysizes"],
-    },/*
+    },
     "popupmodule" : {
       deps: ["libs/modules/cache", "bmodal"]
     },
@@ -96,12 +96,12 @@ paths: {
       deps:["featherlight"],
     },
     "ekko": {
-      deps:["bmodal"],
+      deps:["bootstrap3modal"],
     },/*
     "libs/modules/cache-css": {
         deps: ["css"]
     }*/
-  }/**/,
+  },
  /* 
   map: {
   '*': {
@@ -109,13 +109,16 @@ paths: {
      deps: ["libs/modules/cache-css"]
   }
   
-*/
+
   map: {
   '*': {
     //'libs/modules/cache-css': 'css', // or whatever the path to require-css is
     css: ["libs/css"]
-  }
-}
+  },
+  packages: [
+    "line"
+  ]
+}*/
 });
 define("jquery", [], function() {
   return jQuery;
@@ -224,16 +227,16 @@ $(document).ready(function(){
     });
     
 });
-
-define("version", ["text!version-css.json?bust=" + (new Date()).getTime()], function(version) {
-    version = JSON.parse(version);
+/**/
+define("cssversion", ["text!../css/version-css.json?bust=" + (new Date()).getTime()], function(cssversion) {
+    cssversion = JSON.parse(cssversion);
     requirejs.config({
-        urlArgs: "v=" + version.v
+        urlArgs: "v=" + cssversion.v
     });
-    return version;
+    return cssversion;
 });
-require(["version"], function(version) {
-        var csscommon = "css/common.css?p="+ version.v;
+require(["cssversion"/*"libs/modules/cache-css"*/], function(cssversion) {
+        var csscommon = "css/common.css?p="+ cssversion.v;
         var preloadLink = window.document.createElement("link");
         document.body.appendChild(preloadLink),l("%ccommon.css appended","color:#ff00ff");
         preloadLink.href = csscommon;
@@ -247,9 +250,9 @@ require(["version"], function(version) {
         },l("common.css loaded");
         if (isFirefox > 0 || isSafari > 0 || iOSSafari > 0 || isIE > 0 || isEdge > 0) {
             require(["loadCSS"], function(loadCss) {
-                loadCSS( "css/common.css?v="+ version.v ),l("request common.css");
+                loadCSS( "css/common.css?v="+ cssversion.v ),l("request common.css");
             });
-        };l("current css version "+version.v)
+        };l("current css version "+cssversion.v)
         //$('#csscommon').attr('onload', 'this.onload=null;this.rel="stylesheet";this.media="all"'),l("common.css applied");
     //$('head').append( $('<link rel="preload" type="text/css" />').attr('href', 'css/common.css?v='+ version.v).attr('as', 'style').attr('onload', 'this.onload=null;this.rel="stylesheet"'),l("append act.css") );
 /*
@@ -260,7 +263,7 @@ require(["version"], function(version) {
     }*/
 });
 //require(["jquery","libs/modules/cache"], function() {
-require(["jquery","libs/modules/cache","version"], function($,cache,version) {
+require(["jquery","libs/modules/cache","cssversion"/*"libs/modules/cache-css"*/], function($,version,cssversion) {
     //define(["jquery", "domrouter"], function() {
 
     $(document).ready(function() {
@@ -316,7 +319,7 @@ require(["jquery","libs/modules/cache","version"], function($,cache,version) {
                 });*/
                 //require(["text!version-css.json?bust=" + (new Date()).getTime()], function(version) {
                     //$('head').append( $('<link rel="preload" type="text/css" />').attr('href', 'css/index.css?c='+ version.v).attr('as', 'style').attr('onload', 'this.onload=null;this.rel="stylesheet"'),l("append act.css") );                    
-                    var indexcss = "css/index.css?a="+ version.v;
+                    var indexcss = "css/index.css?a="+ cssversion.v;
                     var preloadLink = document.createElement("link");
                     document.body.appendChild(preloadLink),l("index.css appended");
                     preloadLink.href = indexcss;
@@ -326,7 +329,7 @@ require(["jquery","libs/modules/cache","version"], function($,cache,version) {
                     $('#indexcss').attr('onload', 'this.onload=null;this.rel="stylesheet"'),l("index.css applied");
                     if (isFirefox > 0 || isSafari > 0 || iOSSafari > 0 || isIE > 0 || isEdge > 0) {
                         require(["loadCSS"], function() {
-                            loadCSS( "css/index.css?d="+ version.v ),l("request index.css");
+                            loadCSS( "css/index.css?d="+ cssversion.v ),l("request index.css");
                         });
                     }
                 //});
@@ -343,7 +346,7 @@ require(["jquery","libs/modules/cache","version"], function($,cache,version) {
                     l("grid.min.css+checkout.min.css");
                 });*/
 
-                var listcss = ["css/product_list_main.css?v="+ version.v,"css/grid.min.css?v="+ version.v,"css/checkout.min.css?v="+ version.v];
+                var listcss = ["css/product_list_main.css?v="+ cssversion.v,"css/grid.min.css?v="+ cssversion.v,"css/checkout.min.css?v="+ cssversion.v];
                 var cssstyle = ["css1","css2","css3"];
                 for (var i = 0,y = 0; i < listcss.length &&  y < listcss.length; i++, y++) {
                   var preloadLink = document.createElement("link");
@@ -356,9 +359,9 @@ require(["jquery","libs/modules/cache","version"], function($,cache,version) {
                 $("#css1,#css2,#css3").attr('onload', 'this.onload=null;this.rel="stylesheet"');l("product_list $grid & checkout applied");
                 if (isFirefox > 0 || isSafari > 0 || iOSSafari > 0 || isIE > 0 || isEdge > 0) {
                     require(["loadCSS"], function() {
-                        loadCSS( "css/product_list_main.css?="+ version.v ),l("product_list_main css loaded");
-                        loadCSS( "css/grid.min.css?="+ version.v ),l("grid css loaded");
-                        loadCSS( "css/checkout.min.css?="+ version.v ),l("checkout css loaded");
+                        loadCSS( "css/product_list_main.css?="+ cssversion.v ),l("product_list_main css loaded");
+                        loadCSS( "css/grid.min.css?="+ cssversion.v ),l("grid css loaded");
+                        loadCSS( "css/checkout.min.css?="+ cssversion.v ),l("checkout css loaded");
                     });
                 }
                 require(["product_list_main"]);
@@ -372,7 +375,7 @@ require(["jquery","libs/modules/cache","version"], function($,cache,version) {
                     require(["css!../css/size-chart.min.css"]);
                     l("size-chart.min.css");
                 });*/
-                var listcss = ["css/product_main.css?v="+ version.v,"css/size-chart.min.css?v="+ version.v];
+                var listcss = ["css/product_main.css?v="+ cssversion.v,"css/size-chart.min.css?v="+ cssversion.v];
                 var cssstyle = ["css1","css2"];
                 for (var i = 0,y = 0; i < listcss.length &&  y < listcss.length; i++, y++) {
                   var preloadLink = document.createElement("link");
@@ -385,8 +388,8 @@ require(["jquery","libs/modules/cache","version"], function($,cache,version) {
                 $("#css1,#css2").attr('onload', 'this.onload=null;this.rel="stylesheet"');l("product_man $ size-chart applied");
                 if (isFirefox > 0 || isSafari > 0 || iOSSafari > 0 || isIE > 0 || isEdge > 0) {
                     require(["loadCSS"], function() {
-                        loadCSS( "css/product_main.css?="+ version.v ),l("product_main css loaded");
-                        loadCSS( "css/size-chart.min.css?="+ version.v ),l("size-chart css loaded");
+                        loadCSS( "css/product_main.css?="+ cssversion.v ),l("product_main css loaded");
+                        loadCSS( "css/size-chart.min.css?="+ cssversion.v ),l("size-chart css loaded");
                     });
                 }
                 require(["product_main"]);
@@ -399,7 +402,7 @@ require(["jquery","libs/modules/cache","version"], function($,cache,version) {
                     require(["css!../css/checkout.min.css", "css!../css/grid.min.css"]);
                     l("checkout.min.css+grid.min.css");
                 });*/
-                var listcss = ["css/grid.min.css?v="+ version.v,"css/checkout.min.css?v="+ version.v];
+                var listcss = ["css/grid.min.css?v="+ cssversion.v,"css/checkout.min.css?v="+ cssversion.v];
                 var cssstyle = ["css1","css2"];
                 for (var i = 0,y = 0; i < listcss.length &&  y < listcss.length; i++, y++) {
                   var preloadLink = document.createElement("link");
@@ -412,8 +415,8 @@ require(["jquery","libs/modules/cache","version"], function($,cache,version) {
                 $("#css1,#css2").attr('onload', 'this.onload=null;this.rel="stylesheet"');l("product_list $grid & checkout applied");
                 if (isFirefox > 0 || isSafari > 0 || iOSSafari > 0 || isIE > 0 || isEdge > 0) {
                     require(["loadCSS"], function() {
-                        loadCSS( "css/grid.min.css?="+ version.v ),l("grid css loaded");
-                        loadCSS( "css/checkout.min.css?="+ version.v ),l("checkout css loaded");
+                        loadCSS( "css/grid.min.css?="+ cssversion.v ),l("grid css loaded");
+                        loadCSS( "css/checkout.min.css?="+ cssversion.v ),l("checkout css loaded");
                     });
                 }
                 require(["checkout_main"]);
@@ -426,7 +429,7 @@ require(["jquery","libs/modules/cache","version"], function($,cache,version) {
                     l("checkout.min.css+grid.min.css");
                 });*/
 
-                var listcss = ["css/member_main.css?v="+ version.v,"css/grid.min.css?v="+ version.v,"css/checkout.min.css?v="+ version.v];
+                var listcss = ["css/member_main.css?v="+ cssversion.v,"css/grid.min.css?v="+ cssversion.v,"css/checkout.min.css?v="+ cssversion.v];
                 var cssstyle = ["css1","css2","css3"];
                 for (var i = 0,y = 0; i < listcss.length &&  y < listcss.length; i++, y++) {
                   var preloadLink = document.createElement("link");
@@ -439,9 +442,9 @@ require(["jquery","libs/modules/cache","version"], function($,cache,version) {
                 $("#css1,#css2,#css3").attr('onload', 'this.onload=null;this.rel="stylesheet"');l("product_list $grid & checkout applied");
                 if (isFirefox > 0 || isSafari > 0 || iOSSafari > 0 || isIE > 0 || isEdge > 0) {
                     require(["loadCSS"], function() {
-                        loadCSS( "css/member_main.css?="+ version.v ),l("member_main css loaded");
-                        loadCSS( "css/grid.min.css?="+ version.v ),l("grid css loaded");
-                        loadCSS( "css/checkout.min.css?="+ version.v ),l("checkout css loaded");
+                        loadCSS( "css/member_main.css?="+ cssversion.v ),l("member_main css loaded");
+                        loadCSS( "css/grid.min.css?="+ cssversion.v ),l("grid css loaded");
+                        loadCSS( "css/checkout.min.css?="+ cssversion.v ),l("checkout css loaded");
                     });
                 }
                 require(["member_main"]);
@@ -454,7 +457,7 @@ require(["jquery","libs/modules/cache","version"], function($,cache,version) {
                     require(["css!../css/about.min.css"]);
                     l("about.min.css");
                 });*/
-                var aboutcss = "css/about.min.css?a="+ version.v;
+                var aboutcss = "css/about.min.css?a="+ cssversion.v;
                 var preloadLink = document.createElement("link");
                 document.body.appendChild(preloadLink),l("about.css appended");
                 preloadLink.href = aboutcss;
@@ -464,7 +467,7 @@ require(["jquery","libs/modules/cache","version"], function($,cache,version) {
                 $('#aboutcss').attr('onload', 'this.onload=null;this.rel="stylesheet"'),l("index.css applied");
                 if (isFirefox > 0 || isSafari > 0 || iOSSafari > 0 || isIE > 0 || isEdge > 0) {
                     require(["loadCSS"], function() {
-                        loadCSS( "css/about.min.css?d="+ version.v ),l("request about.css");
+                        loadCSS( "css/about.min.css?d="+ cssversion.v ),l("request about.css");
                     });
                 }
                 require(["about_main"]);
