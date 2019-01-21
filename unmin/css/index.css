@@ -258,6 +258,9 @@ svg:not(:root) {
     float: left;
     padding-left: 5px;
     background-color: #fafafa;
+    height: 0;
+    padding-bottom: 100%;
+    z-index: 1;
 }
 .ig-name {
     color:  #fff;
@@ -280,7 +283,7 @@ svg:not(:root) {
 }
 .no-touchevents .block-instagram img {
     transition: .4s;
-    max-height:  171px;
+    /* max-height:  171px; */
 }
 .no-touchevents .block-instagram a:hover img {
     opacity: 1;
@@ -497,6 +500,7 @@ svg:not(:root) {
         margin: 0;
         padding: 0;
         float: none;
+        padding-bottom: 100%;
     }
     .section-instagram .slick-slide {
         padding: 0 .3em;

@@ -67,7 +67,7 @@ body {
 .block-instagram:before,
 .carousel-recommend .p-item:before {
     content:'';
-    /*background:url(images/spinner-icon3.svg);*/
+    /* background:url(images/spinner-icon3.svg); */
     background-size:contain;
     display:block;
     height: 80px;
@@ -76,6 +76,14 @@ body {
     left: calc(50% - 40px);
     top: calc(50% - 40px);
     z-index: -1;
+}
+.block-instagram:before {
+    background:none;
+    content:'\e918';
+    font-family:veryyou;
+    color: #d5d5d5;
+    font-size: 3.5em;
+    text-align: center;
 }
 li {
   list-style: none;

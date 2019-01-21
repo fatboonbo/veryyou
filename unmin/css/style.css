@@ -3,7 +3,7 @@
     padding-bottom:126.625%;
     overflow:hidden;
 }
-.desktop { display: none }
+.desktop,.carousel-index-banner-bind.desktop { display: none }
 .section-banner {
   webkit-animation-duration: .5s;
   animation-duration: .5s;

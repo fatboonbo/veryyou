@@ -365,13 +365,13 @@ div#size_table {
 }
 
 .normal-range:before {
-  content: '＊單位 :吋( 1吋=2.54cm) 量法:平放丈量(建議彈性範圍)';
+  content: '＊單位 : 吋( 1吋=2.54公分) 量法:平放丈量(建議彈性範圍)';
   display: block;
   margin-right: .5em;
 }
 
 .normal-range:after {
-  content: "＊Unit : cm (1 inch = 2.54cm) Method : Flat measurement.\A＊A standard deviation of 1 to 2 cm may be expected depends on how the product is measured.";
+  content: "＊Unit : inch (1 inch = 2.54cm) Method : Flat measurement.\A＊A standard deviation of 1 to 2 cm may be expected depends on how the product is measured.";
   white-space: normal;
   text-align: left;
   white-space: pre;
