@@ -29,23 +29,21 @@
 		"//fonts.gstatic.com/s/playfairdisplay/v13/nuFlD-vYSZviVYUb_rj3ij__anPXBYf9lW4e5g.woff2",
 		"//fonts.gstatic.com/s/inconsolata/v16/QldKNThLqRwH-OJ1UHjlKGlZ5qg.woff2",
 		"//fonts.gstatic.com/s/inconsolata/v16/QldXNThLqRwH-OJ1UHjlKGHiw71p5_w.woff2"];
-		var fontstyle = ["font1","font2","font3","font4"];//var anonymous = anonymous;
+		var fontstyle = ["font1","font2","font3","font4"];
 		for (var i = 0,y = 0; i < fontlink.length &&  y < fontstyle.length; i++, y++) {
-			var preloadLink = document.createElement("link");
-			document.head.appendChild(preloadLink);
-			preloadLink.href = fontlink[i];
-			preloadLink.as = "font";
-			preloadLink.crossOrigin = 'anonymous';
-			preloadLink.rel = "preload";
-			preloadLink.id = fontstyle[y];
+			var webfontlink = document.createElement("link");
+			document.head.appendChild(webfontlink);
+			webfontlink.href = fontlink[i];
+			webfontlink.as = "font";
+			webfontlink.crossOrigin = 'anonymous';
+			webfontlink.rel = "preload";
+			webfontlink.id = fontstyle[y];
 		}
 		$(document).ready(function() {
 			$("html").addClass("wf-active");
 		});		
 	</script>	
 	<noscript><link rel="stylesheet" href="css/font.css"></noscript>
-
-
 </head>
 <!-- popup style 6 -->
 
@@ -90,7 +88,7 @@
 		<!-- 輪播大圖 & 2小圖 -->
 		<section class="section-banner wrapper">
 			<div class="left">
-				<div class="carousel-index-banner-bind mobile">
+				<div class="carousel-index-banner-bind mobile"><!-- 大圖M版 -->
 					<a href="分類頁.html" class="alink">
 						<picture>
 							<source srcset="https://photo.eyescream.com.tw/Veryyou/banner/IndexBanner/431M.jpg" media="(max-width: 1023px)">
@@ -108,7 +106,7 @@
 							<img srcset="css/images/blank.gif">  
 					</a>
 				</div>
-				<div class="carousel-index-banner-bind desktop">
+				<div class="carousel-index-banner-bind desktop"><!-- 大圖PC版 -->
 					<a href="分類頁.html" class="alink">
 						<picture>
 							<source srcset="https://photo.eyescream.com.tw/Veryyou/banner/IndexBanner/431.jpg" media="(min-width: 1024px)">
@@ -129,7 +127,7 @@
 					</a>
 				</div>
 			</div>
-			<div class="right">				
+			<div class="right"><!--右側兩小圖 -->		
 				<div>
 					<a href="分類頁.html" alt="秋日微出清。2件59折" title="秋日微出清。2件59折" class="alink">
 						<img src="https://photo.eyescream.com.tw/Veryyou/banner/indexwhatnew/1115a.jpg">
@@ -141,20 +139,6 @@
 					</a>
 				</div>
 			</div>
-			<!--
-			<div class="right">				
-				<div>
-					<a href="分類頁.html" alt="秋日微出清。2件59折" title="秋日微出清。2件59折" class="alink">
-						<img src="css/images/blank.gif" data-src="sample2/right01.jpg" class="lazyload">
-					</a>
-				</div>
-				<div>
-					<a href="分類頁-熱銷補貨.html" alt="冬日暖陽。新品88折" title="冬日暖陽。新品88折" class="alink">
-						<img src="css/images/blank.gif" data-src="sample2/right02.jpg" class="lazyload">
-					</a>
-				</div>
-			</div>
-		    -->
 		</section>
 
 		<!-- 最新公告 -->
@@ -169,7 +153,7 @@
 			</a>
 		</section>
 
-		<!-- 分類banner -->
+		<!-- 最新活動 banner -->
 		<section class="section-category-banner">
 			<h1>What's New</h1>
 			<div class="section-showcase wrapper">
