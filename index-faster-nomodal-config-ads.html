@@ -1,0 +1,776 @@
+<!doctype html>
+<html lang="zh-TW">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=10" />
+	<!-- Mobile Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=1, minimal-ui">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>VARYYOU｜VARYYOU</title>
+	<meta name="theme-color" content="#000000"/>
+	<meta name="google-site-verification" content="uEiCZbNGa1YXL5BseiIbkFDuf26w31aXAwA4Hc1clww" />
+	<!--fb meta-->
+	<meta property="og:image" content="https://photo.eyescream.com.tw/VeryYou/banner/fbbanner/01.jpg" />
+	<meta property="og:image" content="https://photo.eyescream.com.tw/VeryYou/banner/fbbanner/02.jpg" />
+	<meta property="og:image" content="https://photo.eyescream.com.tw/VeryYou/banner/fbbanner/03.jpg" />
+	<!-- Favicon -->
+	<link rel="icon" href="css/images/favicon.ico">
+	<!-- css -->
+	<link rel="preload" href="css/fonts/veryyou.woff" as="font" type="font/woff" crossorigin="anonymous">
+	<link rel="preload" href="css/fonts/veryyou.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/style.min.css?v=5">
+	<!-- js -->
+	<script src="https://unpkg.com/jquery@2.2.0/dist/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/libs/jquery-2.2.0.min.zopfli.js.gz"><\/script>')</script>
+	<script>
+		var fontlink = [
+		"//fonts.gstatic.com/s/playfairdisplay/v13/nuFiD-vYSZviVYUb_rj3ij__anPXDTzYgA.woff2",
+		"//fonts.gstatic.com/s/playfairdisplay/v13/nuFlD-vYSZviVYUb_rj3ij__anPXBYf9lW4e5g.woff2",
+		"//fonts.gstatic.com/s/inconsolata/v16/QldKNThLqRwH-OJ1UHjlKGlZ5qg.woff2",
+		"//fonts.gstatic.com/s/inconsolata/v16/QldXNThLqRwH-OJ1UHjlKGHiw71p5_w.woff2"];
+		var fontstyle = ["font1","font2","font3","font4"];
+		for (var i = 0,y = 0; i < fontlink.length &&  y < fontstyle.length; i++, y++) {
+			var webfontlink = document.createElement("link");
+			document.head.appendChild(webfontlink);
+			webfontlink.href = fontlink[i];
+			webfontlink.as = "font";
+			webfontlink.crossOrigin = 'anonymous';
+			webfontlink.rel = "preload";
+			webfontlink.id = fontstyle[y];
+		}
+		$(document).ready(function() {
+			$("html").addClass("wf-active");
+		});		
+	</script>	
+	<noscript><link rel="stylesheet" href="css/font.css"></noscript>
+</head>
+<!-- popup style 6 -->
+
+<script>
+        var popup = false; // false to disable popup
+        if (popup)
+            if (sessionStorage.getItem("hotdada") !== 'true') {
+                sessionStorage.setItem("hotdada", "true");
+                $('head').append( $('<link rel="preload" type="text/css" />').attr('href', 'css/popup.css?='+ (new Date()).getTime() ).attr('as', 'style').attr('onload', 'this.onload=null;this.rel="stylesheet"'));
+                $(document).ready(function() {
+                    requirejs.config({paths: {"loadCSS": "libs/loadCSS"}});	
+                	require(["loadCSS"], function() {
+                		if (isFirefox > 0 || isSafari > 0 || iOSSafari > 0 || isIE > 0 || isEdge > 0) {
+                			loadCSS( "css/popup.css?bust="+ (new Date()).getTime() )/*,l("act css loaded")*/;
+                		}
+                	});
+                	var eles = '<div class="modal fade in index-popup" id="popup-default" tabindex="-1" role="dialog" aria-hidden="true" style="display: none"><div class="modal-dialog"><div class="modal-content"><div class="popup-default-content" style="visibility:hidden"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="btnclose3 icon-close"></i></button></div><div id="popgif" style="background:transparent;"><div style="display:inline-block;"><a href="https://www.veryyou.com.tw/PDSaleDiscount.asp?pi=6847006001"><img src="https://photo.eyescream.com.tw/VeryYou/banner/popupbanner/2018110801.gif" alt="Oct.18 闆娘xNIA姊妹外出服系列 本周新品2件85折" title="Oct.18 闆娘xNIA姊妹外出服系列 本周新品2件85折"></a></div></div></div></div></div><div class="modal-backdrop"></div></div>';
+                	//$("main").before(eles),console.log("modal before");
+                	document.getElementById("nav-header").insertAdjacentHTML('beforeBegin',eles);
+                	$("#popup-default").show()/*, l('#popup-default show')*/; 
+                	$(".popup-default-content").addClass("fadeindownpop");
+                	setTimeout( function() {
+                		$(".modal-backdrop").addClass("fade in");
+                	},50);            
+                	$("#popup-default,button.close").click(function() {
+                		$("#popup-default").hide()/*, l('#popup-default hide')*/;                   
+                	});
+                	return false;
+                });
+            } //localStorage or sessionStorage
+</script>
+<body class="index_main">
+
+	<header id="nav-header" class="header">
+		<script>
+			$(document).ready(function() {
+				$("#nav-header").load("html/nav-header.html");
+			});
+		</script>
+	</header>
+	<main class="index-main">
+		<!-- 輪播大圖 & 2小圖 -->
+		<section class="section-banner wrapper">
+			<div class="left">
+				<div class="carousel-index-banner-bind mobile"><!-- 大圖M版 -->
+					<a href="分類頁.html" class="alink">
+						<picture>
+							<source srcset="https://photo.eyescream.com.tw/Veryyou/banner/IndexBanner/431M.jpg" media="(max-width: 1023px)">
+							<img srcset="css/images/blank.gif">  
+						</picture>
+					</a>
+					<a href="分類頁.html" class="alink">
+						<picture>
+							<source srcset="https://photo.eyescream.com.tw/Veryyou/banner/IndexBanner/432M.jpg" media="(max-width: 1023px)">
+							<img srcset="css/images/blank.gif">    
+						</picture>
+					</a>
+					<a href="分類頁.html" class="alink">
+							<source srcset="https://photo.eyescream.com.tw/Veryyou/banner/IndexBanner/433M.jpg" media="(max-width: 1023px)">
+							<img srcset="css/images/blank.gif">  
+					</a>
+				</div>
+				<div class="carousel-index-banner-bind desktop"><!-- 大圖PC版 -->
+					<a href="分類頁.html" class="alink">
+						<picture>
+							<source srcset="https://photo.eyescream.com.tw/Veryyou/banner/IndexBanner/431.jpg" media="(min-width: 1024px)">
+							<img srcset="css/images/blank.gif">   
+						</picture>
+					</a>
+					<a href="分類頁.html" class="alink">
+						<picture>
+							<source srcset="https://photo.eyescream.com.tw/Veryyou/banner/IndexBanner/432.jpg" media="(min-width: 1024px)">
+							<img srcset="css/images/blank.gif">   
+						</picture>
+					</a>
+					<a href="分類頁.html" class="alink">
+						<picture>
+							<source srcset="https://photo.eyescream.com.tw/Veryyou/banner/IndexBanner/433.jpg" media="(min-width: 1024px)">
+							<img srcset="css/images/blank.gif">   
+						</picture>
+					</a>
+				</div>
+			</div>
+			<div class="right"><!--右側兩小圖 -->		
+				<div>
+					<a href="分類頁.html" alt="秋日微出清。2件59折" title="秋日微出清。2件59折" class="alink">
+						<img src="https://photo.eyescream.com.tw/Veryyou/banner/indexwhatnew/1115a.jpg">
+					</a>
+				</div>
+				<div>
+					<a href="分類頁-熱銷補貨.html" alt="冬日暖陽。新品88折" title="冬日暖陽。新品88折" class="alink">
+						<img src="https://photo.eyescream.com.tw/Veryyou/banner/indexwhatnew/1108B.jpg">
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- 最新公告 -->
+		<section id="section-index-news" class="section-index-news wrapper">
+			<a href="關於-最新公告.html">
+				<div class="news_container_wrap">
+					<div class="title">NOTICE!</div>
+					<p>
+						因適逢端午節假期，6/18(一)將暫停出貨作業&客服服務，詳情請見相關服務公告>> <span class="blink">Click Here ></span>
+					</p>					
+				</div>
+			</a>
+		</section>
+
+		<!-- 最新活動 banner -->
+		<link rel="stylesheet" type="text/css" href="css/test.css?v=9">
+		<section class="section-category-banner">
+			<h1>What's New</h1>
+			<div class="section-showcase wrapper">
+				<div class="container wow fadeInUp" data-wow-duration="0.9s" data-wow-delay="0.0s">
+					<a href="https://www.veryyou.com.tw/PDContent.asp?yano=7231007001&color=A98" class="alink" target="_blank">
+						<img src="css/images/blank.gif" data-src="https://photo.eyescream.com.tw/VeryYou/banner/whatsnew/20181115-new01.jpg" width="250" height="400" class="lazyload">
+					</a>
+				</div>
+				<div class="container wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
+					<a href="https://www.veryyou.com.tw/PDList2.asp?usersearch=71060003" class="alink">
+						<img src="css/images/blank.gif" data-src="https://photo.eyescream.com.tw/VeryYou/banner/whatsnew/20181115-new02.gif" width="250" height="400" class="lazyload">
+					</a>
+				</div>
+				<div class="container wow fadeInUp" data-wow-duration="0.7s" data-wow-delay="0.3s">
+					<a href="https://www.veryyou.com.tw/PDContent.asp?yano=7108012201" class="alink">
+						<img src="css/images/blank.gif" data-src="https://photo.eyescream.com.tw/VeryYou/banner/whatsnew/20181115-new03.jpg" width="250" height="400" class="lazyload">
+					</a>
+				</div>
+				<div class="container wow fadeInUp" data-wow-duration="0.6s" data-wow-delay="0.4s">
+					<a href="https://www.veryyou.com.tw/PDList2.asp?usersearch=71080110" class="alink">
+						<img src="css/images/blank.gif" data-src="https://photo.eyescream.com.tw/VeryYou/banner/whatsnew/20181115-new04.gif" width="250" height="400" class="lazyload">
+					</a>
+				</div>
+			</div>
+		</section>
+		<section id="section-imbest" class="section-imbest wrapper">
+			<h2 class="wow fadeInUp animated" data-wow-duration="0.7s" data-wow-delay="0s">I'm Best</h2>
+			<div class="section-product-showcase">
+
+				<figure class="p-item wow fadeInUp animated" data-wow-duration="0.7s" data-wow-delay="0s">
+					<div class="img__link">
+						<img src="css/images/blank.gif" class="lazyload" data-src="https://photo.eyescream.com.tw/Veryyou/Photo/PDImg/73040008/M/73040008_A33.jpg" alt="小V領純色泡泡網紗袖雪紡上衣" title="小V領純色泡泡網紗袖雪紡上衣" width="320" height="417">
+					</div>
+					<figcaption>
+						<div class="title">小V領純色泡泡網紗袖雪紡上衣</div>
+						<div>
+							<span class="on-sale">NT.700</span>
+							<span class="retail">NT.800</span>
+						</div>
+						<div>
+							<span class="discount">88折</span>
+						</div>
+					</figcaption>
+					<a href="PDContent.html" alt="小V領純色泡泡網紗袖雪紡上衣" title="小V領純色泡泡網紗袖雪紡上衣">小V領純色泡泡網紗袖雪紡上衣</a>
+				</figure>
+
+				<figure class="p-item wow fadeInUp animated" data-wow-duration="0.7s" data-wow-delay="0s">
+					<div class="img__link">
+						<img src="css/images/blank.gif" class="lazyload" data-src="https://photo.eyescream.com.tw/Veryyou/Photo/PDImg/72290032/M/72290032_A08.jpg" alt="小V領純色泡泡網紗袖雪紡上衣" title="小V領純色泡泡網紗袖雪紡上衣" width="320" height="417">
+					</div>
+					<figcaption>
+						<div class="title">小V領純色泡泡網紗袖雪紡上衣</div>
+						<div>
+							<span class="retail">NT.528</span>
+						</div>
+					</figcaption>
+					<a href="PDContent.html" alt="小V領純色泡泡網紗袖雪紡上衣" title="小V領純色泡泡網紗袖雪紡上衣">小V領純色泡泡網紗袖雪紡上衣</a>
+				</figure>
+
+				<figure class="p-item wow fadeInUp animated" data-wow-duration="0.7s" data-wow-delay="0s">
+					<div class="img__link">
+						<img src="css/images/blank.gif" class="lazyload" data-src="https://photo.eyescream.com.tw/Veryyou/Photo/PDImg/72290032/M/72290032_A33.jpg" alt="小V領純色泡泡網紗袖雪紡上衣" title="小V領純色泡泡網紗袖雪紡上衣" width="320" height="417">
+					</div>
+					<figcaption>
+						<div class="title">小V領純色泡泡網紗袖雪紡上衣</div>
+						<div>
+							<span class="on-sale">NT.999</span>
+							<span class="retail">NT.1234</span>
+						</div>
+					</figcaption>
+					<a href="PDContent.html" alt="小V領純色泡泡網紗袖雪紡上衣" title="小V領純色泡泡網紗袖雪紡上衣">小V領純色泡泡網紗袖雪紡上衣</a>
+				</figure>
+
+				<figure class="p-item wow fadeInUp animated" data-wow-duration="0.7s" data-wow-delay="0s">
+					<div class="img__link">
+						<img src="css/images/blank.gif" class="lazyload" data-src="https://photo.eyescream.com.tw/veryyou/photo/PDImg/72310048/72310048_A33.jpg" alt="小V領純色泡泡網紗袖雪紡上衣" title="小V領純色泡泡網紗袖雪紡上衣" width="320" height="417">
+					</div>
+					<figcaption>
+						<div class="title">小V領純色泡泡網紗袖雪紡上衣</div>
+						<div>
+							<span class="on-sale">NT.999</span>
+							<span class="retail">NT.1234</span>
+						</div>
+						<div>
+							<span class="discount">8折</span>
+						</div>
+					</figcaption>
+					<a href="PDContent.html" alt="小V領純色泡泡網紗袖雪紡上衣" title="小V領純色泡泡網紗袖雪紡上衣">小V領純色泡泡網紗袖雪紡上衣</a>
+				</figure>
+
+				<figure class="p-item wow fadeInUp animated" data-wow-duration="0.7s" data-wow-delay="0s">
+					<div class="img__link">
+						<img src="css/images/blank.gif" class="lazyload" data-src="https://photo.eyescream.com.tw/Veryyou/Photo/PDImg/73040001/M/73040001.jpg" alt="小V領純色泡泡網紗袖雪紡上衣" title="小V領純色泡泡網紗袖雪紡上衣" width="320" height="417">
+					</div>
+					<figcaption>
+						<div class="title">小V領純色泡泡網紗袖雪紡上衣</div>
+						<div>
+							<span class="on-sale">NT.700</span>
+							<span class="retail">NT.800</span>
+						</div>
+						<div>
+							<span class="discount">88折</span>
+						</div>
+					</figcaption>
+					<a href="PDContent.html" alt="小V領純色泡泡網紗袖雪紡上衣" title="小V領純色泡泡網紗袖雪紡上衣">小V領純色泡泡網紗袖雪紡上衣</a>
+				</figure>
+
+				<figure class="p-item wow fadeInUp animated" data-wow-duration="0.7s" data-wow-delay="0s">
+					<div class="img__link">
+						<img src="css/images/blank.gif" class="lazyload" data-src="https://photo.eyescream.com.tw/veryyou/photo/PDImg/72310048/72310048_A12.jpg" alt="小V領純色泡泡網紗袖雪紡上衣" title="小V領純色泡泡網紗袖雪紡上衣">
+					</div>
+					<figcaption>
+						<div class="title">小V領純色泡泡網紗袖雪紡上衣</div>
+						<div>
+							<span class="retail">NT.528</span>
+						</div>
+					</figcaption>
+					<a href="PDContent.html" alt="小V領純色泡泡網紗袖雪紡上衣" title="小V領純色泡泡網紗袖雪紡上衣">小V領純色泡泡網紗袖雪紡上衣</a>
+				</figure>
+
+				<figure class="p-item wow fadeInUp animated" data-wow-duration="0.7s" data-wow-delay="0s">
+					<div class="img__link">
+						<img src="css/images/blank.gif" class="lazyload" data-src="https://photo.eyescream.com.tw/Veryyou/Photo/PDImg/72310064/M/72310064_A82.jpg" alt="小V領純色泡泡網紗袖雪紡上衣" title="小V領純色泡泡網紗袖雪紡上衣">
+					</div>
+					<figcaption>
+						<div class="title">小V領純色泡泡網紗袖雪紡上衣</div>
+						<div>
+							<span class="on-sale">NT.999</span>
+							<span class="retail">NT.1234</span>
+						</div>
+					</figcaption>
+					<a href="PDContent.html" alt="小V領純色泡泡網紗袖雪紡上衣" title="小V領純色泡泡網紗袖雪紡上衣">小V領純色泡泡網紗袖雪紡上衣</a>
+				</figure>
+
+				<figure class="p-item wow fadeInUp animated" data-wow-duration="0.7s" data-wow-delay="0s">
+					<div class="img__link">
+						<img src="css/images/blank.gif" class="lazyload" data-src="https://photo.eyescream.com.tw/Veryyou/Photo/PDImg/71050009/M/71050009_A33.jpg" alt="小V領純色泡泡網紗袖雪紡上衣" title="小V領純色泡泡網紗袖雪紡上衣">
+					</div>
+					<figcaption>
+						<div class="title">小V領純色泡泡網紗袖雪紡上衣</div>
+						<div>
+							<span class="on-sale">NT.999</span>
+							<span class="retail">NT.1234</span>
+						</div>
+						<div>
+							<span class="discount">8折</span>
+						</div>
+					</figcaption>
+					<a href="PDContent.html" alt="小V領純色泡泡網紗袖雪紡上衣" title="小V領純色泡泡網紗袖雪紡上衣">小V領純色泡泡網紗袖雪紡上衣</a>
+				</figure>
+
+			</div>
+			<a href="分類頁.html" class="btn-see-more blink">See More<i class="icon-plus"></i></a>
+			<div class="section-act act-imbest wow fadeInUp animated" data-wow-duration="0.7s" data-wow-delay="0s">
+				<div>
+					<img src="css/images/blank.gif" class="lazyload imgL" data-src="https://photo.eyescream.com.tw/VeryYou/banner/ActBanner/20180614-act01.jpg" data-srcset="https://photo.eyescream.com.tw/VeryYou/banner/ActBanner/20180614-act01_s.jpg 800w, https://photo.eyescream.com.tw/VeryYou/banner/ActBanner/20180614-act01.jpg 1500w" alt="Sexy Collection" title="Sexy Collection">
+					<!-- two links
+					<a href="分類頁-上衣全系列.html" class="tow-links"></a>
+					<a href="會員-登入.html" class="tow-links"></a> -->
+					<!-- one link -->
+					<a href="https://www.veryyou.com.tw/PDList2.asp?cid=117300&ob=D3" class="one-link" alt="Sexy Collection" title="Sexy Collection" target="_blank">Sexy Collection</a>
+					
+				</div>
+			</div>
+		</section>
+
+		<section id="section-top-best" class="section-top-best wrapper">
+			<h2 class="wow fadeInUp animated" data-wow-duration="0.7s" data-wow-delay="0s">Hot Top</h2>
+			<div class="section-product-showcase">
+
+				<figure class="p-item wow fadeInUp animated" data-wow-duration="0.7s" data-wow-delay="0s">
+					<div class="img__link">
+						<img src="css/images/blank.gif" class="lazyload" data-src="https://photo.eyescream.com.tw/Veryyou/Photo/PDImg/71080116/M/71080116_A05.jpg" alt="小V領純色泡泡網紗袖雪紡上衣" title="小V領純色泡泡網紗袖雪紡上衣">
+					</div>
+					<figcaption>
+						<div class="title">小V領純色泡泡網紗袖雪紡上衣</div>
+						<div>
+							<span class="on-sale">NT.700</span>
+							<span class="retail">NT.800</span>
+						</div>
+						<div>
+							<span class="discount">88折</span>
+						</div>
+					</figcaption>
+					<a href="PDContent.html" alt="小V領純色泡泡網紗袖雪紡上衣" title="小V領純色泡泡網紗袖雪紡上衣">小V領純色泡泡網紗袖雪紡上衣</a>
+				</figure>
+
+				<figure class="p-item wow fadeInUp animated" data-wow-duration="0.7s" data-wow-delay="0s">
+					<div class="img__link">
+						<img src="css/images/blank.gif" class="lazyload" data-src="https://photo.eyescream.com.tw/Veryyou/Photo/PDImg/71080116/M/71080116_A33.jpg" alt="小V領純色泡泡網紗袖雪紡上衣" title="小V領純色泡泡網紗袖雪紡上衣">
+					</div>
+					<figcaption>
+						<div class="title">小V領純色泡泡網紗袖雪紡上衣</div>
+						<div>
+							<span class="retail">NT.528</span>
+						</div>
+					</figcaption>
+					<a href="PDContent.html" alt="小V領純色泡泡網紗袖雪紡上衣" title="小V領純色泡泡網紗袖雪紡上衣">小V領純色泡泡網紗袖雪紡上衣</a>
+				</figure>
+
+				<figure class="p-item wow fadeInUp animated" data-wow-duration="0.7s" data-wow-delay="0s">
+					<div class="img__link">
+						<img src="css/images/blank.gif" class="lazyload" data-src="https://photo.eyescream.com.tw/Veryyou/Photo/PDImg/75260020/M/75260020_A33.jpg" alt="小V領純色泡泡網紗袖雪紡上衣" title="小V領純色泡泡網紗袖雪紡上衣">
+					</div>
+					<figcaption>
+						<div class="title">小V領純色泡泡網紗袖雪紡上衣</div>
+						<div>
+							<span class="on-sale">NT.999</span>
+							<span class="retail">NT.1234</span>
+						</div>
+					</figcaption>
+					<a href="PDContent.html" alt="小V領純色泡泡網紗袖雪紡上衣" title="小V領純色泡泡網紗袖雪紡上衣">小V領純色泡泡網紗袖雪紡上衣</a>
+				</figure>
+
+				<figure class="p-item wow fadeInUp animated" data-wow-duration="0.7s" data-wow-delay="0s">
+					<div class="img__link">
+						<img src="css/images/blank.gif" class="lazyload" data-src="https://photo.eyescream.com.tw/Veryyou/Photo/PDImg/75260020/M/75260020_A63.jpg" alt="小V領純色泡泡網紗袖雪紡上衣" title="小V領純色泡泡網紗袖雪紡上衣">
+					</div>
+					<figcaption>
+						<div class="title">小V領純色泡泡網紗袖雪紡上衣</div>
+						<div>
+							<span class="on-sale">NT.999</span>
+							<span class="retail">NT.1234</span>
+						</div>
+						<div>
+							<span class="discount">8折</span>
+						</div>
+					</figcaption>
+					<a href="PDContent.html" alt="小V領純色泡泡網紗袖雪紡上衣" title="小V領純色泡泡網紗袖雪紡上衣">小V領純色泡泡網紗袖雪紡上衣</a>
+				</figure>
+
+			</div>
+			<a href="分類頁.html" class="btn-see-more blink">See More<i class="icon-plus"></i></a>
+
+			<div class="section-act act-top-best wow fadeInUp animated" data-wow-duration="0.7s" data-wow-delay="0s">
+				<div>
+					<img src="css/images/blank.gif" class="lazyload imgL" data-src="https://photo.eyescream.com.tw/VeryYou/banner/ActBanner/20180614-act02.jpg" data-srcset="https://photo.eyescream.com.tw/VeryYou/banner/ActBanner/20180614-act02_s.jpg 800w, https://photo.eyescream.com.tw/VeryYou/banner/ActBanner/20180614-act02.jpg 1500w" alt="美背單品任選2件" title="美背單品任選2件">
+					<!-- two links
+					<a href="分類頁-上衣全系列.html" class="tow-links"></a>
+					<a href="會員-登入.html" class="tow-links"></a> -->
+					<!-- one link -->
+					<a href="https://www.veryyou.com.tw/PDList2.asp?cid=117100&ob=D3" class="one-link" alt="美背單品任選2件" title="美背單品任選2件" target="_blank">美背單品任選2件</a>
+					 
+				</div>
+			</div>
+		</section>
+
+		<section id="section-best-dress" class="section-best-dress wrapper">
+			<h2 class="wow fadeInUp animated" data-wow-duration="0.7s" data-wow-delay="0s">Best Dress</h2>
+			<div class="section-product-showcase">
+
+				<figure class="p-item wow fadeInUp animated" data-wow-duration="0.7s" data-wow-delay="0s">
+					<div class="img__link">
+						<img src="css/images/blank.gif" class="lazyload map" data-src="https://photo.eyescream.com.tw/Veryyou/Photo/PDImg/75260020/M/75260020_A98.jpg" alt="小V領純色泡泡網紗袖雪紡上衣" title="小V領純色泡泡網紗袖雪紡上衣">
+					</div>
+					<figcaption>
+						<div class="title">小V領純色泡泡網紗袖雪紡上衣</div>
+						<div>
+							<span class="on-sale">NT.700</span>
+							<span class="retail">NT.800</span>
+						</div>
+						<div>
+							<span class="discount">88折</span>
+						</div>
+					</figcaption>
+					<a href="PDContent.html" alt="小V領純色泡泡網紗袖雪紡上衣" title="小V領純色泡泡網紗袖雪紡上衣">小V領純色泡泡網紗袖雪紡上衣</a>
+				</figure>
+
+				<figure class="p-item wow fadeInUp animated" data-wow-duration="0.7s" data-wow-delay="0s">
+					<div class="img__link">
+						<img src="css/images/blank.gif" class="lazyload" data-src="https://photo.eyescream.com.tw/veryyou/photo/PDImg/71280026/71280026.jpg" alt="小V領純色泡泡網紗袖雪紡上衣" title="小V領純色泡泡網紗袖雪紡上衣">
+					</div>
+					<figcaption>
+						<div class="title">小V領純色泡泡網紗袖雪紡上衣</div>
+						<div>
+							<span class="retail">NT.528</span>
+						</div>
+					</figcaption>
+					<a href="PDContent.html" alt="小V領純色泡泡網紗袖雪紡上衣" title="小V領純色泡泡網紗袖雪紡上衣">小V領純色泡泡網紗袖雪紡上衣</a>
+				</figure>
+
+				<figure class="p-item wow fadeInUp animated" data-wow-duration="0.7s" data-wow-delay="0s">
+					<div class="img__link">
+						<img src="css/images/blank.gif" class="lazyload" data-src="https://photo.eyescream.com.tw/veryyou/photo/PDImg/75260024/75260024.jpg" alt="小V領純色泡泡網紗袖雪紡上衣" title="小V領純色泡泡網紗袖雪紡上衣">
+					</div>
+					<figcaption>
+						<div class="title">小V領純色泡泡網紗袖雪紡上衣</div>
+						<div>
+							<span class="on-sale">NT.999</span>
+							<span class="retail">NT.1234</span>
+						</div>
+					</figcaption>
+					<a href="PDContent.html" alt="小V領純色泡泡網紗袖雪紡上衣" title="小V領純色泡泡網紗袖雪紡上衣">小V領純色泡泡網紗袖雪紡上衣</a>
+				</figure>
+
+				<figure class="p-item wow fadeInUp animated" data-wow-duration="0.7s" data-wow-delay="0s">
+					<div class="img__link">
+						<img src="css/images/blank.gif" class="lazyload" data-src="https://photo.eyescream.com.tw/veryyou/photo/PDImg/73010001/73010001.jpg" alt="小V領純色泡泡網紗袖雪紡上衣" title="小V領純色泡泡網紗袖雪紡上衣">
+					</div>
+					<figcaption>
+						<div class="title">小V領純色泡泡網紗袖雪紡上衣</div>
+						<div>
+							<span class="on-sale">NT.999</span>
+							<span class="retail">NT.1234</span>
+						</div>
+						<div>
+							<span class="discount">8折</span>
+						</div>
+					</figcaption>
+					<a href="PDContent.html" alt="小V領純色泡泡網紗袖雪紡上衣" title="小V領純色泡泡網紗袖雪紡上衣">小V領純色泡泡網紗袖雪紡上衣</a>
+				</figure>
+
+			</div>
+			<a href="分類頁.html" class="btn-see-more blink">See More<i class="icon-plus"></i></a>
+
+			<div class="section-act act-best-dress wow fadeInUp animated" data-wow-duration="0.7s" data-wow-delay="0s">
+				<img src="css/images/blank.gif" class="lazyload imgL" data-src="https://photo.eyescream.com.tw/VeryYou/banner/ActBanner/20180614-act03.jpg" data-srcset="https://photo.eyescream.com.tw/VeryYou/banner/ActBanner/20180614-act03_s.jpg 800w, https://photo.eyescream.com.tw/VeryYou/banner/ActBanner/20180614-act03.jpg 1500w" alt="New Arrival" title="New Arrival">
+					<!-- two links
+					<a href="分類頁-上衣全系列.html" class="tow-links"></a>
+					<a href="會員-登入.html" class="tow-links"></a> -->
+					<!-- one link -->
+					<a href="https://www.veryyou.com.tw/PDList2.asp?cid=117300&ob=D3" class="one-link" alt="New Arrival" title="New Arrival" target="_blank">New Arrival</a>					 
+			</div>
+			
+		</section>
+
+		<section id="section-instagram" class="section-instagram wrapper">
+			<div class="headings">
+			    <span class="wow fadeInUp animated" data-wow-duration="0.7s" data-wow-delay="0s">INSTAGRAM</span>
+			    <h2 class="wow fadeInUp animated" data-wow-duration="0.7s" data-wow-delay="0s"><i class="icon-dashdash"></i>Veryyou_tw</h2>
+		    </div>
+			<div class="carousel-instagram">
+				<figure class="block-instagram">
+					<a href="PDContent.html" target="_blank">
+						<div class="hover_txt">
+							<i class="icon-instagram4"></i>
+							<div class="btn btn-ig">CHECK THIS OUT</div>
+							<div class="ig-name">view more</div>
+						</div>
+						<div class="filter-mask"></div>
+						<img src="css/images/blank.gif" class="lazyload" data-src="https://www.veryyou.com.tw/sample/ig-400x400-01.jpg" alt="小V領純色泡泡網紗袖雪紡上衣" title="小V領純色泡泡網紗袖雪紡上衣" width="400" height="400">
+					</a>
+				</figure>
+				<figure class="block-instagram">
+					<a href="PDContent.html" target="_blank">
+						<div class="hover_txt">
+							<i class="icon-instagram4"></i>
+							<div class="btn btn-ig">SHOP THIS LOOK</div>
+							<div class="ig-name">Zoe Mao</div>
+						</div>
+						<div class="filter-mask"></div>
+						<img src="css/images/blank.gif" class="lazyload" data-src="https://www.veryyou.com.tw/sample/ig-400x400-02.jpg" alt="小V領純色泡泡網紗袖雪紡上衣" title="小V領純色泡泡網紗袖雪紡上衣" width="400" height="400">
+					</a>
+				</figure>
+				<figure class="block-instagram">
+					<a href="PDContent.html" target="_blank">
+						<div class="hover_txt">
+							<i class="icon-instagram4"></i>
+							<div class="btn btn-ig">SHOP THIS LOOK</div>
+							<div class="ig-name">Zoe Mao</div>
+						</div>
+						<div class="filter-mask"></div>
+						<img src="css/images/blank.gif" class="lazyload" data-src="https://www.veryyou.com.tw/sample/ig-400x400-03.jpg" alt="小V領純色泡泡網紗袖雪紡上衣" title="小V領純色泡泡網紗袖雪紡上衣" width="400" height="400">
+					</a>
+				</figure>
+				<figure class="block-instagram">
+					<a href="PDContent.html" target="_blank">
+						<div class="hover_txt">
+							<i class="icon-instagram4"></i>
+							<div class="btn btn-ig">SHOP THIS LOOK</div>
+							<div class="ig-name">Zoe Mao</div>
+						</div>
+						<div class="filter-mask"></div>
+						<img src="css/images/blank.gif" class="lazyload" data-src="https://www.veryyou.com.tw/sample/ig-400x400-04.jpg" alt="小V領純色泡泡網紗袖雪紡上衣" title="小V領純色泡泡網紗袖雪紡上衣" width="400" height="400">
+					</a>
+				</figure>
+				<figure class="block-instagram">
+					<a href="PDContent.html" target="_blank">
+						<div class="hover_txt">
+							<i class="icon-instagram4"></i>
+							<div class="btn btn-ig">SHOP THIS LOOK</div>
+							<div class="ig-name">Zoe Mao</div>
+						</div>
+						<div class="filter-mask"></div>
+						<img src="css/images/blank.gif" class="lazyload" data-src="https://www.veryyou.com.tw/sample/ig-400x400-05.jpg" alt="小V領純色泡泡網紗袖雪紡上衣" title="小V領純色泡泡網紗袖雪紡上衣" width="400" height="400">
+					</a>
+				</figure>
+				<figure class="block-instagram">
+					<a href="PDContent.html" target="_blank">
+						<div class="hover_txt">
+							<i class="icon-instagram4"></i>
+							<div class="btn btn-ig">SHOP THIS LOOK</div>
+							<div class="ig-name">Zoe Mao</div>
+						</div>
+						<div class="filter-mask"></div>
+						<img src="css/images/blank.gif" class="lazyload" data-src="https://www.veryyou.com.tw/sample/ig-400x400-06.jpg" alt="小V領純色泡泡網紗袖雪紡上衣" title="小V領純色泡泡網紗袖雪紡上衣" width="400" height="400">
+					</a>
+				</figure>
+				<figure class="block-instagram">
+					<a href="PDContent.html" target="_blank">
+						<div class="hover_txt">
+							<i class="icon-instagram4"></i>
+							<div class="btn btn-ig">SHOP THIS LOOK</div>
+							<div class="ig-name">Zoe Mao</div>
+						</div>
+						<div class="filter-mask"></div>
+						<img src="css/images/blank.gif" class="lazyload" data-src="https://www.veryyou.com.tw/sample/ig-400x400-07.jpg" alt="小V領純色泡泡網紗袖雪紡上衣" title="小V領純色泡泡網紗袖雪紡上衣" width="400" height="400">
+					</a>
+				</figure>
+				<figure class="block-instagram">
+					<a href="PDContent.html" target="_blank">
+						<div class="hover_txt">
+							<i class="icon-instagram4"></i>
+							<div class="btn btn-ig">SHOP THIS LOOK</div>
+							<div class="ig-name">Zoe Mao</div>
+						</div>
+						<div class="filter-mask"></div>
+						<img src="css/images/blank.gif" class="lazyload" data-src="https://www.veryyou.com.tw/sample/ig-400x400-08.jpg" alt="小V領純色泡泡網紗袖雪紡上衣" title="小V領純色泡泡網紗袖雪紡上衣" width="400" height="400">
+					</a>
+				</figure>
+				<figure class="block-instagram">
+					<a href="PDContent.html" target="_blank">
+						<div class="hover_txt">
+							<i class="icon-instagram4"></i>
+							<div class="btn btn-ig">SHOP THIS LOOK</div>
+							<div class="ig-name">Zoe Mao</div>
+						</div>
+						<div class="filter-mask"></div>
+						<img src="css/images/blank.gif" class="lazyload" data-src="https://www.veryyou.com.tw/sample/ig-400x400-09.jpg" alt="小V領純色泡泡網紗袖雪紡上衣" title="小V領純色泡泡網紗袖雪紡上衣" width="400" height="400">
+					</a>
+				</figure>
+				<figure class="block-instagram">
+					<a href="PDContent.html" target="_blank">
+						<div class="hover_txt">
+							<i class="icon-instagram4"></i>
+							<div class="btn btn-ig">SHOP THIS LOOK</div>
+							<div class="ig-name">Zoe Mao</div>
+						</div>
+						<div class="filter-mask"></div>
+						<img src="css/images/blank.gif" class="lazyload" data-src="https://www.veryyou.com.tw/sample/ig-400x400-10.jpg" alt="小V領純色泡泡網紗袖雪紡上衣" title="小V領純色泡泡網紗袖雪紡上衣" width="400" height="400">
+					</a>
+				</figure>
+				<figure class="block-instagram">
+					<a href="PDContent.html" target="_blank">
+						<div class="hover_txt">
+							<i class="icon-instagram4"></i>
+							<div class="btn btn-ig">SHOP THIS LOOK</div>
+							<div class="ig-name">Zoe Mao</div>
+						</div>
+						<div class="filter-mask"></div>
+						<img src="css/images/blank.gif" class="lazyload" data-src="https://www.veryyou.com.tw/sample/ig-400x400-11.jpg" alt="小V領純色泡泡網紗袖雪紡上衣" title="小V領純色泡泡網紗袖雪紡上衣" width="400" height="400">
+					</a>
+				</figure>
+				<figure class="block-instagram">
+					<a href="PDContent.html" target="_blank">
+						<div class="hover_txt">
+							<i class="icon-instagram4"></i>
+							<div class="btn btn-ig">SHOP THIS LOOK</div>
+							<div class="ig-name">Zoe Mao</div>
+						</div>
+						<div class="filter-mask"></div>
+						<img src="css/images/blank.gif" class="lazyload" data-src="https://www.veryyou.com.tw/sample/ig-400x400-12.jpg" alt="小V領純色泡泡網紗袖雪紡上衣" title="小V領純色泡泡網紗袖雪紡上衣" width="400" height="400">
+					</a>
+				</figure>
+			
+			</div>
+		</section>
+	</main>
+    <!-- 購物車 popup 選單 -->
+	<aside id="cart-panel" class="cart-panel">
+		<script>
+			$(document).ready(function() {
+				$("#cart-panel").load("html/cart-panel.html");
+			});
+		</script>
+	</aside>
+	<!--會員mobile選單-->
+	<aside id="member-panel" class="member-panel">
+		<script>
+			$(document).ready(function() {
+				$("#member-panel").load("html/member-panel.html");
+			});
+		</script>
+	</aside>
+    <!--mobile選單-->
+	<aside id="mobile-menu" class="mobile-menu">
+		<script>
+			$(document).ready(function() {
+				$("#mobile-menu").load("html/mobile-menu.html");
+			});
+		</script>
+	</aside>
+	<div class="overlay"></div>
+	<!-- back to top -->
+	<div href="javascript:;" id="backtotop" class="backtotop"><i class="icon-chevron-up"></i></div>
+	<footer id="footer">		
+		<script>
+			$(document).ready(function() {
+				$("#footer").load("html/nav-footer.html");
+			});  
+		</script>
+	</footer>
+	<script src="js/libs/require.min.mixed.js"></script>
+	<script src="js/config.js?v=20190102"></script>
+	<script>
+		dataLayer = [];
+		dataLayer.push({
+			"userID": '',
+			"user membership level":''
+		});
+	</script>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WQDS75X');</script>
+<!-- End Google Tag Manager -->
+<!-- Global site tag (gtag.js) - AdWords: 806944645 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-806944645"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'AW-806944645');
+</script>
+
+<script language="Javascript">
+	//$("img").lazyload();
+	$(document).ready(function () {
+		var strURL = "/Default.asp";
+		strURL = strURL.toLocaleLowerCase();
+		if (window.name == "" &&
+			(
+				strURL.indexOf("mycar.asp") >= 0 || strURL.indexOf("orderpay.asp") >= 0
+				|| strURL.indexOf("orderdata.asp") >= 0 || strURL.indexOf("orderfinish.asp") >= 0
+				| strURL.indexOf("ordercreditcard") >= 0 || strURL.indexOf("orderatm") >= 0
+				)
+			) {
+			alert("請勿使用多視窗操作");
+		window.close();
+	}
+	if (window.name == "")
+		window.name = "xxxx";
+});
+
+	function AddFavorite() {
+		title = 'VERYYOU';
+		url = 'https://www.veryyou.com.tw/';
+		if (window.sidebar) {
+			window.sidebar.addPanel(title, url, "");
+		} else if (document.all) {
+			window.external.AddFavorite(url, title);
+		} else if (window.opera && window.print) {
+			alert('請用 Ctrl + D，或手動加入我的最愛');
+		} else if (window.chrome) {
+			alert('請用 Ctrl + D，或手動加入我的最愛');
+		}
+	}
+	function swap_img(objThis, isHover) {
+		if (isHover)
+			objThis.src = objThis.src.replace('.jpg', '-h.jpg').replace('.gif', '-h.gif').replace('.png', '-h.png');
+		else {
+			objThis.src = objThis.src.replace('-h.jpg', '.jpg').replace('-h.gif', '.gif').replace('-h.png', '.png');
+		}
+	}
+
+	function setCookie(c_name, value, exdays) {
+		var exdate = new Date();
+		exdate.setDate(exdate.getDate() + exdays);
+		var c_value = escape(value) + ((exdays == null) ? "" : "; expires=" + exdate.toUTCString());
+		document.cookie = c_name + "=" + c_value;
+	}
+
+	function getCookie(c_name) {
+		var i, x, y, ARRcookies = document.cookie.split(";");
+		for (i = 0; i < ARRcookies.length; i++) {
+			x = ARRcookies[i].substr(0, ARRcookies[i].indexOf("="));
+			y = ARRcookies[i].substr(ARRcookies[i].indexOf("=") + 1);
+			x = x.replace(/^\s+|\s+$/g, "");
+			if (x == c_name) {
+				return unescape(y);
+			}
+		}
+	}
+
+</script>
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WQDS75X"
+        height="0" width="0" style="display: none; visibility: hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+ fbq('init', '168766263796118'); 
+fbq('track', 'PageView');
+</script>
+<noscript>
+    <img height="1" width="1"
+        src="https://www.facebook.com/tr?id=168766263796118&ev=PageView
+&noscript=1" />
+</noscript>
+<!-- End Facebook Pixel Code -->
+
+
+
+</body>
+</html>
