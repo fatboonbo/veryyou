@@ -702,27 +702,6 @@
 		window.name = "xxxx";
 });
 
-	function AddFavorite() {
-		title = 'VERYYOU';
-		url = 'https://www.veryyou.com.tw/';
-		if (window.sidebar) {
-			window.sidebar.addPanel(title, url, "");
-		} else if (document.all) {
-			window.external.AddFavorite(url, title);
-		} else if (window.opera && window.print) {
-			alert('請用 Ctrl + D，或手動加入我的最愛');
-		} else if (window.chrome) {
-			alert('請用 Ctrl + D，或手動加入我的最愛');
-		}
-	}
-	function swap_img(objThis, isHover) {
-		if (isHover)
-			objThis.src = objThis.src.replace('.jpg', '-h.jpg').replace('.gif', '-h.gif').replace('.png', '-h.png');
-		else {
-			objThis.src = objThis.src.replace('-h.jpg', '.jpg').replace('-h.gif', '.gif').replace('-h.png', '.png');
-		}
-	}
-
 	function setCookie(c_name, value, exdays) {
 		var exdate = new Date();
 		exdate.setDate(exdate.getDate() + exdays);
