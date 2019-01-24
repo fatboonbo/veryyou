@@ -659,6 +659,7 @@
 	</footer>
 	<script src="js/libs/require.min.mixed.js"></script>
 	<script src="js/config.js?v=20190102"></script>
+	
 	<script>
 		dataLayer = [];
 		dataLayer.push({
@@ -747,6 +748,79 @@ fbq('track', 'PageView');
 &noscript=1" />
 </noscript>
 <!-- End Facebook Pixel Code -->
+<script>
+    if ($("#cart-panel")) {
+        $("#cart-panel").html($("#carinitDiv").html());
+        
+            $(".cart-countshow").html("0");
+        
+    }
+</script>
+<script src="https://www.veryyou.com.tw/js/eyescream.js?v=1"></script>
+<script>
+    doSiteRetargeting();
+</script>
+
+
+<script type="text/javascript" src="//rec.scupio.com/recweb/js/rec.js">
+    {
+        "mid":143,
+        "pid":"home",
+        "uid":""
+    }
+</script>
+
+
+
+    <!-- js-->
+
+    <script>
+    dataLayer.push({
+      'event':'promoView',
+      'ecommerce': {
+        'promoView': {
+          'promotions': [  
+                {'id': '首頁-大Banner-20190110','name': '首頁-大Banner-20190110','creative': '','position': '2'},
+{'id': '首頁-大Banner-20190110','name': '首頁-大Banner-20190110','creative': '','position': '3'},
+{'id': '首頁-大Banner-20181101','name': '首頁-大Banner-20181101','creative': '','position': '4'},
+{'id': '首頁-大Banner-20190124','name': '首頁-大Banner-20190124','creative': '','position': '5'},
+{'id': '首頁-活動小圖-20180516','name': '首頁-活動小圖-20180516','creative': '','position': '6'},{'id': '首頁-活動小圖-20180418','name': '首頁-活動小圖-20180418','creative': '','position': '7'},{'id': '首頁-活動橫幅-20190124','name': '首頁-活動橫幅-20190124','creative': '','position': '8'},{'id': '首頁-活動橫幅-20190124','name': '首頁-活動橫幅-20190124','creative': '','position': '9'},{'id': '首頁-活動橫幅-20190124','name': '首頁-活動橫幅-20190124','creative': '','position': '10'}
+           ]
+        }
+      }
+    });
+
+    dataLayer.push({
+      'event': 'productImpressions',
+      'ecommerce': {
+        'currencyCode': 'TWD',                       
+        'impressions': [
+          
+         ]
+      }
+    });
+   
+    function onproductClick(obj,pos) {
+      dataLayer.push({
+        'event': 'productClick',
+        'ecommerce': {
+          'click': {
+            'actionField': {'list': 'HomePage'},      
+            'products': [{
+              'name': $(obj).attr("ganame"),
+              'id': $(obj).attr("gaid"),
+              'price': $(obj).attr("gap"),
+              'brand': 'VERYYOU',
+              'category': $(obj).attr("gacat"),
+              'variant': $(obj).attr("gacolor"),
+              'position':pos
+             }]
+           }
+         }
+      });
+    }
+
+    </script>
 
 
 
