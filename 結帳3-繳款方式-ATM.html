@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="zh-TW">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=10" />
+	<!-- Mobile Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=1, minimal-ui">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>VARYYOU｜VARYYOU</title>
+	<meta name="theme-color" content="#000000"/>
+	<!-- Favicon -->
+	<link rel="icon" href="css/images/favicon.ico">
+	<!-- css -->
+	<link rel="preload" href="css/fonts/veryyou.woff" as="font" type="font/woff" crossorigin="anonymous">
+	<link rel="preload" href="css/fonts/veryyou.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/style.min.css?v=5">
+	<!-- js -->
+	<script src="https://unpkg.com/jquery@2.2.0/dist/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/libs/jquery-2.2.0.min.zopfli.js.gz"><\/script>')</script>
+	<script>
+		var fontlink = [
+		"//fonts.gstatic.com/s/playfairdisplay/v13/nuFiD-vYSZviVYUb_rj3ij__anPXDTzYgA.woff2",
+		"//fonts.gstatic.com/s/playfairdisplay/v13/nuFlD-vYSZviVYUb_rj3ij__anPXBYf9lW4e5g.woff2",
+		"//fonts.gstatic.com/s/inconsolata/v16/QldKNThLqRwH-OJ1UHjlKGlZ5qg.woff2",
+		"//fonts.gstatic.com/s/inconsolata/v16/QldXNThLqRwH-OJ1UHjlKGHiw71p5_w.woff2"];
+		var fontstyle = ["font1","font2","font3","font4"];
+		for (var i = 0,y = 0; i < fontlink.length &&  y < fontstyle.length; i++, y++) {
+			var webfontlink = document.createElement("link");
+			document.head.appendChild(webfontlink);
+			webfontlink.href = fontlink[i];
+			webfontlink.as = "font";
+			webfontlink.crossOrigin = 'anonymous';
+			webfontlink.rel = "preload";
+			webfontlink.id = fontstyle[y];
+		}
+		$(document).ready(function() {
+			$("html").addClass("wf-active");
+		});		
+	</script>	
+	<noscript><link rel="stylesheet" href="css/font.css"></noscript>
+</head>
+
+<body class="checkout_main">
+	<header id="nav-header" class="header">
+		<script>
+			$(document).ready(function() {
+				$("#nav-header").load("html/nav-header.html");
+			});
+		</script>
+	</header>
+	<main class="checkout">
+		<div class="wrapping-up-old">
+			<div class="column-main-old">
+				<div class="row">
+
+					<section class="section-shopping-step wrapper">
+						<div class="col-md-3 col-xs-3 steps active">
+							<div>
+								<span>1.</span>
+							</div>
+							<div>
+								<span>確認購物清單</span>
+								<span>shopping cart</span>
+							</div>            
+						</div>
+						<div class="col-md-3 col-xs-3 steps active">
+							<div>
+								<span>2.</span>
+							</div>
+							<div>
+								<span>選擇付款方式</span>
+								<span>choose payment</span>
+							</div>            
+						</div>
+						<div class="col-md-3 col-xs-3 steps active">
+							<div>
+								<span>3.</span>
+							</div>
+							<div>
+								<span>確認訂單資料</span>
+								<span>delivery</span>
+							</div>            
+						</div>
+						<div class="col-md-3 col-xs-3 steps">
+							<div>
+								<span>4.</span>
+							</div>
+							<div>
+								<span>完成訂購</span>
+								<span>done</span>
+							</div>            
+						</div>
+
+					</section>
+
+					<section class="section-shopping-cart">
+						<h1>YOUR CART 購物清單</h1>
+						<div class="cart-title row v-align mh992">
+
+							<div class="col-md-1"></div>
+							<div class="col-md-8">
+								<div class="col-md-6"></div>
+								<div class="col-md-3">數量</div>
+								<div class="col-md-2">價格</div>
+							</div>
+							<div class="col-md-3">
+								<div class="col-md-12">小記</div>
+							</div>
+						</div>
+
+						<div class="cart-wrap">
+							<h4>訂單編號：170209000329</h4>
+
+							<div class="cart-item-list">
+								<div class="row v-align">
+
+									<div class="block col-md-1 col-xs-5">
+										<a href="PDContent.html">
+											<img src="sample/p1-320x417-02.jpg">
+										</a>
+									</div>
+									<div class="block col-md-8 col-xs-7 v-align">
+										<div class="description col-md-6 col-xs-12">
+											<span class="tag">#11081519</span>
+											<a href="PDContent.html" class="product-title">韓國空運內刷毛直條紋撞色T恤</a>
+											<span class="detail">color:黑 | size:M </span>
+										</div>
+										<div class="col-md-3 col-xs-12">
+											<div class="cart-qty" data-mobile="數量 : ">
+												<span>1</span>
+											</div>
+										</div>
+										<div class="col-md-2 col-xs-12">
+											<div class="price">
+												<span class="retail">NT.880</span>
+										    </div>
+										</div>
+									</div>
+									<div class="block col-md-3 col-xs-12">
+										<div class="col-md-12 col-xs-12">          
+											<span class="retail" data-mobile="小記 : ">NT.800</span>
+										</div>
+									</div>
+
+								</div>
+							</div>
+
+							<div class="cart-item-list">
+								<div class="row v-align">
+
+									<div class="block col-md-1 col-xs-5">
+										<a href="PDContent.html">
+											<img src="sample/p1-320x417-03.jpg">
+										</a>
+									</div>
+									<div class="block col-md-8 col-xs-7 v-align">
+										<div class="description col-md-6 col-xs-12">
+											<span class="tag">#11081519</span>
+											<a href="PDContent.html" class="product-title">韓國空運內刷毛直條紋撞色T恤</a>
+											<span class="detail">color:黑 | size:M </span>
+											
+										</div>
+										<div class="col-md-3 col-xs-12">
+											<div class="cart-qty" data-mobile="數量 : ">
+												<span>2</span>
+											</div>
+										</div>
+										<div class="col-md-2 col-xs-12">
+											<div class="price">
+												<span class="retail">NT.350</span>
+										    </div>
+										</div>
+									</div>
+									<div class="block col-md-3 col-xs-12">
+										<div class="col-md-12 col-xs-12">          
+											<span class="retail" data-mobile="小記 : ">NT.700</span>
+										</div>
+									</div>
+
+								</div>
+							</div>
+
+							<div class="cart-result row v-align">
+
+								<div class="col-md-8 col-xs-12">
+									<div class="cart-description">
+										<span class="total-txt"><strong>*</strong>單筆訂單滿<strong>1000</strong>元，即享有免運優惠</span>
+										<span class="total-txt"><strong>*</strong>單筆訂單滿<strong>1000</strong>元，即享有免運優惠</span>
+									</div>
+								</div>
+
+								<div class="col-md-4 col-xs-12">
+									<div class="col-md-6 col-xs-6 align-left">
+										<div class="total-txt-small shipping">運費</div>
+									</div>
+									<div class="col-md-6 col-xs-6">
+										<div class="sub-amount shipping">nt.60</div>
+									</div>
+									<div class="col-md-6 col-xs-6 align-left">
+										<div class="total-txt-small">商品總金額</div>
+									</div>
+									<div class="col-md-6 col-xs-6">
+										<div class="sub-amount">nt.1500</div>
+									</div>
+									<hr class="hr3">
+									<div class="col-md-6 col-xs-6 align-left">
+										<div class="total-txt">應付總金額 =</div>
+									</div>
+									<div class="col-md-6 col-xs-6">
+										<div class="total-amount">nt.1560</div>
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+					</section>
+
+					<section class="section-coupon">
+						<h3>COUPON 選擇折扣優惠</h3>
+						<div class="row">
+
+							<div class="col-md-6 col-xs-12">
+								<div class="form-group">
+									<label><span>購物金 :</span> 可用來折抵訂單</label><br>
+									<input type="text" value="" name="name" class="form-control" placeholder="請輸入購物金金額">
+									<div class="txt">購物金餘額 <span class="link__normal">$150</span> 元</div>
+								</div>
+							</div>
+
+
+							<div class="col-md-6 col-xs-12">
+								<div class="form-group">
+									<label>優惠代碼 : </label><br>
+									<input type="text" value="" name="name" class="form-control" placeholder="請輸入網路優惠代碼">
+								</div>
+							</div>
+
+
+							<div class="col-md-12 col-xs-12">
+								<div class="form-group">
+									<label><span>紅利金 : </span></label>
+
+									<div class="v-align">
+										<input id="bonus0001" name="bonus0001" type="checkbox">
+										<label for="bonus0001" class="credit-wrap">
+											<span></span>
+											<div>
+												<span>$100</span>
+												<span>EYESCREAM x HUAWEI紅利金100</span>
+												<span>[到期日:2017-07-21]</span>
+											</div>
+										</label>
+									</div>
+
+									<div class="v-align">
+										<input id="bonus0002" name="bonus0002" type="checkbox">
+										<label for="bonus0002" class="credit-wrap">
+											<span></span>
+											<div>
+												<span>$200</span>
+												<span>EYESCREAMxHUAWEI-P9 Lite 紅利金$200</span>
+												<span>[到期日:2017-07-21]</span>
+											</div>
+										</label>
+									</div>
+
+								</div>
+							</div>
+
+						</div>
+					</section>
+
+					<section class="section-shipping">
+						<h3>SHIPPING INFORMATION 填寫資料</h3>
+						<div class="row">
+							<div class="col-md-6 col-xs-12">
+
+								<div class="form-group">
+									<label>收件者姓名</label><br>
+									<input type="text" value="非下標購買" name="name" class="form-control">
+								</div>
+								<div class="form-group block-edit-tel">
+									<label class="label-plain">室內電話</label>
+									<div class="tel-edit">
+										<div class="tel-group">
+											<div>
+												<input type="text" value="" name="tel1" class="form-control" maxlength="4" placeholder="區碼">
+											</div>
+											<div> 
+												<input type="text" value="" name="tel2" class="form-control">
+											</div>
+											<div> 
+												<input type="text" value="" name="tel3" class="form-control" maxlength="5" placeholder="分機">
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<label>行動電話</label><br>
+									<input type="text" value="0900000000" name="mobile" class="form-control">
+								</div>
+								<div class="form-group form-select">
+									<label class="label-plain">收件地址</label>
+									<select class="default_select">
+										<option value="" selected="">-請選擇縣市-</option>
+										<option>台北市</option>
+										<option>新北市</option>
+									</select>
+									<select class="default_select">
+										<option value="" selected="">-請選擇區域-</option>
+										<option>信義區</option>
+										<option>中正區</option>
+									</select>
+									<input type="text" value="110" name="zip" class="form-control form-zip" readonly="" maxlength="5">
+									<input type="text" value="松山路130號6樓" name="addr" class="form-control addr">
+								</div>
+							</div>
+							<div class="col-md-6 col-xs-12">
+								<div class="form-group">
+									<label>發票選擇</label><br>
+									<div class="radio">
+										<input type="radio" id="od94" name="od94" checked>
+										<label for="od94">我要隨貨附發票</label>
+									</div>
+									<input type="text" value="" name="name" class="form-control form--inline" placeholder="統一編號">
+								</div>
+								<div class="form-group">
+									<label for="memo">訂單備註</label><br>
+									<textarea class="form-control" name="memo" type="text"></textarea>
+								</div>
+							</div>
+
+							<div class="cart-description col-md-12">
+								<span>訂單備註資訊皆會經出貨人員確認後才會安排出貨,為避免耽誤您的收貨時間,如您有以下三種問題請不要留填訂單備註欄位:</span>
+								<span><strong>１.</strong>非必要資訊請不要填寫, EX:請快點寄出、尺寸請寄對、無備註 、已匯款等。</span>
+								<span><strong>２.</strong>假日不收件、下午再寄送、管理員可代收等資訊請用括弧( ) 直接加註在地址後面即可。</span>
+								<span><strong>３.</strong>尺寸確認的問題請於購買前與客服人員電話連絡, 出貨人員無法替您解決尺寸上的疑問。</span>
+								<br>
+								<span><strong>請注意：點選立即轉帳後將進入線上ATM畫面，請準備好您的金融卡與讀卡機，進行線上付款！</strong></span>
+							</div>
+
+						</div>
+					</section>
+
+
+
+					<section class="section-cart-submit">
+						<div class="row">
+							<div class="col-md-7 col-xs-12">
+								<div class="cart-description">
+								</div>
+							</div>
+							<div class="col-md-5 col-xs-12">
+								<div class="row">
+									<div class="col-md-5 col-xs-12">
+										<a href="javascript:;" class="go-back blink" onclick="window.history.go(-1)"><i class="icon-angle-left"></i>BACK 上一步</a>
+									</div>
+									<div class="col-md-7 col-xs-12">
+										<a href="結帳4-完成.html" class="btn btn-checkout">NEXT 下一步</a>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</section>
+
+
+
+
+				</div>
+			</div>
+		</div>
+
+
+	</main>
+    <!-- 購物車 popup 選單 -->
+	<aside id="cart-panel" class="cart-panel">
+		<script>
+			$(document).ready(function() {
+				$("#cart-panel").load("html/cart-panel.html");
+			});
+		</script>
+	</aside>
+	<!--會員mobile選單-->
+	<aside id="member-panel" class="member-panel">
+		<script>
+			$(document).ready(function() {
+				$("#member-panel").load("html/member-panel.html");
+			});
+		</script>
+	</aside>
+    <!--mobile選單-->
+	<aside id="mobile-menu" class="mobile-menu">
+		<script>
+			$(document).ready(function() {
+				$("#mobile-menu").load("html/mobile-menu.html");
+			});
+		</script>
+	</aside>
+	<div class="overlay"></div>
+	<!-- back to top -->
+	<div href="javascript:;" id="backtotop" class="backtotop"><i class="icon-chevron-up"></i></div>
+
+	<footer id="footer">		
+		<script>
+			$(document).ready(function() {
+				$("#footer").load("html/nav-footer.html");
+			});
+		</script>
+	</footer>
+	<script src="js/libs/require.min.mixed.js"></script>
+	<script src="js/config.js?v=20190102"></script>
+</body>
+</html>
