@@ -101,8 +101,8 @@
                 var eles = '<div class="modal fade in popup_subscribe" id="popup-default" tabindex="-1" role="dialog" aria-hidden="true" style="display: none"><div class="modal-dialog"><div class="modal-content"><div class="popup-default-content" style="visibility:hidden"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="btnclose4 icon-close"></i></button></div><div id="popgif" style="background:transparent;"><div style="display:inline-block;"><div class="email-header"><i class="icon-logo-veryyou style01a"></i><div class="style04">不要錯過!</div></div><div class="style01">Join our mailing list and get the latest news</div><div class="style03">訂閱<span class="icon-logo-veryyou"></span>即可獲得<span class="icon-ticket-frame"><span>$</span>100</span>折價卷</div><!--<div class="style01">冬．季．折．扣</div>--><div class="style02" style="display:none">加入VERYYOU即獲得<span class="icon-ticket-frame">$100</span>元折價卷</div><form class="email_form01" id="email_form2" method="POST"><input class="email01 clearable input" required="required" type="email" name="EMAIL" placeholder="Subscribe to our newsletter" id="newsletter" name="newsletter"><button id="btnNewletter" class="icon-arrow-u-turn" title="送出"></button></form></div></div></div></div></div></div><div class="modal-backdrop fade in" style="display: none"></div>';
                 //$('main').before(eles);
                 document.getElementById("nav-header").insertAdjacentHTML('beforeBegin',eles);
-                $(".popup-default-content").addClass("fadeindownpop");
                 $("#popup-default,.modal-backdrop").show();/* l('#popup-default show'); */
+                $(".popup-default-content").addClass("fadeindownpop");
                 require(['js/libs/modules/subscribe-email.js'], function(subscribePopup) {
                 	$('#btnNewletter').on('click', function() {
                 		subscribePopup.subscribePopup();
