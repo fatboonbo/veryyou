@@ -94,7 +94,7 @@
     border-color: rgba(255,255,255,.5);
     color: #fff;
 }
-.index_main .bg-carousel .absol {
+.index_main  .absol {
     width: 90%!important;
     left: 0;
     right: 0;
@@ -370,8 +370,8 @@ a.slick-active .ttline {
     width: 100%;
     float: none;
 }
-.index_main .bg-carousel .relate,
-.index_main .bg-carousel .absol {
+.index_main .relate,
+.index_main .absol {
     width:auto;
     margin:0 auto;
     /* overflow: hidden; */
@@ -380,14 +380,14 @@ a.slick-active .ttline {
     vertical-align: middle;
     position: absolute;
 }
-.index_main .bg-carousel .relate1 {
+.index_main .relate1 {
     max-width: 236px;
     width: 80%;
     margin-left: -118px;
     top: 30%;
     left: 49.5%;
 }
-.index_main .carousel-index-banner .bg-carousel .relate1,.bg-carousel .relate2{
+.index_main .carousel-index-banner .relate1,.relate2{
   -webkit-animation:fadeOutRight 1s both;
   animation:fadeOutRight 1s both;
 }
@@ -398,9 +398,9 @@ a.slick-active .ttline {
     /* left: 50%; */
     /* margin-left: -125px; */
 }
-.index_main .bg-carousel .relate>div {/* position: absolute; */}
-.index_main .carousel-index-banner a.slick-active .bg-carousel .relate1,
-.index_main .carousel-index-banner a.slick-active .bg-carousel .relate2 {
+.index_main .relate>div {/* position: absolute; */}
+.index_main .carousel-index-banner a.slick-active .relate1,
+.index_main .carousel-index-banner a.slick-active .relate2 {
   -webkit-animation:fadeInDown .5s both .5s;
           animation:fadeInDown .5s both .5s;
 }
@@ -675,4 +675,11 @@ a.slick-active .ttline {
 @media (min-width:1600px) {
     .index_main .section-category-banner {padding-bottom:28%}
     .index_main .section-act:nth-child(6) {padding-bottom:6em;}
+}
+.imgimg, .imgimg_wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
 }
