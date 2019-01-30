@@ -27,7 +27,7 @@ libs/ls.unveilhooks.min.js
 libs/picturefill.min.js
 libs/modules/lazy-module.js
 libs/wow.min.js
-libs/bootstrap3modal.min.js
+libs/bootstrap.js
 libs/theia-sticky-sidebar.min.js
 libs/modules/sticky-module.js
 libs/modules/line-helper.js
@@ -43,6 +43,7 @@ index_main.js
 
 product_list_main.js
 ----------------
+libs/jquery.rwdImageMaps.min.js
 product_list_main.js
 
 product_main.js

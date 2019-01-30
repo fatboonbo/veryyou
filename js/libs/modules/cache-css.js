@@ -1,1 +1,1 @@
-define(["text!version-css.json?bust="+(new Date).getTime()],function(e){e=JSON.parse(e),requirejs.config({urlArgs:"v="+e.v})});
+define("cssversion",["text!../css/version-css.json?bust="+(new Date).getTime()],function(e){return e=JSON.parse(e),requirejs.config({urlArgs:"c="+e.c}),e});
