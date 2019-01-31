@@ -13,7 +13,7 @@ define(["lazysizes", "unveilhooks", "picturefill"], function() {
             l('init lazysize');
             /*
             var lazy = function lazy() {
-              document.addEventListener('lazyloaded', function (e)  {
+              document.addEventListener('lazyloaded', {passive: true}, function (e)  {
                 e.target.parentNode.classList.add('image-loaded');
                 e.target.parentNode.classList.remove('loading');
             });
@@ -25,7 +25,9 @@ define(["lazysizes", "unveilhooks", "picturefill"], function() {
         product_list_main: function() {
             window.lazySizesConfig = window.lazySizesConfig || {};
             var timerStart = Date.now();
-            window.lazySizesConfig.expand = 500;
+            window.lazySizesConfig.ricTimeout = 300;
+            window.lazySizesConfig.expand = 300;
+            lazySizesConfig.expFactor = 3; // max 4
             window.lazySizesConfig.loadMode = 1;
 	        //window.lazySizesConfig.expand = 1600;
             //window.lazySizesConfig.expFactor = 3; // max 4

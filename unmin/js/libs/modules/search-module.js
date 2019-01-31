@@ -78,8 +78,10 @@ define(["jquery"], function($) {
         	var savedsearch = localStorage.getItem("savedsearch");
         	if (savedsearch !== null) {
         			$("#search-id").attr("value", savedsearch),l(savedsearch + " searched");
-        			$(".breadcrumb.style1 h1").text("搜尋結果 : "+savedsearch),l(input.value+" loaded");;
-        			$(".searchModal").addClass("active");
+        			$(".breadcrumb.style1 h1").text("搜尋結果 : "+savedsearch),l(input.value+" loaded");
+                    if (!is_touch_device()) {
+                     $(".searchModal").addClass("active");
+                    }
                     setTimeout(function() {
                         $("#nav-header").addClass("headroom--pinned");
                     }, 200);

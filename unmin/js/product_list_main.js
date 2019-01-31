@@ -1,5 +1,6 @@
-define([/*,"csspreload","text!version-css.json?bust=" + (new Date()).getTime()*/], function(/*,csspreload,version*/) {
+define(["rwdmap"], function() {
 // Convert text to JSON
+
 /*
     version = JSON.parse(version);
 
@@ -50,6 +51,9 @@ define([/*,"csspreload","text!version-css.json?bust=" + (new Date()).getTime()*/
 // - Other minor tweaks
 // 2009-08-21 First Public Release
 
+$(document).ready(function(e) {
+  $('img[usemap]').rwdImageMaps();
+});
 (function (window, undefined) {
     var document = window.document,
         location = window.location,
@@ -120,7 +124,7 @@ define([/*,"csspreload","text!version-css.json?bust=" + (new Date()).getTime()*/
         }
     };
 })(window);
-/*
+/**/
 // Attach to page load and unload
 (function (window) {
     var addEvent, eventPrefix;
@@ -144,7 +148,7 @@ setTimeout(function () {
         instance.add_endRequest(window.loadScroll);
     }
 }, 0);
-*/
+
 window.loadScroll();
 /*
 window.onbeforeunload = function() {
@@ -206,27 +210,27 @@ $(document).ready(function(){
     //    bottomSpacing: 20,
     //  });
     $(document).ready(function() {
-/*
-  $('.btn-sale input:checkbox').each(function(){
-    $('.panel-sale-wrap').addClass("active");
-  }); */
-  
-  if($('.btn-sale input:checkbox').is(":checked")) {
-    $('.panel-sale-wrap').addClass("active");
-  } else {
-    $('.panel-sale-wrap').removeClass("active");
-  }
-  $('.btn-sale input:checkbox').change(function(){    
-    if($('.btn-sale input:checkbox').is(":checked")) {
-      $('.panel-sale-wrap').addClass("active");
-    } else {
-      $('.panel-sale-wrap').removeClass("active");
-    }
-  });
+      /*
+      $('.btn-sale input:checkbox').each(function(){
+        $('.panel-sale-wrap').addClass("active");
+      }); */
+      
+      if($('.btn-sale input:checkbox').is(":checked")) {
+        $('.panel-sale-wrap').addClass("active");
+      } else {
+        $('.panel-sale-wrap').removeClass("active");
+      }
+      $('.btn-sale input:checkbox').change(function(){    
+        if($('.btn-sale input:checkbox').is(":checked")) {
+          $('.panel-sale-wrap').addClass("active");
+        } else {
+          $('.panel-sale-wrap').removeClass("active");
+        }
+      });
 
 
 
-});
+    });
     /*
     ;(function($){
 

@@ -26,18 +26,18 @@ define([], function() {
 */
 
 if (is_touch_device()) {
-      $('.accordion-account').on('click', function(){
-        if($(this).parent().hasClass('expand')){
-          $(this).parent().find('.accordion-content').slideUp(500);
-          $(this).parent().removeClass('expand').find('.expand').removeClass('expand');
-        }else{
-          $(this).parent().siblings('.expand').find('.accordion-content').slideUp(500);
-          $(this).parent().siblings('.expand').removeClass('expand').find('.expand').removeClass('expand');
-          $(this).parent().addClass('expand');
-          $(this).siblings('.accordion-content').slideDown(500);
-        }
-      })
+  $('.accordion-account').on('click', function(){
+    if($(this).parent().hasClass('expand')){
+      $(this).parent().find('.accordion-content').slideUp(500);
+      $(this).parent().removeClass('expand').find('.expand').removeClass('expand');
+    }else{
+      $(this).parent().siblings('.expand').find('.accordion-content').slideUp(500);
+      $(this).parent().siblings('.expand').removeClass('expand').find('.expand').removeClass('expand');
+      $(this).parent().addClass('expand');
+      $(this).siblings('.accordion-content').slideDown(500);
     }
+  })
+}
     /*
   $('.column-main-old, .column-menu-old')
   .theiaStickySidebar({

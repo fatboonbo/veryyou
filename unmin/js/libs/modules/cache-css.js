@@ -1,11 +1,7 @@
-//define(["text!version-css.json"], function(version) {
-define(["text!version-css.json?bust=" + (new Date()).getTime()], function(version) {
-
-    // Convert text to JSON
-    version = JSON.parse(version);
-
+define("cssversion", ["text!../css/version-css.json?bust=" + (new Date()).getTime()], function(cssversion) {
+    cssversion = JSON.parse(cssversion);
     requirejs.config({
-        urlArgs: "v=" + version.v
+        urlArgs: "c=" + cssversion.c
     });
-
+    return cssversion;
 });

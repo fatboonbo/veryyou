@@ -24,12 +24,12 @@ define(["stickysidebar"], function() {
           });
         },
         about_main: function() {
-          /*
+          /**/
           $('.column-main-old, .column-menu-old')
           .theiaStickySidebar({
             additionalMarginTop: 210,
             minWidth: 768
-          });*/
+          });
 
         }
     });

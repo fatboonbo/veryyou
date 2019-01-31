@@ -557,7 +557,7 @@
 
 			throttledCheckElements();
 
-			addEventListener('scroll', function(){
+			addEventListener('scroll', {passive: true}, function(){
 				if(lazySizesConfig.loadMode == 3){
 					lazySizesConfig.loadMode = 2;
 				}
@@ -573,9 +573,9 @@
 				preloadElems = document.getElementsByClassName(lazySizesConfig.lazyClass + ' ' + lazySizesConfig.preloadClass);
 				hFac = lazySizesConfig.hFac;
 
-				addEventListener('scroll', throttledCheckElements, true);
+				addEventListener('scroll', throttledCheckElements, true, {passive: true});
 
-				addEventListener('resize', throttledCheckElements, true);
+				addEventListener('resize', throttledCheckElements, true, {passive: true});
 
 				if(window.MutationObserver){
 					new MutationObserver( throttledCheckElements ).observe( docElem, {childList: true, subtree: true, attributes: true} );
@@ -585,7 +585,7 @@
 					setInterval(throttledCheckElements, 999);
 				}
 
-				addEventListener('hashchange', throttledCheckElements, true);
+				addEventListener('hashchange', throttledCheckElements, true, {passive: true});
 
 				//, 'fullscreenchange'
 				['focus', 'mouseover', 'click', 'load', 'transitionend', 'animationend', 'webkitAnimationEnd'].forEach(function(name){
@@ -595,8 +595,8 @@
 				if((/d$|^c/.test(document.readyState))){
 					onload();
 				} else {
-					addEventListener('load', onload);
-					document[_addEventListener]('DOMContentLoaded', throttledCheckElements);
+					addEventListener('load', onload, {passive: true});
+					document[_addEventListener]('DOMContentLoaded', throttledCheckElements, {passive: true});
 					setTimeout(onload, 20000);
 				}
 
@@ -669,7 +669,7 @@
 		return {
 			_: function(){
 				autosizesElems = document.getElementsByClassName(lazySizesConfig.autosizesClass);
-				addEventListener('resize', debouncedUpdateElementsSizes);
+				addEventListener('resize', debouncedUpdateElementsSizes, {passive: true});
 			},
 			checkElems: debouncedUpdateElementsSizes,
 			updateElem: getSizeElement

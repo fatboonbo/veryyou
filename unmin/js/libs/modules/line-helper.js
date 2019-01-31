@@ -13,9 +13,26 @@ define([],function() {
                     $("#footer").before(helper),l("line helper html");
                 });
                 */
+                require(["cssversion"], function(cssversion) {
+                    var lineCss = "css/line.css?v="+ cssversion.v;
+                    var preloadLine = document.createElement("link");
+                    document.body.appendChild(preloadLine),l("line.css appended");
+                    preloadLine.href = lineCss;
+                    preloadLine.as = "style";
+                    preloadLine.rel = "preload";
+                    preloadLine.id = "lineCss";
+                    $('#lineCss').attr('onload', 'this.onload=null;this.rel="stylesheet"'),l("line.css applied");
+                    //$('head').append( $('<link rel="preload" type="text/css" />').attr('href', 'css/line.css').attr('as', 'style').attr('onload', 'this.onload=null;this.rel="stylesheet"'));
+                
+                    if (isFirefox > 0 || isSafari > 0 || iOSSafari > 0 || isIE > 0 || isEdge > 0) {
+                        require(["loadCSS"], function() {
+                            loadCSS( "css/line.css?v="+ cssversion.v)/*,l("act css loaded")*/;
+                        });
+                    }
+                });
                 var html = [];
                 html.push('<div id="line-helper" class="line-helper-wrapper">'+
-                    '<div class="line-helper">'+
+                    '<div class="line-helper" style="visibility:hidden;opacity:0">'+
                     '<button type="button" class="close" aria-label="Close"><span class="icon-close"></span></button>'+
                     '<div class="line-helper-logo">'+
                     '<div class="half"><div class="agent circle"><i class="icon-logo-veryyou"></i></div></div>'+
@@ -28,19 +45,19 @@ define([],function() {
                     '<div><img src="css/images/blank.gif" class="lazyload" data-src="https://photo.eyescream.com.tw/VeryYou/banner/aboutus/VERYYOU%20LINE@%20QR%20CODE.jpg" alt="加入LINE好友!" title="加入LINE好友!" width="330" height="331"></div>'+
                     '</div>'+
                     '<div class="line-helper-footer">'+
-                    '<h2>透過QR code加入LINE好友</h2>'+
+                    '<h2>透過QR code加入LINE小幫手</h2>'+
                     '<p>請在<span class="line-green">LINE</span>應用程式上開啟「好友」分頁，點選畫面右上方用來加入好友的圖示。</p>'+
                     '</div>'+
                     '</div>'+
                     '</div>'+
 
-                    '<div id="button_line">'+
+                    '<div id="button_line" class="pulse">'+
                     '<i class="icon-line"></i>'+
                     '</div>'+
                     '<div id="message_bubble"><p>需要協助嗎?<br>點我可以聯繫小幫手唷!</p></div>'+
                     '</div>');
 
-                document.getElementById('footer').insertAdjacentHTML("beforeBegin",html.join(''),l("line helper jquery2"));
+                document.getElementById('footer').insertAdjacentHTML("beforeBegin",html.join(''),l("line helper desktop"));
                 //document.getElementById('footer').innerHTML = html.join(''),l("line helper jquery");
             } else {
                 var html = [];
@@ -50,13 +67,14 @@ define([],function() {
                     '</div>'+
                     '<div id="message_bubble"><p>需要協助嗎?<br>點我可以聯繫小幫手唷!</p></div>');
 
-                document.getElementById('footer').innerHTML = html.join(''),l("test added");
+                //document.getElementById('footer').innerHTML = html.join(''),l("test added");
+                document.getElementById('footer').insertAdjacentHTML("beforeBegin",html.join(''),l("line helper mobile"));
             }
 
             var  //msg = $("#message_bubble"),
             //msgc = "message_bubble",
             //msg = $(msgc),
-            lineWrapper = $(".line-helper-wrapper"),
+            //lineWrapper = $(".line-helper-wrapper"),
             /*
             lineHelper = '<div class="line-helper-wrapper">'+
             '<div id="button_line">'+
@@ -64,7 +82,7 @@ define([],function() {
             '</div>'+
             '<div id="'+msgc+'"><p>需要協助嗎?<br>點我可以聯繫小幫手唷!</p></div>',
             */
-            lineWrapper = $(".line-helper-wrapper"),
+            //lineWrapper = $(".line-helper-wrapper"),
             atv = "active",
             clk = "clicked";
             /*
@@ -84,19 +102,19 @@ define([],function() {
                     $(".line-helper button.close").on("click",function(){
                         $("#line-helper").removeClass(atv);
                         //$("#button_line").removeClass("atv clk");
-                    })
+                    });
                     if (is_touch_device()) {
                         $("#button_line").on("click touch",function() {
                             window.location = "https://line.me/R/ti/p/%40ixo8426n";
                         });
-                    } else {
-                    	setTimeout(function() {
-                    		if (!$(".line-helper").hasClass(atv)) {
-                    			$("#message_bubble").addClass(atv).delay(5000).queue(function(){
-                    				$(this).removeClass(atv).dequeue();
-                    			});
-                    		}
-                    	}, 3000);
+                    } else {                    
+                        setTimeout(function() {
+                            if (!$(".line-helper").hasClass(atv)) {
+                                $("#message_bubble").addClass(atv).delay(5000).queue(function(){
+                                    $(this).removeClass(atv).dequeue();
+                                });
+                            }
+                        }, 3000);
                         $(".line-helper-wrapper").on("mouseenter", function() {
                             $(this).data('timeout', setTimeout(function() {
                                 if ($("#line-helper").hasClass(atv)) {

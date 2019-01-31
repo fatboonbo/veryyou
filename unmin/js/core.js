@@ -2,7 +2,8 @@ define([
       "jquery","headroom","libs/modules/search-module","libs/modules/lazy-module","wowwow","bootstrap3modal","libs/modules/sticky-module","libs/modules/line-helper", "jscrollto","libs/modules/subscribe-footer"
     ], function($,headroom,search,lazy,wowwow,bootstrap3modal,/*globalmenu,*/sticky,lineHelpermenu,jscrollto,subscribeFooter) {
     /**/
-    l(headroom);
+    //l(headroom);
+
     
     function isNavVisible(nav) {
       return ( nav.classList.contains('visible') ? true : false );
@@ -398,6 +399,14 @@ $.scrollLock = ( function scrollLockClosure() {
         //hep = "headroom--top";
         //nav = $("#nav-header");
         //open sale temp cart to edit
+        Mbt.on("click touch", function(m) {
+            m.preventDefault();
+            hh.removeClass(allbutmo);
+            hh.toggleClass(mo);
+            Nhp.removeClass(im);
+            Nhp.removeClass(iss);
+            return hh.hasClass(mo) ? Dt.disable():Dt.enable();
+        });
         if (is_touch_device()) {
             Cp.on("click", function(c) {
                 c.preventDefault(c);
@@ -477,6 +486,12 @@ $.scrollLock = ( function scrollLockClosure() {
                     Dt.disable();
                 }
             });
+/*
+                if ($(".section-shopping-cart.sales.active").hasClass(ac)) {
+                    $(this).removeClass(ac);
+                    $(".btn btn-cart-edit .active").removeClass(ac);
+                    Dt.enable();
+                } */
         } else {
             Cp.on("mouseenter", function(c) {
                 $(this).data('timeout', setTimeout(function() {
@@ -534,17 +549,9 @@ $.scrollLock = ( function scrollLockClosure() {
                 if (alink.next(Nhp).is(":visible")) {
                     clink.off("mouseenter").off("mouseleave");
                 }
-            });
+            });            
         }
 
-    Mbt.on("touchmove click", function(m) {
-        m.preventDefault();
-        hh.removeClass(allbutmo);
-        hh.toggleClass(mo);
-        Nhp.removeClass(im);
-        Nhp.removeClass(iss);
-        return hh.hasClass(mo) ? Dt.disable():Dt.enable();
-    });
     
 };
 globalmenu();
@@ -618,7 +625,7 @@ function opn2(h) {
     // BACKTOTOP
     //$(window).scroll(function() {
     //window.addEventListener('scroll', function(){
-    window.addEventListener('scroll', throttle(callback, 1000));
+    window.addEventListener('scroll', throttle(callback, 500), {passive: true});
 
     function throttle(fn, wait) {
       var time = Date.now();

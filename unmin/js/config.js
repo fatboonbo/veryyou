@@ -7,7 +7,8 @@ paths: {
     //"jquery": "//unpkg.com/jquery@2.2.0/dist/jquery.min.js",
     "fontloader": "libs/fontfaceobserver2",
     "slick": "libs/slick.min",
-    "bootstrap3modal": "libs/bootstrap3modal.min",
+    //"bootstrap3modal": "libs/bootstrap3modal.min",
+    "bootstrap3modal": "libs/bootstrap",
     "ekko": "libs/ekko-lightbox.min",
     //"lazysizes": "libs/lazysizes.min",
     "lazysizes": "libs/lazysizes",
@@ -19,10 +20,12 @@ paths: {
     "jheadroom": "libs/jQuery.headroom",
     //"headroom": "libs/headroom.min",
     "jscrollto":"libs/jquery-scrollto.min",
-    "stickysidebar": "libs/theia-sticky-sidebar.min",
+    //"stickysidebar": "libs/theia-sticky-sidebar.min",
+    "stickysidebar": "libs/theia-sticky-sidebar",
     "wowwow": "libs/wow.min",
+    //"wowwow": "libs/wow",
     //"imgready": "libs/imagesloaded.pkgd.min",
-    "rwdmap": "libs/jquery.rwdImageMaps",
+    "rwdmap": "libs/jquery.rwdImageMaps.min",
     "featherlight": "libs/featherlight.min",
     "fgallery": "libs/featherlight.gallery.min",
     "jsflip": "libs/jquery.flip.min",
@@ -191,6 +194,7 @@ function is_touch_device() {
 //localStorage.setItem("debug", true);
 // 
 // Turn logging off with: 
+//window.performance && window.performance.mark && window.performance.mark("optimizely:blockBegin");
 localStorage.setItem("debug", false);
 
 var timerStart = Date.now();
@@ -214,6 +218,7 @@ if (is_touch_device()) {
 l("loading config");
 //var consoleHolder = console;
 //console = consoleHolder;
+/**/
 $(document).ready(function(){
     var threshold = 1025;//1007
     var initialDiff = ($(window).width() > threshold) ? 1:-1;
@@ -227,7 +232,14 @@ $(document).ready(function(){
     });
     
 });
-/**/
+/* detect img src change
+$('#img_div').load(function() {
+  var imageObj = $(this);
+  if (!(imageObj.width() == 1 && imageObj.height() == 1)) {
+    l('Image source changed!!!!!');
+  }
+});
+*/
 define("cssversion", ["text!../css/version-css.json?bust=" + (new Date()).getTime()], function(cssversion) {
     cssversion = JSON.parse(cssversion);
     requirejs.config({
@@ -238,7 +250,7 @@ define("cssversion", ["text!../css/version-css.json?bust=" + (new Date()).getTim
 require(["cssversion"/*"libs/modules/cache-css"*/], function(cssversion) {
         var csscommon = "css/common.css?p="+ cssversion.v;
         var preloadLink = window.document.createElement("link");
-        document.body.appendChild(preloadLink),l("%ccommon.css appended","color:#ff00ff");
+        document.body.appendChild(preloadLink),l("common.css appended");
         preloadLink.href = csscommon;
         preloadLink.as = "style";
         preloadLink.rel = "preload";
@@ -263,7 +275,7 @@ require(["cssversion"/*"libs/modules/cache-css"*/], function(cssversion) {
     }*/
 });
 //require(["jquery","libs/modules/cache"], function() {
-require(["jquery","libs/modules/cache","cssversion"/*"libs/modules/cache-css"*/], function($,version,cssversion) {
+require(["jquery","libs/modules/cache","cssversion"/*,"libs/modules/lazy-module"*/], function($,version,cssversion) {
     //define(["jquery", "domrouter"], function() {
 
     $(document).ready(function() {
@@ -346,8 +358,8 @@ require(["jquery","libs/modules/cache","cssversion"/*"libs/modules/cache-css"*/]
                     l("grid.min.css+checkout.min.css");
                 });*/
 
-                var listcss = ["css/product_list_main.css?v="+ cssversion.v,"css/grid.min.css?v="+ cssversion.v,"css/checkout.min.css?v="+ cssversion.v];
-                var cssstyle = ["css1","css2","css3"];
+                var listcss = ["css/product_list_main.css?v="+ cssversion.v];
+                var cssstyle = ["css1"];
                 for (var i = 0,y = 0; i < listcss.length &&  y < listcss.length; i++, y++) {
                   var preloadLink = document.createElement("link");
                   document.body.appendChild(preloadLink);
@@ -360,8 +372,8 @@ require(["jquery","libs/modules/cache","cssversion"/*"libs/modules/cache-css"*/]
                 if (isFirefox > 0 || isSafari > 0 || iOSSafari > 0 || isIE > 0 || isEdge > 0) {
                     require(["loadCSS"], function() {
                         loadCSS( "css/product_list_main.css?="+ cssversion.v ),l("product_list_main css loaded");
-                        loadCSS( "css/grid.min.css?="+ cssversion.v ),l("grid css loaded");
-                        loadCSS( "css/checkout.min.css?="+ cssversion.v ),l("checkout css loaded");
+                        //loadCSS( "css/grid.min.css?="+ cssversion.v ),l("grid css loaded");
+                        //loadCSS( "css/checkout_list.css?="+ cssversion.v ),l("checkout css loaded");
                     });
                 }
                 require(["product_list_main"]);
@@ -402,8 +414,8 @@ require(["jquery","libs/modules/cache","cssversion"/*"libs/modules/cache-css"*/]
                     require(["css!../css/checkout.min.css", "css!../css/grid.min.css"]);
                     l("checkout.min.css+grid.min.css");
                 });*/
-                var listcss = ["css/grid.min.css?v="+ cssversion.v,"css/checkout.min.css?v="+ cssversion.v];
-                var cssstyle = ["css1","css2"];
+                var listcss = [/*"css/grid.css?v="+ cssversion.v,*/"css/checkout_cart.css?v="+ cssversion.v];
+                var cssstyle = ["css1"];
                 for (var i = 0,y = 0; i < listcss.length &&  y < listcss.length; i++, y++) {
                   var preloadLink = document.createElement("link");
                   document.body.appendChild(preloadLink);
@@ -415,8 +427,8 @@ require(["jquery","libs/modules/cache","cssversion"/*"libs/modules/cache-css"*/]
                 $("#css1,#css2").attr('onload', 'this.onload=null;this.rel="stylesheet"');l("product_list $grid & checkout applied");
                 if (isFirefox > 0 || isSafari > 0 || iOSSafari > 0 || isIE > 0 || isEdge > 0) {
                     require(["loadCSS"], function() {
-                        loadCSS( "css/grid.min.css?="+ cssversion.v ),l("grid css loaded");
-                        loadCSS( "css/checkout.min.css?="+ cssversion.v ),l("checkout css loaded");
+                        //loadCSS( "css/grid.min.css?="+ cssversion.v ),l("grid css loaded");
+                        loadCSS( "css/checkout_cart.css?="+ cssversion.v ),l("checkout css loaded");
                     });
                 }
                 require(["checkout_main"]);
@@ -429,8 +441,8 @@ require(["jquery","libs/modules/cache","cssversion"/*"libs/modules/cache-css"*/]
                     l("checkout.min.css+grid.min.css");
                 });*/
 
-                var listcss = ["css/member_main.css?v="+ cssversion.v,"css/grid.min.css?v="+ cssversion.v,"css/checkout.min.css?v="+ cssversion.v];
-                var cssstyle = ["css1","css2","css3"];
+                var listcss = ["css/member_main.css?v="+ cssversion.v/*,"css/checkout_member.css?v="+ cssversion.v*/];
+                var cssstyle = ["css1"];
                 for (var i = 0,y = 0; i < listcss.length &&  y < listcss.length; i++, y++) {
                   var preloadLink = document.createElement("link");
                   document.body.appendChild(preloadLink);
@@ -439,12 +451,12 @@ require(["jquery","libs/modules/cache","cssversion"/*"libs/modules/cache-css"*/]
                   preloadLink.rel = "preload";
                   preloadLink.id = cssstyle[y],l(cssstyle[y] + "loaded");
                 }
-                $("#css1,#css2,#css3").attr('onload', 'this.onload=null;this.rel="stylesheet"');l("product_list $grid & checkout applied");
+                $("#css1").attr('onload', 'this.onload=null;this.rel="stylesheet"');l("product_list $grid & checkout applied");
                 if (isFirefox > 0 || isSafari > 0 || iOSSafari > 0 || isIE > 0 || isEdge > 0) {
                     require(["loadCSS"], function() {
                         loadCSS( "css/member_main.css?="+ cssversion.v ),l("member_main css loaded");
-                        loadCSS( "css/grid.min.css?="+ cssversion.v ),l("grid css loaded");
-                        loadCSS( "css/checkout.min.css?="+ cssversion.v ),l("checkout css loaded");
+                        //loadCSS( "css/grid.min.css?="+ cssversion.v ),l("grid css loaded");
+                        //loadCSS( "css/checkout_member.css?="+ cssversion.v ),l("checkout css loaded");
                     });
                 }
                 require(["member_main"]);
