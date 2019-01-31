@@ -17,26 +17,25 @@
 	<!-- Favicon -->
 	<link rel="icon" href="css/images/favicon.ico">
 	<!-- css -->
-	<link rel="preload" href="css/fonts/veryyou.woff" as="font" type="font/woff" crossorigin="anonymous">
-	<link rel="preload" href="css/fonts/veryyou.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+	<link rel="preload" href="css/fonts/veryyou.woff" as="font" type="font/woff" crossorigin>
+	<link rel="preload" href="css/fonts/veryyou.woff2" as="font" type="font/woff2" crossorigin>
 	<link rel="stylesheet" type="text/css" href="css/style.min.css?v=5">
 	<!-- js -->
 	<script src="https://unpkg.com/jquery@3.3.0/dist/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="js/libs/jquery-3.3.0.min.zopfli.js.gz"><\/script>')</script>
 	<script>
 		var fontlink = [
-		"//fonts.gstatic.com/s/playfairdisplay/v13/nuFiD-vYSZviVYUb_rj3ij__anPXDTzYgA.woff2",
-		"//fonts.gstatic.com/s/playfairdisplay/v13/nuFlD-vYSZviVYUb_rj3ij__anPXBYf9lW4e5g.woff2",
-		"//fonts.gstatic.com/s/inconsolata/v16/QldKNThLqRwH-OJ1UHjlKGlZ5qg.woff2",
-		"//fonts.gstatic.com/s/inconsolata/v16/QldXNThLqRwH-OJ1UHjlKGHiw71p5_w.woff2"];
-		var fontstyle = ["font1","font2","font3","font4"];
+		"css/fonts/inconsolata_400.woff2",
+		"css/fonts/playfair_display_400.woff2",
+		"css/fonts/playfair_display_700.woff2"];
+		var fontstyle = ["font1","font2","font3"];
 		for (var i = 0,y = 0; i < fontlink.length &&  y < fontstyle.length; i++, y++) {
 			var webfontlink = document.createElement("link");
 			document.head.appendChild(webfontlink);
 			webfontlink.href = fontlink[i];
 			webfontlink.as = "font";
 			webfontlink.crossOrigin = 'anonymous';
-			webfontlink.rel = "preload";
+			webfontlink.rel = "prefetch";
 			webfontlink.id = fontstyle[y];
 		}
 		$(document).ready(function() {
@@ -45,7 +44,7 @@
 	</script>	
 	<noscript><link rel="stylesheet" href="css/font.css"></noscript>
 </head>
-<!-- popup style 6
+<!-- popup style 6 -->
 
 <script>
         var popup = false; // false to disable popup
@@ -74,11 +73,11 @@
                 	return false;
                 });
             } //localStorage or sessionStorage
-</script> -->
-
+</script>
+<!-- popup style 5 
 <script>
     $(document).ready(function() {
-        var popup = true; // false to disable popup
+        var popup = false; // false to disable popup
         if (popup)
             if (sessionStorage.getItem("hotdada") !== 'true') {
                 sessionStorage.setItem("hotdada", "true");
@@ -98,7 +97,7 @@
                         /*l("popup.css");*/
                     });
                 }
-                var eles = '<div class="modal fade in popup_subscribe" id="popup-default" tabindex="-1" role="dialog" aria-hidden="true" style="display: none"><div class="modal-dialog"><div class="modal-content"><div class="popup-default-content" style="visibility:hidden"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="btnclose4 icon-close"></i></button></div><div id="popgif" style="background:transparent;"><div style="display:inline-block;"><div class="email-header"><i class="icon-logo-veryyou style01a"></i><div class="style04">不要錯過!</div></div><div class="style01">Join our mailing list and get the latest news</div><div class="style03">訂閱<span class="icon-logo-veryyou"></span>即可獲得<span class="icon-ticket-frame"><span>$</span>100</span>折價卷</div><!--<div class="style01">冬．季．折．扣</div>--><div class="style02" style="display:none">加入VERYYOU即獲得<span class="icon-ticket-frame">$100</span>元折價卷</div><form class="email_form01" id="email_form2" method="POST"><input class="email01 clearable input" required="required" type="email" name="EMAIL" placeholder="Subscribe to our newsletter" id="newsletter" name="newsletter"><button id="btnNewletter" class="icon-arrow-u-turn" title="送出"></button></form></div></div></div></div></div></div><div class="modal-backdrop fade in" style="display: none"></div>';
+                var eles = '<div class="modal fade in popup_subscribe" id="popup-default" tabindex="-1" role="dialog" aria-hidden="true" style="display: none"><div class="modal-dialog"><div class="modal-content"><div class="popup-default-content" style="visibility:hidden"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="btnclose4 icon-close"></i></button></div><div id="popgif" style="background:transparent;"><div style="display:inline-block;"><div class="email-header"><i class="icon-logo-veryyou style01a"></i><div class="style04">不要錯過!</div></div><div class="style01">Join our mailing list and get the latest news</div><div class="style03">訂閱<span class="icon-logo-veryyou"></span>即可獲得<span class="icon-ticket-frame"><span>$</span>100</span>折價卷</div><div class="style01" style="display:none">冬．季．折．扣</div><div class="style02" style="display:none">加入VERYYOU即獲得<span class="icon-ticket-frame">$100</span>元折價卷</div><form class="email_form01" id="email_form2" method="POST"><input class="email01 clearable input" required="required" type="email" name="EMAIL" placeholder="Subscribe to our newsletter" id="newsletter" name="newsletter"><button id="btnNewletter" class="icon-arrow-u-turn" title="送出"></button></form></div></div></div></div></div></div><div class="modal-backdrop fade in" style="display: none"></div>';
                 //$('main').before(eles);
                 document.getElementById("nav-header").insertAdjacentHTML('beforeBegin',eles);
                 $("#popup-default,.modal-backdrop").show();/* l('#popup-default show'); */
@@ -117,7 +116,7 @@
             } //localStorage or sessionStorage
         return false;
     });
-</script>
+</script> -->
 <body class="index_main">
 
 	<header id="nav-header" class="header">
@@ -134,22 +133,48 @@
 				<div class="carousel-index-banner-bind mobile"><!-- 大圖M版 -->
 					<a href="分類頁.html" class="alink">
 						<picture>
+							<source srcset="https://photo.eyescream.com.tw/Veryyou/banner/IndexBanner/439M.jpg" media="(max-width: 1023px)">
+							<img srcset="css/images/blank.gif">   
+						</picture>
+					</a>
+					<a href="分類頁.html" class="alink">
+						<picture>
+							<source srcset="https://photo.eyescream.com.tw/Veryyou/banner/IndexBanner/442M.jpg" media="(max-width: 1023px)">
+							<img srcset="css/images/blank.gif">   
+						</picture>
+					</a>
+					<a href="分類頁.html" class="alink">
+						<picture>
 							<source srcset="https://photo.eyescream.com.tw/Veryyou/banner/IndexBanner/431M.jpg" media="(max-width: 1023px)">
-							<img srcset="css/images/blank.gif">  
+							<img srcset="css/images/blank.gif">   
 						</picture>
 					</a>
 					<a href="分類頁.html" class="alink">
 						<picture>
 							<source srcset="https://photo.eyescream.com.tw/Veryyou/banner/IndexBanner/432M.jpg" media="(max-width: 1023px)">
-							<img srcset="css/images/blank.gif">    
+							<img srcset="css/images/blank.gif">   
 						</picture>
 					</a>
 					<a href="分類頁.html" class="alink">
-							<source srcset="https://photo.eyescream.com.tw/Veryyou/banner/IndexBanner/433M.jpg" media="(max-width: 1023px)">
-							<img srcset="css/images/blank.gif">  
+						<picture>
+							<source srcset="https://photo.eyescream.com.tw/Veryyou/banner/IndexBanner/444M.jpg" media="(max-width: 1023px)">
+							<img srcset="css/images/blank.gif">   
+						</picture>
 					</a>
 				</div>
 				<div class="carousel-index-banner-bind desktop"><!-- 大圖PC版 -->
+					<a href="分類頁.html" class="alink">
+						<picture>
+							<source srcset="https://photo.eyescream.com.tw/Veryyou/banner/IndexBanner/439.jpg" media="(min-width: 1023px)">
+							<img srcset="css/images/blank.gif">   
+						</picture>
+					</a>
+					<a href="分類頁.html" class="alink">
+						<picture>
+							<source srcset="https://photo.eyescream.com.tw/Veryyou/banner/IndexBanner/442.jpg" media="(min-width: 1024px)">
+							<img srcset="css/images/blank.gif">   
+						</picture>
+					</a>
 					<a href="分類頁.html" class="alink">
 						<picture>
 							<source srcset="https://photo.eyescream.com.tw/Veryyou/banner/IndexBanner/431.jpg" media="(min-width: 1024px)">
@@ -164,7 +189,7 @@
 					</a>
 					<a href="分類頁.html" class="alink">
 						<picture>
-							<source srcset="https://photo.eyescream.com.tw/Veryyou/banner/IndexBanner/433.jpg" media="(min-width: 1024px)">
+							<source srcset="https://photo.eyescream.com.tw/Veryyou/banner/IndexBanner/444.jpg" media="(min-width: 1024px)">
 							<img srcset="css/images/blank.gif">   
 						</picture>
 					</a>
