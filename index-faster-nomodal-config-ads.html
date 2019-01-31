@@ -18,26 +18,25 @@
 	<!-- Favicon -->
 	<link rel="icon" href="css/images/favicon.ico">
 	<!-- css -->
-	<link rel="preload" href="css/fonts/veryyou.woff" as="font" type="font/woff" crossorigin="anonymous">
-	<link rel="preload" href="css/fonts/veryyou.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+	<link rel="preload" href="css/fonts/veryyou.woff" as="font" type="font/woff" crossorigin>
+	<link rel="preload" href="css/fonts/veryyou.woff2" as="font" type="font/woff2" crossorigin>
 	<link rel="stylesheet" type="text/css" href="css/style.min.css?v=5">
 	<!-- js -->
-	<script src="https://unpkg.com/jquery@2.2.0/dist/jquery.min.js"></script>
-	<script>window.jQuery || document.write('<script src="js/libs/jquery-2.2.0.min.zopfli.js.gz"><\/script>')</script>
+	<script src="https://unpkg.com/jquery@3.3.0/dist/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/libs/jquery-3.3.0.min.zopfli.js.gz"><\/script>')</script>
 	<script>
 		var fontlink = [
-		"//fonts.gstatic.com/s/playfairdisplay/v13/nuFiD-vYSZviVYUb_rj3ij__anPXDTzYgA.woff2",
-		"//fonts.gstatic.com/s/playfairdisplay/v13/nuFlD-vYSZviVYUb_rj3ij__anPXBYf9lW4e5g.woff2",
-		"//fonts.gstatic.com/s/inconsolata/v16/QldKNThLqRwH-OJ1UHjlKGlZ5qg.woff2",
-		"//fonts.gstatic.com/s/inconsolata/v16/QldXNThLqRwH-OJ1UHjlKGHiw71p5_w.woff2"];
-		var fontstyle = ["font1","font2","font3","font4"];
+		"css/fonts/inconsolata_400.woff2",
+		"css/fonts/playfair_display_400.woff2",
+		"css/fonts/playfair_display_700.woff2"];
+		var fontstyle = ["font1","font2","font3"];
 		for (var i = 0,y = 0; i < fontlink.length &&  y < fontstyle.length; i++, y++) {
 			var webfontlink = document.createElement("link");
 			document.head.appendChild(webfontlink);
 			webfontlink.href = fontlink[i];
 			webfontlink.as = "font";
 			webfontlink.crossOrigin = 'anonymous';
-			webfontlink.rel = "preload";
+			webfontlink.rel = "prefetch";
 			webfontlink.id = fontstyle[y];
 		}
 		$(document).ready(function() {
@@ -45,6 +44,37 @@
 		});		
 	</script>	
 	<noscript><link rel="stylesheet" href="css/font.css"></noscript>
+	<!--
+	<link rel="preconnect" href="//www.googletagmanager.com">
+	<link rel="preconnect" href="//www.google-analytics.com">
+	<link rel="preconnect" href="//www.googleadservices.com">
+	<link rel="preconnect" href="//googleads.g.doubleclick.net">
+	<link rel="preconnect" href="//api.ematicsolutions.com">
+	<link rel="preconnect" href="//sg3-api.ematicsolutions.com">
+	<link rel="preconnect" href="//d.yimg.com">
+	<link rel="preconnect" href="//connect.facebook.net">
+	<link rel="preconnect" href="//img.scupio.com">
+	<link rel="preconnect" href="//rec.scupio.com">
+	<link rel="preconnect" href="//sp.analytics.yahoo.com">
+	<link rel="preconnect" href="//geo.query.yahoo.com">
+
+	<link rel="dns-prefetch" href="//www.googletagmanager.com">
+	<link rel="dns-prefetch" href="//www.google-analytics.com">
+	<link rel="dns-prefetch" href="//www.googleadservices.com">
+	<link rel="dns-prefetch" href="//googleads.g.doubleclick.net">
+	<link rel="dns-prefetch" href="//api.ematicsolutions.com">
+	<link rel="dns-prefetch" href="//sg3-api.ematicsolutions.com">
+	<link rel="dns-prefetch" href="//d.yimg.com">
+	<link rel="dns-prefetch" href="//connect.facebook.net">
+	<link rel="dns-prefetch" href="//img.scupio.com">
+	<link rel="dns-prefetch" href="//rec.scupio.com">
+	<link rel="dns-prefetch" href="//sp.analytics.yahoo.com">
+	<link rel="dns-prefetch" href="//geo.query.yahoo.com">
+-->
+	<link rel="preconnect" href="//sg3-api.ematicsolutions.com">
+	<link rel="preconnect" href="//img.scupio.com">
+	<link rel="dns-prefetch" href="//sg3-api.ematicsolutions.com">
+	<link rel="dns-prefetch" href="//img.scupio.com">
 </head>
 <!-- popup style 6 -->
 
@@ -127,6 +157,18 @@
 						</picture>
 					</a>
 				</div>
+
+				<!-- 最新公告 -->
+				<section id="section-index-news" class="section-index-news wrapper">
+					<a href="關於-最新公告.html">
+						<div class="news_container_wrap">
+							<div class="title">NOTICE!</div>
+							<p>
+								因適逢端午節假期，6/18(一)將暫停出貨作業&客服服務，詳情請見相關服務公告>> <span class="blink">Click Here ></span>
+							</p>					
+						</div>
+					</a>
+				</section>
 			</div>
 			<div class="right"><!--右側兩小圖 -->		
 				<div>
@@ -140,18 +182,6 @@
 					</a>
 				</div>
 			</div>
-		</section>
-
-		<!-- 最新公告 -->
-		<section id="section-index-news" class="section-index-news wrapper">
-			<a href="關於-最新公告.html">
-				<div class="news_container_wrap">
-					<div class="title">NOTICE!</div>
-					<p>
-						因適逢端午節假期，6/18(一)將暫停出貨作業&客服服務，詳情請見相關服務公告>> <span class="blink">Click Here ></span>
-					</p>					
-				</div>
-			</a>
 		</section>
 
 		<!-- 最新活動 banner -->
@@ -756,7 +786,7 @@ fbq('track', 'PageView');
         
     }
 </script>
-<script src="https://www.veryyou.com.tw/js/eyescream.js?v=1"></script>
+<script src="https://www.veryyou.com.tw/js/eyescream.js?v=1" async=""></script>
 <script>
     doSiteRetargeting();
 </script>
