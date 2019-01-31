@@ -163,7 +163,7 @@ svg:not(:root) {
     font-size: .75rem;
     word-spacing:  -2px;
 }
-.btn-see-more i {
+.btn-see-more i, .wf-active .btn-see-more i {
     left: auto;
     top: .3em;
     position:  absolute;
@@ -185,7 +185,7 @@ svg:not(:root) {
     font-weight:  normal;
     margin: 1em 0 .5em;
 }
-.section-instagram h2 i {
+.section-instagram h2 i, .wf-active .section-instagram h2 i {
     color:rgba(94, 89, 87, .66);
     position:  absolute;
     left: -.8em;
@@ -258,8 +258,6 @@ svg:not(:root) {
     float: left;
     padding-left: 5px;
     background-color: #fafafa;
-    height: 0;
-    padding-bottom: 100%;
     z-index: 1;
 }
 .ig-name {
@@ -313,8 +311,11 @@ svg:not(:root) {
 .section-instagram {visibility: visible!important;}
 @media (min-width: 768px) and (max-width: 1023px) {    
     .block-instagram {
-        width:50%;
+        width: 33.33333%;
         float:left;
+    }
+    .section-instagram.wrapper {
+        max-width:80%;
     }
 }
 @media (min-width: 1024px) {    
@@ -454,8 +455,8 @@ svg:not(:root) {
         width: auto!important;
         font-size:  .9375rem;
     }
-    .btn-see-more i {
-        right: -1.6em;
+    .wf-active .btn-see-more i,.btn-see-more i {
+        right: -1.4em;
     }
     .section-category-banner .container {
         width: 25%;
@@ -493,7 +494,7 @@ svg:not(:root) {
     }    
     .section-instagram.wrapper {
         padding:0;
-        max-width:992px;
+        max-width: 80%;
         overflow:  visible;
     }
     .block-instagram {
@@ -501,6 +502,7 @@ svg:not(:root) {
         padding: 0;
         float: none;
         padding-bottom: 100%;
+        height: 0;
     }
     .section-instagram .slick-slide {
         padding: 0 .3em;

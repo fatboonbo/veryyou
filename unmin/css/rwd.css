@@ -151,7 +151,6 @@
     .promotion+.nav-header-panel {
         left:-1.8em;
     }
-
     .section-slogan {
         font-size:  .75rem;
         opacity: .8;
@@ -220,7 +219,14 @@
         transition: all .25s ease-in-out;
         backface-visibility: hidden;
     }
-    
+    .p-item {
+        padding-left: 50px;
+    }    
+    .sales-module .p-item {
+        width:25%;
+        padding-left: 15px;
+        margin-bottom: 2em;
+    }
     .checkout {
         -webkit-animation-name: fadeInUp;
         animation-name: fadeInUp;
@@ -433,23 +439,10 @@
         top: auto;
         bottom: 20px;
     }
-    
     .close, .close-thin {
         top: -1.3em;
         /* right: -.6em; */
     }
-    
-
-    .section-shopping-cart.sales {
-        position:  relative;
-        bottom: auto;
-        left: auto;
-        top: auto;
-        height: auto;
-        overflow:  visible;
-        padding:  0;
-    }
-
     .headroom--not-top .searchModal.active {
         left: 30px;
     }
@@ -564,7 +557,7 @@
     .section-sales-banner {
         margin-bottom:1em;
         overflow:  hidden;
-        max-height:  350px;
+        /* max-height:  350px; */
         padding-left: 40px;
     }
     .sales-module .section-sales-banner {

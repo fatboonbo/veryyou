@@ -17,7 +17,7 @@
   width: 688px;
   background: #EFBDB7;
   background: linear-gradient(232deg, #EFBDB7, #8da4d0, #EFBDB7);
-  background-size: 600% 600%;
+  background-size: 400% 400%;
   -webkit-animation: colourFade 10s ease infinite;
   animation: colourFade 10s ease infinite;
 }
@@ -89,29 +89,29 @@
   opacity:0;
 }
 span.icon-ticket-frame {
-    position: relative;
-    margin: 0 .9em;
+    /* position: relative; */
+    /* margin: 0 .9em; */
     /* font-size:.8em; */
-    font-family:arial;
-    letter-spacing:0;
+    /* font-family:arial; */
+    /* letter-spacing:0; */
 }
 span.icon-ticket-frame:before {
-    position:absolute;
-    top: -.16em;
-    left: -.35em;
-    font-size: 1.9em;
-    color:rgba(255,255,255,.5);
+    /* position:absolute; */
+    /* top: -.16em; */
+    /* left: -.35em; */
+    /* font-size: 1.9em; */
+    /* color:rgba(255,255,255,.5); */
 }
 .style03 span.icon-ticket-frame {
-    font-size: 1em;
-    font-family: 'Montserrat';
-    font-weight:300;
+    /* font-size: 1em; */
+    /* font-family: 'Montserrat'; */
+    /* font-weight:300; */
 }
 .style03 span.icon-ticket-frame>span {
-    font-size: .6em;
-    position: relative;
-    top: -.1em;
-    left: -.1em;
+    /* font-size: .6em; */
+    /* position: relative; */
+    /* top: -.1em; */
+    /* left: -.1em; */
 }
 .style03 .icon-arrow3-left {
     font-size: .8125rem;
@@ -119,10 +119,33 @@ span.icon-ticket-frame:before {
     top: -.2em;
 }
 .style03 span.icon-ticket-frame:before {
-    color:#fff;
-    font-size:1.6em;
-    top: -.11em;
-    left: -.46em;
+    /* color:#fff; */
+    /* font-size:1.6em; */
+    /* top: -.11em; */
+    /* left: -.46em; */
+}
+#popgif .icon-ticket-frame {
+    font-family:inherit;
+    margin: 0 .7em;
+    /* line-height: 1.9em; */
+    text-align: center;
+}
+#popgif .icon-ticket-frame:before {
+    position:absolute;
+    font-size: 1em;
+    top: .05em;
+    left: 0;
+    /* margin-left: -.8em; */
+    bottom: 0;
+    right: 0;
+    transform: scale(1.7,1.6);
+    transform-origin: center;
+}
+#popgif .icon-ticket-frame>span {   
+    font-size:1.3rem;
+    position:relative;
+    top:-.1em;
+    left:.2em;
 }
 .popup_subscribe .icon-logo-veryyou {font-size: .7em;}
 .email_form01 {

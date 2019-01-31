@@ -1,4 +1,159 @@
 @charset "utf-8";
+@font-face {
+  font-family: 'veryyou';
+  font-display: block;
+  src:  url('fonts/veryyou.eot#iefix') format('embedded-opentype'),
+        url('fonts/veryyou.eot') format('eot'),
+        url('fonts/veryyou.woff2') format('woff2'),
+        url('fonts/veryyou.woff') format('woff'),
+        url('fonts/veryyou.ttf') format('truetype'),
+        url('veryyou.svg#veryyou') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  text-rendering: optimizeLegibility;
+}
+.wf-active [class^="icon-"], .wf-active [class*=" icon-"], .wf-active [class^="icon-"]:before, .wf-active [class*=" icon-"]:after, .wf-active .error-msg:before {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /*font-size: inherit;*/
+  position: relative;
+  background: transparent;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.wf-active [class^="icon-"], .wf-active [class*=" icon-"], .wf-active [class^="icon-"]:before, .wf-active [class*=" icon-"]:after, .wf-active .error-msg:before {
+  font-family: 'veryyou';
+}
+
+.icon-ticket-frame:before {
+  content: "\e914";
+}
+.icon-arrow-u-turn:before {
+  content: "\e917";
+}
+.icon-delete-circle:before {
+  content: "\e920";
+}
+.icon-earth:before {
+  content: "\e91d";
+}
+.icon-heart-o:before {
+  content: "\e902";
+}
+.icon-wishlist:before {
+  content: "\e90c";
+}
+.icon-hanger:before {
+  content: "\e90f";
+}
+.icon-truck:before {
+  content: "\e910";
+}
+.icon-logo-handwritten:before {
+  content: "\e90e";
+}
+.icon-notice_l:before {
+  content: "\e91c";
+}
+.icon-dashdash:before {
+  content: "\e90a";
+}
+.icon-edit:before {
+  content: "\e946";
+}
+.icon-spinner11:before {
+  content: "\e921";
+}
+.icon-play-big:before {
+  content: "\e91f";
+}
+.icon-minus:before {
+  content: "\e91a";
+}
+.icon-arrow-left2:before {
+  content: "\e931";
+}
+.icon-arrow-right2:before {
+  content: "\e932";
+}
+.icon-logo-veryyou:before {
+  content: "\e909";
+}
+.icon-tote:before {
+  content: "\e906";
+}
+.icon-chevron-up:before {
+  content: "\e929";
+}
+.icon-chevron-right:before {
+  content: "\e90d";
+}
+.icon-chevron-left:before {
+  content: "\e963";
+}
+.icon-user3:before {
+  content: "\e900";
+}
+.icon-arrow3-left:before {
+  content: "\e901";
+}
+.icon-arrow3-right:before {
+  content: "\e903";
+}
+.icon-letter3:before {
+  content: "\e904";
+}
+.icon-refresh:before {
+  content: "\e934";
+}
+.icon-help-with-circle:before {
+  content: "\e93e";
+}
+.icon-facebook:before {
+  content: "\e905";
+}
+.icon-account:before {
+  content: "\e907";
+}
+.icon-chevron-down:before {
+  content: "\e908";
+}
+.icon-line:before {
+  content: "\e90b";
+}
+.icon-search:before {
+  content: "\e911";
+}
+.icon-angle-left:before {
+  content: "\e913";
+}
+.icon-close:before {
+  content: "\e915";
+}
+.icon-chevron-thin-down:before {
+  content: "\e916";
+}
+.icon-instagram4:before {
+  content: "\e918";
+}
+.icon-heart2:before {
+  content: "\e919";
+}
+.icon-angle-right:before {
+  content: "\e91b";
+}
+.icon-plus:before {
+  content: "\e912";
+}
+.icon-phone:before {
+  content: "\e91e";
+}
 html {
   box-sizing: border-box;
   font-size: 1em;
@@ -48,16 +203,59 @@ body {
 }
 .lazyloaded {
     opacity: 1;
-    transition: opacity 300ms;
+    transition: opacity 100ms;
+    /* -webkit-filter: blur(0); */
+    /* filter: blur(0); */
 }
 .lazyload,
 .lazyloading {
     opacity: 0;
+    /* -webkit-filter:blur(5px); */
+    /* filter:blur(5px); */
+    /* transition:filter .4s,-webkit-filter .4s; */
 }
 .index_main .lazyloaded, .product_main .lazyload {
     opacity: 1;
     transition: opacity 300ms;
     /* transform: rotate(0.01deg); */
+}
+.section-product-list, .section-product-showcase {
+    /* padding: 12px; */
+    margin-left: -12px;
+    overflow:  hidden;
+}
+.p-item {
+    width: 50%;
+    float: left;
+    position: relative;
+    padding-left: 12px;
+    overflow: hidden;
+}
+.p-item img {
+    width:  100%;
+    will-change: opacity;
+}
+.img__link {
+    position: relative;
+}
+.p-item a {
+    position: absolute;
+    top:0;
+    bottom: 45px;
+    left: 12px;
+    right:0;
+    z-index: 15;
+    cursor: pointer;
+}
+.p-item .img__link, .carousel-product-image {
+    padding: 0;
+    border: 0;
+    transform: rotate(0.01deg);
+    z-index: 1;
+    height: 0;
+    padding-bottom: 130.3125%;
+    overflow: hidden;
+    background-color: #fafafa;
 }
 .touchevents .carousel-product-image:before,
 .touchevents .carousel-index-banner-m:before,
@@ -80,10 +278,13 @@ body {
 .block-instagram:before {
     background:none;
     content:'\e918';
-    font-family:veryyou;
+    /*font-family:veryyou;*/
     color: #d5d5d5;
     font-size: 3.5em;
     text-align: center;
+}
+.wf-active .block-instagram:before {
+    font-family:veryyou;    
 }
 li {
   list-style: none;
@@ -335,174 +536,8 @@ input[type='checkbox'] {
     width: 0;
     visibility: hidden;
     display: none;
-}/*
-@font-face {
-  font-family: 'veryyou';
-  font-display: block;
-  src:  url('fonts/veryyou.eot#iefix') format('embedded-opentype'),
-        url('fonts/veryyou.eot') format('eot'),
-        url('fonts/veryyou.woff2') format('woff2'),
-        url('fonts/veryyou.woff') format('woff'),
-        url('fonts/veryyou.ttf') format('truetype'),
-        url('veryyou.svg#veryyou') format('svg');
-  font-weight: normal;
-  font-style: normal;
-  text-rendering: optimizeLegibility;
-}
-*/
-@font-face {
-  font-family: 'veryyou';
-  font-display: block;
-  src:  url('fonts/veryyou.eot#iefix') format('embedded-opentype'),
-        url('fonts/veryyou.eot') format('eot'),
-        url('fonts/veryyou.woff2') format('woff2'),
-        url('fonts/veryyou.woff') format('woff'),
-        url('fonts/veryyou.ttf') format('truetype'),
-        url('veryyou.svg#veryyou') format('svg');
-  font-weight: normal;
-  font-style: normal;
-  text-rendering: optimizeLegibility;
-}
-[class^="icon-"], [class*=" icon-"], [class^="icon-"]:before, [class*=" icon-"]:after, .error-msg:before {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'veryyou';
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  font-size: inherit;
-  position: relative;
-  background: transparent;
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-ticket-frame:before {
-  content: "\e914";
-}
-.icon-arrow-u-turn:before {
-  content: "\e917";
-}
-.icon-delete-circle:before {
-  content: "\e920";
-}
-.icon-earth:before {
-  content: "\e91d";
-}
-.icon-heart-o:before {
-  content: "\e902";
-}
-.icon-wishlist:before {
-  content: "\e90c";
-}
-.icon-hanger:before {
-  content: "\e90f";
-}
-.icon-truck:before {
-  content: "\e910";
-}
-.icon-logo-handwritten:before {
-  content: "\e90e";
-}
-.icon-notice_l:before {
-  content: "\e91c";
-}
-.icon-dashdash:before {
-  content: "\e90a";
-}
-.icon-edit:before {
-  content: "\e946";
-}
-.icon-spinner11:before {
-  content: "\e921";
-}
-.icon-play-big:before {
-  content: "\e91f";
-}
-.icon-minus:before {
-  content: "\e91a";
-}
-.icon-arrow-left2:before {
-  content: "\e931";
-}
-.icon-arrow-right2:before {
-  content: "\e932";
-}
-.icon-logo-veryyou:before {
-  content: "\e909";
-}
-.icon-tote:before {
-  content: "\e906";
-}
-.icon-chevron-up:before {
-  content: "\e929";
-}
-.icon-chevron-right:before {
-  content: "\e90d";
-}
-.icon-chevron-left:before {
-  content: "\e963";
-}
-.icon-user3:before {
-  content: "\e900";
-}
-.icon-arrow3-left:before {
-  content: "\e901";
-}
-.icon-arrow3-right:before {
-  content: "\e903";
-}
-.icon-letter3:before {
-  content: "\e904";
-}
-.icon-refresh:before {
-  content: "\e934";
-}
-.icon-help-with-circle:before {
-  content: "\e93e";
-}
-.icon-facebook:before {
-  content: "\e905";
-}
-.icon-account:before {
-  content: "\e907";
-}
-.icon-chevron-down:before {
-  content: "\e908";
-}
-.icon-line:before {
-  content: "\e90b";
-}
-.icon-search:before {
-  content: "\e911";
-}
-.icon-angle-left:before {
-  content: "\e913";
-}
-.icon-close:before {
-  content: "\e915";
-}
-.icon-chevron-thin-down:before {
-  content: "\e916";
-}
-.icon-instagram4:before {
-  content: "\e918";
-}
-.icon-heart2:before {
-  content: "\e919";
-}
-.icon-angle-right:before {
-  content: "\e91b";
-}
-.icon-plus:before {
-  content: "\e912";
-}
-.icon-phone:before {
-  content: "\e91e";
-}
 /*.webfont-loaded [class^="icon-"], .webfont-loaded [class*=" icon-"],.webfont-loaded [class^="icon-"]:before, .webfont-loaded [class*=" icon-"]:after,.webfont-loaded .error-msg:before {*/
 
 /*
@@ -535,7 +570,7 @@ main {
     overflow: hidden;
     height: 100%;
 }
-.checkout, .orders, .about_us, .sales-module .row, .grid_main, footer, .section-product-list {
+.checkout, .orders, .about_us, .sales-module .row, .grid_main, footer {
     visibility: hidden!important;
 }
 .column-product-description,
@@ -545,7 +580,8 @@ main {
 .section-pagination,
 .checkout select, .default_select, .btn-select,
 .index-main section .wrapper,
-.section-index-news {
+.section-index-news,
+.p-item figcaption {
     visibility: hidden;
     opacity: 0;
     transition:.1s;
