@@ -350,8 +350,9 @@ $.scrollLock = ( function scrollLockClosure() {
         },
         enable: function() {
             $.scrollLock( false );
+            $("header").removeClass("ffix");
             headroom.init();
-            $("header").addClass("headroom--not-top ffix headroom--pinned");
+            //$("header").addClass("headroom--not-top ffix headroom--pinned");
         }
     };
     function globalmenu() {
@@ -393,16 +394,20 @@ $.scrollLock = ( function scrollLockClosure() {
         mlinka = $(".list-style-nav-header>li.mlink a"),
         clink = $(".list-style-nav-header>li.clink"),
         Bce = $(".btn-cart-edit"),
-        Sscs = $(".section-shopping-cart.sales");
+        Sscs = $(".section-shopping-cart.sales"),
+        paca = $(".panel-menu .accordion-content a.alink");
         //oot= $("<div class='overlay'></div>");
         //bdd = $("body");
         //hep = "headroom--top";
         //nav = $("#nav-header");
         //open sale temp cart to edit
         Mbt.on("click touch", function(m) {
+            $('ul.panel-menu li>a+.accordion-content:has(a.selected)').parent().addClass('expand');
+            $('ul.panel-menu li>a+.accordion-content:has(a.selected)').parent().find('.accordion-content').slideDown(500);
+            $(".panel-menu .selected").ScrollTo({offsetTop: '120px',easing: 'linear',duration: 200,});  
             m.preventDefault();
             hh.removeClass(allbutmo);
-            hh.toggleClass(mo);
+            hh.toggleClass(mo);          
             Nhp.removeClass(im);
             Nhp.removeClass(iss);
             return hh.hasClass(mo) ? Dt.disable():Dt.enable();
@@ -671,12 +676,19 @@ function opn2(h) {
           $(this).parent().find('.accordion-content').slideUp(500);
           $(this).parent().removeClass('expand').find('.expand').removeClass('expand');
         }else{
+          //$(this).parent().addClass('expand');
+          //$(this).siblings('.accordion-content').slideDown(500);
+          //$(this).parent().siblings('.expand').find('.accordion-content').slideUp(500);
+          //$(this).parent().siblings('.expand').find('.accordion-content').slideUp(500);
+          //$(this).parent().siblings('.expand').removeClass('expand').find('.expand').removeClass('expand');
           $(this).parent().addClass('expand');
           $(this).siblings('.accordion-content').slideDown(500);
-          $(this).parent().siblings('.expand').find('.accordion-content').slideUp(500);
-          $(this).parent().siblings('.expand').removeClass('expand').find('.expand').removeClass('expand');
         }
       })
+
+
+
+
       //$('.accordion-footer').on('click', function(){
       $(document).on("click touch", ".accordion-footer", function() {
         if($(this).parent().hasClass('expand')){

@@ -275,7 +275,7 @@ require(["cssversion"/*"libs/modules/cache-css"*/], function(cssversion) {
     }*/
 });
 //require(["jquery","libs/modules/cache"], function() {
-require(["jquery","libs/modules/cache","cssversion"/*,"libs/modules/lazy-module"*/], function($,version,cssversion) {
+require(["jquery","libs/modules/cache","cssversion","libs/modules/lazy-module"/**/], function($,version,cssversion) {
     //define(["jquery", "domrouter"], function() {
 
     $(document).ready(function() {
