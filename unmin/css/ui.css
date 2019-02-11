@@ -1,4 +1,5 @@
 @charset "utf-8";
+/*
 @font-face {
   font-family: 'veryyou';
   font-display: block;
@@ -12,6 +13,7 @@
   font-style: normal;
   text-rendering: optimizeLegibility;
 }
+*/
 .wf-active [class^="icon-"], .wf-active [class*=" icon-"], .wf-active [class^="icon-"]:before, .wf-active [class*=" icon-"]:after, .wf-active .error-msg:before {
   /* use !important to prevent issues with browser extensions that change fonts */
   speak: none;
@@ -579,8 +581,6 @@ main {
 .section-member-pws, .section-member-detail,
 .section-pagination,
 .checkout select, .default_select, .btn-select,
-.index-main section .wrapper,
-.section-index-news,
 .p-item figcaption {
     visibility: hidden;
     opacity: 0;

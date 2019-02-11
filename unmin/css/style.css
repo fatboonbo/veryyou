@@ -38,6 +38,9 @@
     bottom: -3px;
     transition:.12s;
 }
+.mobile-menu .alink.selected:after {
+    background-color:rgba(255,255,255,.3)
+}
 .alink.member-pop.selected:after,
 .logo .alink.selected:after,
 .logo .alink:hover:after {
@@ -313,6 +316,25 @@
     top:0;
 }
 */
+.news_container_wrap {
+    border: 1px solid rgba(0, 0, 0, .5);
+    padding: 1em;
+    overflow: hidden;
+}
+.news_container_wrap .title {
+    font-size: 1.3125rem;
+    text-align:  center;
+    font-weight:  bold;
+}
+.news_container_wrap p {
+    margin:.4em 0;
+}
+.news_container_wrap .blink {
+    display:inline-block;
+}
+.section-index-news.wrapper {
+    padding: 15px;
+}
 /*button*/
 .btn-mobile,
 .btn-mobile span,
@@ -436,7 +458,7 @@
   -webkit-transition: -webkit-transform .8s cubic-bezier(.19,1,.22,1);
   transition: -webkit-transform .8s cubic-bezier(.19,1,.22,1);
   transition: transform .8s cubic-bezier(.19,1,.22,1);
-  transition: transform .8s cubic-bezier(.19,1,.22,1),-webkit-transform .8s cubic-bezier(.19,1,.22,1);
+  transition: transform .4s cubic-bezier(.19,1,.22,1),-webkit-transform .4s cubic-bezier(.19,1,.22,1);
 }
 .overlay {
   -webkit-transition: all .7s cubic-bezier(.19, 1, .22, 1);
@@ -1194,7 +1216,7 @@ body.modal-open, body.modal-open header {
 .active .clearfix>div:not(:first-child) {
     /* float:right; */
 }
-
+/*
 @font-face {
   font-family: 'Playfair Display';
   font-display: swap;
@@ -1223,6 +1245,7 @@ body.modal-open, body.modal-open header {
   url(fonts/inconsolata_400.woff) format('woff');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+*/
 /*
 @font-face {
   font-family: 'Fira Mono';
