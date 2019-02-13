@@ -18,9 +18,15 @@
 	<!-- Favicon -->
 	<link rel="icon" href="css/images/favicon.ico">
 	<!-- css -->
-	<link rel="preload" href="css/fonts/veryyou.woff" as="font" type="font/woff" crossorigin>
+	<style>@font-face {font-family: 'veryyou';font-display: block;src: url('css/fonts/veryyou.eot#iefix') format('embedded-opentype'), url('css/fonts/veryyou.eot') format('eot'), url('css/fonts/veryyou.woff2') format('woff2'), url('css/fonts/veryyou.woff') format('woff');font-weight: normal;font-style: normal;text-rendering: optimizeLegibility;}@font-face {font-family: 'Playfair Display';font-display: swap;font-style: normal;font-weight: 400;src: url(css/fonts/playfair_display_400.woff2) format('woff2'), url(css/fonts/playfair_display_400.woff) format('woff');unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}@font-face {font-family: 'Playfair Display';font-display: swap;font-style: normal;font-weight: 700;src: url(css/fonts/playfair_display_700.woff2) format('woff2'), url(css/fonts/playfair_display_700.woff) format('woff');unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}@font-face {font-family: 'Inconsolata';font-display: swap;font-style: normal;font-weight: 400;src: url(css/fonts/inconsolata_400.woff2) format('woff2'), url(css/fonts/inconsolata_400.woff) format('woff');unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}</style>
 	<link rel="preload" href="css/fonts/veryyou.woff2" as="font" type="font/woff2" crossorigin>
 	<link rel="stylesheet" type="text/css" href="css/style.min.css?v=5">
+	<link rel="dns-prefetch" href="//unpkg.com">
+	<link rel="dns-prefetch" href="//www.veryyou.com.tw">
+	<link rel="dns-prefetch" href="//photo.eyescream.com.tw">
+	<link rel="preconnect" href="//unpkg.com">
+	<link rel="preconnect" href="//www.veryyou.com.tw">
+	<link rel="preconnect" href="//photo.eyescream.com.tw">
 	<!-- js -->
 	<script src="https://unpkg.com/jquery@3.3.0/dist/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="js/libs/jquery-3.3.0.min.zopfli.js.gz"><\/script>')</script>
@@ -36,7 +42,7 @@
 			webfontlink.href = fontlink[i];
 			webfontlink.as = "font";
 			webfontlink.crossOrigin = 'anonymous';
-			webfontlink.rel = "prefetch";
+			webfontlink.rel = "preload";
 			webfontlink.id = fontstyle[y];
 		}
 		$(document).ready(function() {
@@ -44,6 +50,7 @@
 		});		
 	</script>	
 	<noscript><link rel="stylesheet" href="css/font.css"></noscript>
+	<link rel="canonical" href="https://www.veryyou.com.tw/">
 	<!--
 	<link rel="preconnect" href="//www.googletagmanager.com">
 	<link rel="preconnect" href="//www.google-analytics.com">
@@ -71,10 +78,14 @@
 	<link rel="dns-prefetch" href="//sp.analytics.yahoo.com">
 	<link rel="dns-prefetch" href="//geo.query.yahoo.com">
 -->
-	<link rel="preconnect" href="//sg3-api.ematicsolutions.com">
-	<link rel="preconnect" href="//img.scupio.com">
 	<link rel="dns-prefetch" href="//sg3-api.ematicsolutions.com">
-	<link rel="dns-prefetch" href="//img.scupio.com">
+	<link rel="dns-prefetch" href="//rec.scupio.com">
+	<link rel="dns-prefetch" href="//www.googletagmanager.com">
+	<link rel="dns-prefetch" href="//www.google-analytics.com">
+	<link rel="preconnect" href="//sg3-api.ematicsolutions.com">
+	<link rel="preconnect" href="//rec.scupio.com">
+	<link rel="preconnect" href="//www.googletagmanager.com">
+	<link rel="preconnect" href="//www.google-analytics.com">
 </head>
 <!-- popup style 6 -->
 
@@ -119,41 +130,69 @@
 		<!-- 輪播大圖 & 2小圖 -->
 		<section class="section-banner wrapper">
 			<div class="left">
-				<div class="carousel-index-banner-bind mobile"><!-- 大圖M版 -->
+				<!-- 大圖M版 -->
+				<div class="carousel-index-banner-bind mobile">
 					<a href="分類頁.html" class="alink">
 						<picture>
-							<source srcset="https://photo.eyescream.com.tw/Veryyou/banner/IndexBanner/431M.jpg" media="(max-width: 1023px)">
-							<img srcset="css/images/blank.gif">  
+							<source srcset="https://photo.eyescream.com.tw/Veryyou/banner/IndexBanner/439M.jpg" media="(max-width: 1023px)">
+							<img src="css/images/blank.gif">   
 						</picture>
 					</a>
 					<a href="分類頁.html" class="alink">
 						<picture>
-							<source srcset="https://photo.eyescream.com.tw/Veryyou/banner/IndexBanner/432M.jpg" media="(max-width: 1023px)">
-							<img srcset="css/images/blank.gif">    
+							<source data-srcset="https://photo.eyescream.com.tw/Veryyou/banner/IndexBanner/442M.jpg" media="(max-width: 1023px)">
+							<img src="css/images/blank.gif" data-src="https://photo.eyescream.com.tw/Veryyou/banner/IndexBanner/442M.jpg" class="lazyload">   
 						</picture>
 					</a>
 					<a href="分類頁.html" class="alink">
-							<source srcset="https://photo.eyescream.com.tw/Veryyou/banner/IndexBanner/433M.jpg" media="(max-width: 1023px)">
-							<img srcset="css/images/blank.gif">  
+						<picture>
+							<source data-srcset="https://photo.eyescream.com.tw/Veryyou/banner/IndexBanner/431M.jpg" media="(max-width: 1023px)">
+							<img src="css/images/blank.gif" data-src="https://photo.eyescream.com.tw/Veryyou/banner/IndexBanner/431M.jpg" class="lazyload">   
+						</picture>
+					</a>
+					<a href="分類頁.html" class="alink">
+						<picture>
+							<source data-srcset="https://photo.eyescream.com.tw/Veryyou/banner/IndexBanner/432M.jpg" media="(max-width: 1023px)">
+							<img src="css/images/blank.gif" data-src="https://photo.eyescream.com.tw/Veryyou/banner/IndexBanner/432M.jpg" class="lazyload">   
+						</picture>
+					</a>
+					<a href="分類頁.html" class="alink">
+						<picture>
+							<source data-srcset="https://photo.eyescream.com.tw/Veryyou/banner/IndexBanner/444M.jpg" media="(max-width: 1023px)">
+							<img src="css/images/blank.gif" data-src="https://photo.eyescream.com.tw/Veryyou/banner/IndexBanner/444M.jpg" class="lazyload">   
+						</picture>
 					</a>
 				</div>
-				<div class="carousel-index-banner-bind desktop"><!-- 大圖PC版 -->
+				<!-- 大圖PC版 -->
+				<div class="carousel-index-banner-bind desktop">
 					<a href="分類頁.html" class="alink">
 						<picture>
-							<source srcset="https://photo.eyescream.com.tw/Veryyou/banner/IndexBanner/431.jpg" media="(min-width: 1024px)">
-							<img srcset="css/images/blank.gif">   
+							<source srcset="https://photo.eyescream.com.tw/Veryyou/banner/IndexBanner/439.jpg" media="(min-width: 1024px)">
+							<img src="css/images/blank.gif">   
 						</picture>
 					</a>
 					<a href="分類頁.html" class="alink">
 						<picture>
-							<source srcset="https://photo.eyescream.com.tw/Veryyou/banner/IndexBanner/432.jpg" media="(min-width: 1024px)">
-							<img srcset="css/images/blank.gif">   
+							<source data-srcset="https://photo.eyescream.com.tw/Veryyou/banner/IndexBanner/442.jpg" media="(min-width: 1024px)">
+							<img src="css/images/blank.gif" data-src="https://photo.eyescream.com.tw/Veryyou/banner/IndexBanner/442.jpg" class="lazyload">   
 						</picture>
 					</a>
 					<a href="分類頁.html" class="alink">
 						<picture>
-							<source srcset="https://photo.eyescream.com.tw/Veryyou/banner/IndexBanner/433.jpg" media="(min-width: 1024px)">
-							<img srcset="css/images/blank.gif">   
+							<source data-srcset="https://photo.eyescream.com.tw/Veryyou/banner/IndexBanner/431.jpg" media="(min-width: 1024px)">
+							<img src="css/images/blank.gif" data-src="https://photo.eyescream.com.tw/Veryyou/banner/IndexBanner/431.jpg" class="lazyload">   
+						</picture>
+					</a>
+					<a href="分類頁.html" class="alink">
+						<picture>
+							<source data-srcset="https://photo.eyescream.com.tw/Veryyou/banner/IndexBanner/432.jpg" media="(min-width: 1024px)">
+							<img src="css/images/blank.gif" data-src="https://photo.eyescream.com.tw/Veryyou/banner/IndexBanner/432.jpg" class="lazyload">   
+						</picture>
+					</a>
+					<a href="分類頁.html" class="alink">
+						<picture>
+							<source data-srcset="https://photo.eyescream.com.tw/Veryyou/banner/IndexBanner/444.jpg" media="(min-width: 1024px)">
+							<img src="css/images/blank.gif" data-src="https://photo.eyescream.com.tw/Veryyou/banner/IndexBanner/444.jpg" class="lazyload">   
 						</picture>
 					</a>
 				</div>
@@ -170,7 +209,7 @@
 					</a>
 				</section>
 			</div>
-			<div class="right"><!--右側兩小圖 -->		
+			<div class="right">	<!--右側兩小圖 -->				
 				<div>
 					<a href="分類頁.html" alt="秋日微出清。2件59折" title="秋日微出清。2件59折" class="alink">
 						<img src="https://photo.eyescream.com.tw/Veryyou/banner/indexwhatnew/1115a.jpg">
@@ -753,6 +792,20 @@
 	}
 
 </script>
+<!--
+    <script>
+        var url = window.location.href;
+        try{
+            if ((url.toLowerCase().indexOf("http:") > -1 || url.toLowerCase().indexOf("//veryyou") > -1) && url.toLowerCase().indexOf(".local") < 0)
+            {
+                url = url.replace("//veryyou","//www.veryyou");
+                url = url.replace("http:","https:");
+                window.location = url;
+            }
+        }
+        catch(err){}
+    </script>
+-->
 <!-- Google Tag Manager (noscript) -->
 <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WQDS75X"
@@ -778,6 +831,30 @@ fbq('track', 'PageView');
 &noscript=1" />
 </noscript>
 <!-- End Facebook Pixel Code -->
+<script>
+
+function onPromoClick(obj, pos) {
+  dataLayer.push({
+    'event': 'promotionClick',
+    'ecommerce': {
+      'promoClick': {
+        'promotions': [
+         {
+           'id': $(obj).attr("gaid"),                         
+           'name': $(obj).attr("ganame"),
+           'creative': '',
+           'position': pos
+         }]
+      }
+    },
+    'eventCallback': function() {
+      document.location = $(obj).attr("galink");
+    }
+  });
+}
+    
+</script>
+
 <script>
     if ($("#cart-panel")) {
         $("#cart-panel").html($("#carinitDiv").html());
