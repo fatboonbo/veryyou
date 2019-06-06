@@ -236,6 +236,59 @@
 				</div>
 			</div>
 		</section>
+		<script>
+			$(function () {
+				var xmlHttp;
+				function srvTime(){
+					try {
+						//FF, Opera, Safari, Chrome
+						xmlHttp = new XMLHttpRequest();
+					}
+					catch (err1) {
+						//IE
+						try {
+							xmlHttp = new ActiveXObject('Msxml2.XMLHTTP');
+						}
+						catch (err2) {
+							try {
+								xmlHttp = new ActiveXObject('Microsoft.XMLHTTP');
+							}
+							catch (eerr3) {
+								//AJAX not supported, use CPU time.
+								alert("AJAX not supported");
+							}
+						}
+					}
+					xmlHttp.open('HEAD',window.location.href.toString(),false);
+					xmlHttp.setRequestHeader("Content-Type", "text/html");
+					xmlHttp.send('');
+					return xmlHttp.getResponseHeader("Date");
+				}
+
+				var st = srvTime();
+				//var date = new Date(st);
+				var dtNow = new Date(st);
+
+
+				$(".timedContentWrap").each(function (index) {
+					var sRange = $(this).find(".DateRange").html();
+					var arrTemp = sRange.split(" to ");
+					var dtFrom = new Date(arrTemp[0]);
+					//var dtFrom = new Date(st);
+					console.log(dtFrom);
+					var dtTo = new Date(arrTemp[1]);
+					//var dtTo = srvTime(arrTemp[1]);
+					console.log(dtTo);
+					//var dtNow = new Date();
+					console.log(dtNow);
+					if (dtNow >= dtFrom && dtNow <= dtTo) $(this).delay(300).slideDown('slow');
+				});
+			});
+		</script>
+		<div class="timedContentWrap" style="background: #fff;">
+			<span class="DateRange">June 13 2016 00:00 to June 07 2019 23:59</span>
+			<div style="background-image: url(photo/photo/banner/2018110501-pc.jpg);"></div>
+		</div>
 
 
 		<!-- 最新活動 banner -->
