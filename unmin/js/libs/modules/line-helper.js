@@ -42,7 +42,7 @@ define([],function() {
                     '<h2 class="poweredby">-- Powered by <i class="icon-logo-veryyou"></i>--</h2>'+
                     '</div>'+
                     '<div class="messages">'+
-                    '<div><img src="css/images/blank.gif" class="lazyload" data-src="https://photo.eyescream.com.tw/VeryYou/banner/aboutus/VERYYOU%20LINE@%20QR%20CODE.jpg" alt="加入LINE好友!" title="加入LINE好友!" width="330" height="331"></div>'+
+                    '<div><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="lazyload" data-src="https://photo.eyescream.com.tw/VeryYou/banner/aboutus/VERYYOU%20LINE@%20QR%20CODE.jpg" alt="加入LINE好友!" title="加入LINE好友!" width="330" height="331"></div>'+
                     '</div>'+
                     '<div class="line-helper-footer">'+
                     '<h2>透過QR code加入LINE小幫手</h2>'+
