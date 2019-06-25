@@ -247,6 +247,13 @@ define("cssversion", ["text!../css/version-css.json?bust=" + (new Date()).getTim
     });
     return cssversion;
 });
+define("jsversion", ["text!version.json?bust=" + (new Date()).getTime()], function(jsversion) {
+    jsversion = JSON.parse(jsversion);
+    requirejs.config({
+        urlArgs: "v=" + jsversion.v
+    });
+    return jsversion;
+});
 require(["cssversion"/*"libs/modules/cache-css"*/], function(cssversion) {
         var csscommon = "css/common.css?p="+ cssversion.v;
         var preloadLink = window.document.createElement("link");
@@ -275,7 +282,7 @@ require(["cssversion"/*"libs/modules/cache-css"*/], function(cssversion) {
     }*/
 });
 //require(["jquery","libs/modules/cache"], function() {
-require(["jquery","libs/modules/cache","cssversion","libs/modules/lazy-module"/**/], function($,version,cssversion) {
+require(["jquery","jsversion"/*,"libs/modules/lazy-module"*/], function($,jsversion) {
     //define(["jquery", "domrouter"], function() {
 
     $(document).ready(function() {
@@ -331,6 +338,8 @@ require(["jquery","libs/modules/cache","cssversion","libs/modules/lazy-module"/*
                 });*/
                 //require(["text!version-css.json?bust=" + (new Date()).getTime()], function(version) {
                     //$('head').append( $('<link rel="preload" type="text/css" />').attr('href', 'css/index.css?c='+ version.v).attr('as', 'style').attr('onload', 'this.onload=null;this.rel="stylesheet"'),l("append act.css") );                    
+                require(["cssversion","domReady"], function(cssversion,domReady) {
+                  domReady(function () {
                     var indexcss = "css/index.css?a="+ cssversion.v;
                     var preloadLink = document.createElement("link");
                     document.body.appendChild(preloadLink),l("index.css appended");
@@ -344,6 +353,8 @@ require(["jquery","libs/modules/cache","cssversion","libs/modules/lazy-module"/*
                             loadCSS( "css/index.css?d="+ cssversion.v ),l("request index.css");
                         });
                     }
+                    });
+                });
                 //});
             
                 require([ /*"libs/modules/popup-module",*/ "index_main"]);
@@ -357,25 +368,27 @@ require(["jquery","libs/modules/cache","cssversion","libs/modules/lazy-module"/*
                     require(["css!../css/grid.min.css","css!../css/checkout.min.css"]);
                     l("grid.min.css+checkout.min.css");
                 });*/
+                require(["cssversion"], function(cssversion) {
 
-                var listcss = ["css/product_list_main.css?v="+ cssversion.v];
-                var cssstyle = ["css1"];
-                for (var i = 0,y = 0; i < listcss.length &&  y < listcss.length; i++, y++) {
-                  var preloadLink = document.createElement("link");
-                  document.body.appendChild(preloadLink);
-                  preloadLink.href = listcss[i];
-                  preloadLink.as = "style";
-                  preloadLink.rel = "preload";
-                  preloadLink.id = cssstyle[y],l(cssstyle[y] + "loaded");
-                }
-                $("#css1,#css2,#css3").attr('onload', 'this.onload=null;this.rel="stylesheet"');l("product_list $grid & checkout applied");
-                if (isFirefox > 0 || isSafari > 0 || iOSSafari > 0 || isIE > 0 || isEdge > 0) {
+                  var listcss = ["css/product_list_main.css?v="+ cssversion.v];
+                  var cssstyle = ["css1"];
+                  for (var i = 0,y = 0; i < listcss.length &&  y < listcss.length; i++, y++) {
+                    var preloadLink = document.createElement("link");
+                    document.body.appendChild(preloadLink);
+                    preloadLink.href = listcss[i];
+                    preloadLink.as = "style";
+                    preloadLink.rel = "preload";
+                    preloadLink.id = cssstyle[y],l(cssstyle[y] + "loaded");
+                  }
+                  $("#css1,#css2,#css3").attr('onload', 'this.onload=null;this.rel="stylesheet"');l("product_list $grid & checkout applied");
+                  if (isFirefox > 0 || isSafari > 0 || iOSSafari > 0 || isIE > 0 || isEdge > 0) {
                     require(["loadCSS"], function() {
-                        loadCSS( "css/product_list_main.css?="+ cssversion.v ),l("product_list_main css loaded");
-                        //loadCSS( "css/grid.min.css?="+ cssversion.v ),l("grid css loaded");
-                        //loadCSS( "css/checkout_list.css?="+ cssversion.v ),l("checkout css loaded");
+                      loadCSS( "css/product_list_main.css?="+ cssversion.v ),l("product_list_main css loaded");
+                      //loadCSS( "css/grid.min.css?="+ cssversion.v ),l("grid css loaded");
+                      //loadCSS( "css/checkout_list.css?="+ cssversion.v ),l("checkout css loaded");
                     });
-                }
+                  }
+                });
                 require(["product_list_main"]);
                 l("require : product_list_main");
             },
@@ -387,23 +400,25 @@ require(["jquery","libs/modules/cache","cssversion","libs/modules/lazy-module"/*
                     require(["css!../css/size-chart.min.css"]);
                     l("size-chart.min.css");
                 });*/
-                var listcss = ["css/product_main.css?v="+ cssversion.v,"css/size-chart.min.css?v="+ cssversion.v];
-                var cssstyle = ["css1","css2"];
-                for (var i = 0,y = 0; i < listcss.length &&  y < listcss.length; i++, y++) {
-                  var preloadLink = document.createElement("link");
-                  document.body.appendChild(preloadLink);
-                  preloadLink.href = listcss[i];
-                  preloadLink.as = "style";
-                  preloadLink.rel = "preload";
-                  preloadLink.id = cssstyle[y],l(cssstyle[y] + "loaded");
-                }
-                $("#css1,#css2").attr('onload', 'this.onload=null;this.rel="stylesheet"');l("product_man $ size-chart applied");
-                if (isFirefox > 0 || isSafari > 0 || iOSSafari > 0 || isIE > 0 || isEdge > 0) {
+                require(["cssversion"], function(cssversion) {
+                  var listcss = ["css/product_main.css?v="+ cssversion.v/*,"css/size-chart.min.css?v="+ cssversion.v*/];
+                  var cssstyle = ["css1"/*,"css2"*/];
+                  for (var i = 0,y = 0; i < listcss.length &&  y < listcss.length; i++, y++) {
+                    var preloadLink = document.createElement("link");
+                    document.body.appendChild(preloadLink);
+                    preloadLink.href = listcss[i];
+                    preloadLink.as = "style";
+                    preloadLink.rel = "preload";
+                    preloadLink.id = cssstyle[y],l(cssstyle[y] + "loaded");
+                  }
+                  $("#css1,#css2").attr('onload', 'this.onload=null;this.rel="stylesheet"');l("product_man $ size-chart applied");
+                  if (isFirefox > 0 || isSafari > 0 || iOSSafari > 0 || isIE > 0 || isEdge > 0) {
                     require(["loadCSS"], function() {
-                        loadCSS( "css/product_main.css?="+ cssversion.v ),l("product_main css loaded");
-                        loadCSS( "css/size-chart.min.css?="+ cssversion.v ),l("size-chart css loaded");
+                      loadCSS( "css/product_main.css?="+ cssversion.v ),l("product_main css loaded");
+                      //loadCSS( "css/size-chart.min.css?="+ cssversion.v ),l("size-chart css loaded");
                     });
-                }
+                  }
+                });
                 require(["product_main"]);
                 l("require : product_main");
             },

@@ -1,6 +1,6 @@
 define([
-      "jquery","headroom","libs/modules/search-module","libs/modules/lazy-module","wowwow","bootstrap3modal","libs/modules/sticky-module","libs/modules/line-helper", "jscrollto","libs/modules/subscribe-footer"
-    ], function($,headroom,search,lazy,wowwow,bootstrap3modal,/*globalmenu,*/sticky,lineHelpermenu,jscrollto,subscribeFooter) {
+      "jquery","headroom","libs/modules/search-module","libs/modules/lazy-module","wowwow","bootstrap3modal","libs/modules/sticky-module","libs/modules/line-helper","libs/modules/ads", "jscrollto","libs/modules/subscribe-footer"
+    ], function($,headroom,search,lazy,wowwow,bootstrap3modal,/*globalmenu,*/sticky,lineHelpermenu,adsBanner,jscrollto,subscribeFooter) {
     /**/
     //l(headroom);
 
@@ -91,6 +91,7 @@ if (!is_touch_device()) {
 
     $(window).trigger('resize');
 */
+
     var wow = new WOW({
         animateClass: 'animated',
         offset: 0,
@@ -101,6 +102,11 @@ if (!is_touch_device()) {
     });
     wow.init();
     l("wow initiate");
+    
+    $("img").on('error',function () { 
+        //$(this).hide();
+        $(this).css({visibility:"hidden"}); 
+    });
 /*
     //$("a.alink").click(function() {
     $(document).one("click touch", "a.alink", function(event) {
@@ -560,7 +566,7 @@ $.scrollLock = ( function scrollLockClosure() {
     
 };
 globalmenu();
-lineHelpermenu.lineHelpermenu();
+
     /*
     var Dt = {
         disable: function() {
@@ -630,7 +636,7 @@ function opn2(h) {
     // BACKTOTOP
     //$(window).scroll(function() {
     //window.addEventListener('scroll', function(){
-    window.addEventListener('scroll', throttle(callback, 500), {passive: true});
+    window.addEventListener('scroll', throttle(callback, 200/*500*/), {passive: true});
 
     function throttle(fn, wait) {
       var time = Date.now();
@@ -707,7 +713,7 @@ function opn2(h) {
         //if($(this).next("ul")[0]) {
             return true;
         } else {
-          $(this).find("span.x").removeClass("x").addClass("icon-angle-right");
+          $(this).find("span.x").removeClass("x");//.addClass("icon-angle-right");
           }
       });
 /*
@@ -845,6 +851,7 @@ function subscribePopup() {
     $('.btn-subscribe').on('click', function() {
         subscribeFooter.subscribeFooter();
     });
+    $('#copyright>div').append(document.createTextNode("Copyright© "+ new Date().getFullYear() + " VERYYOU All right reserved.")),l("copyright added");
 
 
     
@@ -870,6 +877,8 @@ require(['js/libs/modules/subscribe-email.js'], function(subscribePopup) {
 //return {subscribeFooter:subscribeFooter};
 //subscribeFooter();
 //subscribePopup();
+lineHelpermenu.lineHelpermenu();
+//adsBanner.adsBanner();
 l("core plugin fully loaded");
 
   // invalid email
