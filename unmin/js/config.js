@@ -205,7 +205,7 @@ window.l = function(message) {
     }
   }
 }
-require(["cssversion","domReady"], function(cssversion,domReady) {
+require(["domReady"], function(domReady) {
   domReady(function () {
     if (is_touch_device()) {
       $("html").removeClass("no-touchevents");
@@ -219,6 +219,17 @@ require(["cssversion","domReady"], function(cssversion,domReady) {
   });
 });
 l("loading config");
+$(document).ready(function(){
+    if (is_touch_device()) {
+      $("html").removeClass("no-touchevents");
+      $("html").addClass("touchevents");
+      l("touch device");
+    } else {
+      $("html").removeClass("touchevents");
+      $("html").addClass("no-touchevents");
+      l("desktop");
+    }
+});
 //var consoleHolder = console;
 //console = consoleHolder;
 /**/
