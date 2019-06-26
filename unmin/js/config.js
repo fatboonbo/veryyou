@@ -223,11 +223,22 @@ $(document).ready(function(){
     if (is_touch_device()) {
       $("html").removeClass("no-touchevents");
       $("html").addClass("touchevents");
-      l("touch device");
+      l("touch device - document ready");
     } else {
       $("html").removeClass("touchevents");
       $("html").addClass("no-touchevents");
-      l("desktop");
+      l("desktop - document ready");
+    }
+});
+document.addEventListener("DOMContentLoaded", function(event) {
+    if (is_touch_device()) {
+      $("html").removeClass("no-touchevents");
+      $("html").addClass("touchevents");
+      l("touch device - dom ready");
+    } else {
+      $("html").removeClass("touchevents");
+      $("html").addClass("no-touchevents");
+      l("desktop - dom ready");
     }
 });
 //var consoleHolder = console;
@@ -246,6 +257,7 @@ $(document).ready(function(){
     });
     
 });
+
 /* detect img src change
 $('#img_div').load(function() {
   var imageObj = $(this);
@@ -568,6 +580,9 @@ if (localStorage.getItem("debug") == "true") {
             l("load inside function:require function");
         });
         l("The DOM might not be ready before I happen:require");
+    });
+    document.addEventListener("DOMContentLoaded", function(event) {
+      console.log("DOM ready!");
     });
 }
 l("config loaded");
