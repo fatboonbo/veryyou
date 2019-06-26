@@ -205,16 +205,19 @@ window.l = function(message) {
     }
   }
 }
-
-if (is_touch_device()) {
-    $("html").removeClass("no-touchevents");
-    $("html").addClass("touchevents");
-    l("touch device");
-} else {
-    $("html").removeClass("touchevents");
-    $("html").addClass("no-touchevents");
-    l("desktop");
-}
+require(["cssversion","domReady"], function(cssversion,domReady) {
+  domReady(function () {
+    if (is_touch_device()) {
+      $("html").removeClass("no-touchevents");
+      $("html").addClass("touchevents");
+      l("touch device");
+    } else {
+      $("html").removeClass("touchevents");
+      $("html").addClass("no-touchevents");
+      l("desktop");
+    }
+  });
+});
 l("loading config");
 //var consoleHolder = console;
 //console = consoleHolder;
