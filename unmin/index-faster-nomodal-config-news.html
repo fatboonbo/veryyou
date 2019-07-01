@@ -45,11 +45,12 @@
 			webfontlink.rel = "preload";
 			webfontlink.id = fontstyle[y];
 		}
+		/*
 		$(document).ready(function() {
 			$("html").addClass("wf-active");l("wf-active - document ready");
-		});
+		});*/
 		document.addEventListener("DOMContentLoaded", function(event) {
-			$("html").addClass("wf-active2");l("wf-active - dom ready");
+			$("html").addClass("wf-active");l("wf-active - dom ready");
 		});
 	</script>	
 	<noscript><link rel="stylesheet" href="css/font.css"></noscript>
@@ -87,7 +88,8 @@
 </script> -->
 <!-- popup style 5  -->
 <script>
-    $(document).ready(function() {
+	document.addEventListener("DOMContentLoaded", function() {
+    //$(document).ready(function() {
         var popup = true; // false to disable popup
         if (popup)
             if (sessionStorage.getItem("hotdada") !== 'true') {
