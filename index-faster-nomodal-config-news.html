@@ -45,7 +45,7 @@
 			webfontlink.rel = "preload";
 			webfontlink.id = fontstyle[y];
 		}
-		$(document).ready(function() {
+		document.addEventListener("DOMContentLoaded", function(event) {
 			$("html").addClass("wf-active");
 		});		
 	</script>	
@@ -84,7 +84,8 @@
 </script> -->
 <!-- popup style 5  -->
 <script>
-    $(document).ready(function() {
+	document.addEventListener("DOMContentLoaded", function() {
+    //$(document).ready(function() {
         var popup = true; // false to disable popup
         if (popup)
             if (sessionStorage.getItem("hotdada") !== 'true') {
@@ -742,6 +743,6 @@
 		</script>
 	</footer>
 	<script src="js/libs/require.min.mixed.js"></script>
-	<script src="js/config.js?v=20190102"></script>
+	<script src="js/config.js?v=2019070101"></script>
 </body>
 </html>
