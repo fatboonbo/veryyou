@@ -191,11 +191,11 @@ function is_touch_device() {
 // Usage: l("message");
 // 
 // To turn logging on with: 
-//localStorage.setItem("debug", true);
+localStorage.setItem("debug", true);
 // 
 // Turn logging off with: 
 //window.performance && window.performance.mark && window.performance.mark("optimizely:blockBegin");
-localStorage.setItem("debug", false);
+//localStorage.setItem("debug", false);
 
 var timerStart = Date.now();
 window.l = function(message) {
@@ -205,20 +205,18 @@ window.l = function(message) {
     }
   }
 }
-require(["domReady"], function(domReady) {
-  domReady(function () {
-    if (is_touch_device()) {
-      $("html").removeClass("no-touchevents");
-      $("html").addClass("touchevents");
-      l("touch device");
-    } else {
-      $("html").removeClass("touchevents");
-      $("html").addClass("no-touchevents");
-      l("desktop");
-    }
-  });
-});
 l("loading config");
+/*
+if (is_touch_device()) {
+  $("html").removeClass("no-touchevents");
+  $("html").addClass("touchevents");
+  l("touch device");
+} else {
+  $("html").removeClass("touchevents");
+  $("html").addClass("no-touchevents");
+  l("desktop");
+}
+
 $(document).ready(function(){
     if (is_touch_device()) {
       $("html").removeClass("no-touchevents");
@@ -229,8 +227,8 @@ $(document).ready(function(){
       $("html").addClass("no-touchevents");
       l("desktop - document ready");
     }
-});
-document.addEventListener("DOMContentLoaded", function(event) {
+});*/
+document.addEventListener("DOMContentLoaded", function() {
     if (is_touch_device()) {
       $("html").removeClass("no-touchevents");
       $("html").addClass("touchevents");
@@ -364,8 +362,7 @@ require(["jquery","jsversion"/*,"libs/modules/lazy-module"*/], function($,jsvers
                 });*/
                 //require(["text!version-css.json?bust=" + (new Date()).getTime()], function(version) {
                     //$('head').append( $('<link rel="preload" type="text/css" />').attr('href', 'css/index.css?c='+ version.v).attr('as', 'style').attr('onload', 'this.onload=null;this.rel="stylesheet"'),l("append act.css") );                    
-                require(["cssversion","domReady"], function(cssversion,domReady) {
-                  domReady(function () {
+                require(["cssversion"], function(cssversion) {
                     var indexcss = "css/index.css?a="+ cssversion.v;
                     var preloadLink = document.createElement("link");
                     document.body.appendChild(preloadLink),l("index.css appended");
@@ -379,7 +376,6 @@ require(["jquery","jsversion"/*,"libs/modules/lazy-module"*/], function($,jsvers
                             loadCSS( "css/index.css?d="+ cssversion.v ),l("request index.css");
                         });
                     }
-                    });
                 });
                 //});
             
