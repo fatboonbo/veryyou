@@ -46,8 +46,11 @@
 			webfontlink.id = fontstyle[y];
 		}
 		$(document).ready(function() {
-			$("html").addClass("wf-active");
-		});		
+			$("html").addClass("wf-active");l("wf-active - document ready");
+		});
+		document.addEventListener("DOMContentLoaded", function(event) {
+			$("html").addClass("wf-active");l("wf-active - dom ready");
+		});
 	</script>	
 	<noscript><link rel="stylesheet" href="css/font.css"></noscript>
 	<link rel="canonical" href="https://www.veryyou.com.tw/">
