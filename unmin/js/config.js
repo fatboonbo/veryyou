@@ -191,11 +191,11 @@ function is_touch_device() {
 // Usage: l("message");
 // 
 // To turn logging on with: 
-localStorage.setItem("debug", true);
+//localStorage.setItem("debug", true);
 // 
 // Turn logging off with: 
 //window.performance && window.performance.mark && window.performance.mark("optimizely:blockBegin");
-//localStorage.setItem("debug", false);
+localStorage.setItem("debug", false);
 
 var timerStart = Date.now();
 window.l = function(message) {
@@ -227,7 +227,7 @@ $(document).ready(function(){
       $("html").addClass("no-touchevents");
       l("desktop - document ready");
     }
-});*/
+});
 document.addEventListener("DOMContentLoaded", function() {
     if (is_touch_device()) {
       $("html").removeClass("no-touchevents");
@@ -238,10 +238,21 @@ document.addEventListener("DOMContentLoaded", function() {
       $("html").addClass("no-touchevents");
       l("desktop - dom ready");
     }
-});
+});*/
 //var consoleHolder = console;
 //console = consoleHolder;
 /**/
+
+if (is_touch_device()) {
+  $("html").removeClass("no-touchevents");
+  $("html").addClass("touchevents");
+  l("touch device - dom ready");
+} else {
+  $("html").removeClass("touchevents");
+  $("html").addClass("no-touchevents");
+  l("desktop - dom ready");
+}
+
 $(document).ready(function(){
     var threshold = 1025;//1007
     var initialDiff = ($(window).width() > threshold) ? 1:-1;
@@ -309,7 +320,8 @@ require(["cssversion"/*"libs/modules/cache-css"*/], function(cssversion) {
 require(["jquery","jsversion"/*,"libs/modules/lazy-module"*/], function($,jsversion) {
     //define(["jquery", "domrouter"], function() {
 
-    $(document).ready(function() {
+    //$(document).ready(function() {
+    document.addEventListener("DOMContentLoaded", function() {
         $(document).router({
             common: function() {
                 /*
