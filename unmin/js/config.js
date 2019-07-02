@@ -321,7 +321,6 @@ require(["jquery","jsversion"/*,"libs/modules/lazy-module"*/], function($,jsvers
     //define(["jquery", "domrouter"], function() {
 
     //$(document).ready(function() {
-    document.addEventListener("DOMContentLoaded", function() {
         $(document).router({
             common: function() {
                 /*
@@ -535,7 +534,7 @@ require(["jquery","jsversion"/*,"libs/modules/lazy-module"*/], function($,jsvers
                 l("require : about_main");
             }
         });
-    });
+    //});
 })
 /*
 Foo = {
