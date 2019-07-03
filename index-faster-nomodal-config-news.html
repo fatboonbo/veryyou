@@ -49,7 +49,7 @@
 		$(document).ready(function() {
 			$("html").addClass("wf-active");l("wf-active - document ready");
 		});*/
-		document.addEventListener("DOMContentLoaded", function(event) {
+		document.addEventListener("DOMContentLoaded", function() {
 			$("html").addClass("wf-active");l("wf-active - dom ready");
 		});
 	</script>	
@@ -719,7 +719,7 @@
     <!-- 購物車 popup 選單 -->
 	<aside id="cart-panel" class="cart-panel">
 		<script>
-			$(document).ready(function() {
+			document.addEventListener("DOMContentLoaded", function() {
 				$("#cart-panel").load("html/cart-panel.html");
 			});
 		</script>
@@ -727,7 +727,7 @@
 	<!--會員mobile選單-->
 	<aside id="member-panel" class="member-panel">
 		<script>
-			$(document).ready(function() {
+			document.addEventListener("DOMContentLoaded", function() {
 				$("#member-panel").load("html/member-panel.html");
 			});
 		</script>
@@ -735,7 +735,7 @@
     <!--mobile選單-->
 	<aside id="mobile-menu" class="mobile-menu">
 		<script>
-			$(document).ready(function() {
+			document.addEventListener("DOMContentLoaded", function() {
 				$("#mobile-menu").load("html/mobile-menu.html");
 			});
 		</script>
@@ -745,7 +745,7 @@
 	<div href="javascript:;" id="backtotop" class="backtotop"><i class="icon-chevron-up"></i></div>
 	<footer id="footer">		
 		<script>
-			$(document).ready(function() {
+			document.addEventListener("DOMContentLoaded", function() {
 				$("#footer").load("html/nav-footer.html");
 			});  
 		</script>
