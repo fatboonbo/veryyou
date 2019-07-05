@@ -145,7 +145,7 @@
 			document.head.appendChild(preloadLink);
 
 			//document.addEventListener("DOMContentLoaded", function() {
-				$('#subscribe').attr('onload', 'this.onload=null;this.rel="stylesheet"');
+			$('#subscribe').attr('onload', 'this.onload=null;this.rel="stylesheet"');
 			document.addEventListener("DOMContentLoaded", function() {
 				if (isFirefox > 0 || isSafari > 0 || iOSSafari > 0 || isIE > 0 || isEdge > 0) {
 					requirejs.config({paths: {"loadCSS": "libs/loadCSS"}});	
