@@ -1,0 +1,1 @@
+define("progress",["require","nanobar"],function(e){return new(require("nanobar"))({classname:"my-class",id:"my-id",target:document.getElementById("myDivId")})});
