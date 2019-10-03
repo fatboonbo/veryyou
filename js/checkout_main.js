@@ -1,1 +1,1 @@
-define("checkout_main",[],function(){});
+define("checkout_main",[],function(){require(["progress"],function(e){e.go(100)})});
