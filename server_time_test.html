@@ -93,45 +93,47 @@
           <script src="https://www.polylulu.com.tw/js/jquery.syotimer.min.js" ></script>
           <script>
             
-          $(document).ready(function(){ 
-            $.ajax({
-              type: 'GET',
-              cache: false,
-              url: location.href,
-              success: function (req, textStatus,xhr) {
-                var dateString = xhr.getResponseHeader('Date');
-                if (dateString.indexOf('GMT') === -1) {
-                  dateString += ' GMT';
-                }
-                var dtNow = new Date(dateString);//get server time & date
-                $(".timedContentWrap").each(function (index) {
-                  var sRange = $(this).find(".DateRange").html();
-                  var arrTemp = sRange.split(" to ");
-                  var dtFrom = new Date(arrTemp[0]);
-                  var dtTo = new Date(arrTemp[1]);
-                  var newdtTo = arrTemp[0].replace(/:/g, '').replace(/ /g,'');
-                  var timeInMillis = Date.parse(dtTo);
-                  if (dtNow >= dtFrom && dtNow <= dtTo) 
+          $(document).ready(function() {
+    $.ajax({
+        type: 'GET',
+        cache: false,
+        url: location.href,
+        success: function(req, textStatus, xhr) {
+            var dateString = xhr.getResponseHeader('Date');
+            if (dateString.indexOf('GMT') === -1) {
+                dateString += ' GMT';
+            }
+            var dtNow = new Date(dateString); //get server time & date
+            $(".timedContentWrap").each(function(index) {
+                var sRange = $(this).find(".DateRange").html();
+                var arrTemp = sRange.split(" to ");
+                var dtFrom = new Date(arrTemp[0]);
+                var dtTo = new Date(arrTemp[1]);
+                var newdtTo = arrTemp[0].replace(/:/g, '').replace(/ /g, '');
+                var timeInMillis = Date.parse(dtTo);
+                if (dtNow >= dtFrom && dtNow <= dtTo)
                     $(this).delay(300).slideDown('slow');
 
-                    $(document).ready(function(){
-                      /* countdown set to 10:00AM 2019.11.18 計時器時間設定 ----- */
-                      $('#simple_timer_d').syotimer({
+                $(document).ready(function() {
+                    /* countdown set to 10:00AM 2019.11.18 計時器時間設定 ----- */
+                    $('#simple_timer_d').syotimer({
                         year: 2019,
                         month: 11,
                         day: 18,
                         hour: 10,
                         minute: 0,
-                        afterDeadline: function(syotimer){
-                          syotimer.bodyBlock.html('<p>Sorry! 活動已過期</p>');
+                        afterDeadline: function(syotimer) {
+                            syotimer.bodyBlock.html('<p>Sorry! 活動已過期</p>');
                         }
-                      });
                     });
-
                 });
-              }
+                else if (dtNow <= dtFrom && dtNow >= dtTo)
+                    $(this).hide;
+
             });
-          });
+        }
+    });
+});
           </script>
           <!-- countdown ends here -->
         </div>
