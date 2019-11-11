@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<!-- Meta -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="">
+<meta name="author" content="">
+        
+<title>流行女裝 ｜時尚穿搭服飾購物網｜ EYESCREAM</title>
+<!-- Mobile Metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+<!-- Favicon -->
+<link rel="icon" href="images/favicon.ico">
+
+<!-- CSS -->
+<link rel="stylesheet" href="css/ui-poly_lulu.css">
+<link rel="stylesheet" type="text/css" href="https://www.polylulu.com.tw/css/style-poly_lulu.css?v=222">
+<link rel="stylesheet" type="text/css" href="https://www.polylulu.com.tw/css/rwd-poly_lulu.css">
+
+<!--[if lt IE 9]>  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+<![endif]-->
+
+<!--[if lt IE 8]>  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+<![endif]-->
+
+<!--[if lt IE 7]>  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+<![endif]-->
+
+<!-- js -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" ></script>
+<script src="https://www.polylulu.com.tw/js/plugin.min.js"></script>
+<script src="https://www.polylulu.com.tw/js/script.js"></script>
+</head>
+
+<body>
+<div class="body">
+<header>
+
+  <!-- 置頂廣告含計時器 20191104 -->
+  <section id="banndf-flash_ads"  class="banndf-flash_ads">
+    <style>
+      .section-new.single11 {background: url(photo/photo/banner/2017110702-bg.jpg) no-repeat;padding: 13px 13px 20px;margin-top: 0;}
+      .banner-new.single11 {width:1200px;max-width:100%;}
+      .banner-new.single11>div {float: left;/* height: 160px; */width: calc(20% - 25px);margin: 0;width: 20%!important;display: inline-block;}
+      .banner-new.single11>div img {width:100%}
+      .index-carousel-big.slick-initialized {  visibility:visible}
+      .single11 .headings {margin-top:2em;margin-bottom: 7em;}
+      .single11 .headings h3 {display:none;}
+      .single11 .headings span {background: none;color: #fff;font-weight: normal;font-size: 3.1em;letter-spacing: .2em;}
+      .timedContentWrap .timer-head-block { display: none;}
+      .timedContentWrap .tab-metr {display:none}
+      .timedContentWrap .timer-body-block {width:100%;display: table;}
+      .timedContentWrap .table-cell {width:25%;vertical-align: middle;display: table-cell;float: none;}
+      .timedContentWrap .tab-val {
+        background: #010203; /* Old browsers */
+        color: #fff;
+        font-family: Avant Garde,Avantgarde,Century Gothic,CenturyGothic,AppleGothic,sans-serif,'Microsoft JhengHei';
+        height: 27px;
+        display: block;
+        line-height: 29px;
+        width: 35px;
+        font-size: 18px;
+        text-align: center;
+        font-weight: bold;
+        letter-spacing: 1px;
+      }
+      .timedContentWrap .timer { float: right; width: 27.8%; position: relative; right: -.1em;}
+      .timer-body-block p {color: #010203; background: #f5ca5b; height: 100%;font-family: 'Microsoft JhengHei', sans-serif; font-size: 16px; line-height: 50px;font-weight:bold;}
+      .arrow-down-animated {  -webkit-animation:bounce1 2s infinite; animation:bounce1 2s infinite; display: block; position: absolute; left: 50%; margin-left: -23px; margin-top:16px;
+        bottom: -65px; transform: translateX(0); top: -3rem; animation: bounce7 0.3s ease-out infinite alternate;}  
+        @keyframes bounce7 {
+          0% {
+            top: 2rem;
+          }
+          100% {
+            top: 1.5rem;
+          }
+        }
+      </style>
+      <div class="timedContentWrap" style="background: #f5ca5b;display: none">
+        <span class="DateRange">June 13 2016 00:00 to November 18 2019 10:00</span><!--置頂廣告下架時間設定-->
+        <div style="background-image: url(https://photo.polylulu.com.tw/photo/banner/2019110401-pc.jpg);">
+
+          <!-- countdown starts here -->
+          <div id="simple_timer_d"></div>
+          <script src="js/jquery.syotimer.min.js" ></script>
+          <script>
+            
+          $(document).ready(function(){ 
+            $.ajax({
+              type: 'GET',
+              cache: false,
+              url: location.href,
+              success: function (req, textStatus,xhr) {
+                var dateString = xhr.getResponseHeader('Date');
+                if (dateString.indexOf('GMT') === -1) {
+                  dateString += ' GMT';
+                }
+                var dtNow = new Date(dateString);//get server time & date
+                $(".timedContentWrap").each(function (index) {
+                  var sRange = $(this).find(".DateRange").html();
+                  var arrTemp = sRange.split(" to ");
+                  var dtFrom = new Date(arrTemp[0]);
+                  var dtTo = new Date(arrTemp[1]);
+                  var newdtTo = arrTemp[0].replace(/:/g, '').replace(/ /g,'');
+                  var timeInMillis = Date.parse(dtTo);
+                  if (dtNow >= dtFrom && dtNow <= dtTo) 
+                    $(this).delay(300).slideDown('slow');
+
+                    $(document).ready(function(){
+                      /* countdown set to 10:00AM 2019.11.18 計時器時間設定 ----- */
+                      $('#simple_timer_d').syotimer({
+                        year: 2019,
+                        month: 11,
+                        day: 18,
+                        hour: 10,
+                        minute: 0,
+                        afterDeadline: function(syotimer){
+                          syotimer.bodyBlock.html('<p>Sorry! 活動已過期</p>');
+                        }
+                      });
+                    });
+
+                });
+              }
+            });
+          });
+          </script>
+          <!-- countdown ends here -->
+        </div>
+        <a href="https://www.polylulu.com.tw/PDList2.asp?item=all&ob=D3" class="col-md-12"></a>
+  </section>
+  <!-- 置頂廣告含計時器 20191104 -->
+ 
+
+</header>
+
+
+<!-- main content -->
+    <div></div>
+
+    
+    <!-- 門市資訊 starts -->
+    <!-- 門市資訊 ends -->
+
+
+
+
+<!-- end of main -->
+
+
+
+
+
+</div><!-- end of body -->
+
+
+
+
+
+
+
+</body>
+</html>
