@@ -34,14 +34,14 @@
 				</ul>			
 			</section>		
 			<section class="block-subscribe">
-				<form class="form-subscribe" id="form_epaper1" name="form_epaper1" action="index-faster.html" method="POST">
+				<form class="form-subscribe" id="email_form" action="index-main.html" method="POST">
 					<div class="input-group">
 						<div><i class="icon-letter3"></i></div>
-						<input type="hidden" name="orderepaper" value="1">
-						<input type="email" name="email" placeholder="訂閱電子報" required="required" class="input-subscribe">
+						<input type="email" name="EMAIL" placeholder="訂閱電子報" required="required" class="input-subscribe">
 						<div class="btn-subscribe-wrapper"><input type="submit" value="" class="btn btn-subscribe"></div>
 					</div>
 				</form>
+				<div class="error-subscribe" style="color:#DC5168;display: none">請輸入正確的電子信箱格式! ex: example@gmail.com</div>
 			</section>	
 			<section class="block-social_footer">
 				<a href="https://www.facebook.com/Very-you-450703675359521/" data-tool-tip="加入FACEBOOK粉絲專頁" class="tooltip_icon footer_social_icon" target="_blank" rel="noopener noreferrer"><i class="icon-facebook footer"></i>加入FACEBOOK粉絲專頁</a>
@@ -56,16 +56,198 @@
 					<li class="font14"><span><i class="icon-letter3 font12"></i><strong><a href="mailto:cc@veryyou.com.tw" class="nav__link">cc@veryyou.com.tw</a></strong></span></li>
 				</ul>
 			</section>
-			<section id="copyright" class="copyright">
-				<div></div>
+			<section class="copyright">
+				<div>Copyright© 2018 VERYYOU All right reserved.</div>
 			</section>
 		</div>
 
-		<div class="timedContentWrap" style="background: #fff;display: none">
-			<span class="DateRange">July 03 2019 10:00 to July 18 2019 10:00</span>
-		</div>
-		<script>
-			require(["libs/modules/ads"], function(adsBanner) {
-				adsBanner.adsBanner();
-			});
-		</script>
+    <!-- modal notice -->
+    <div class="modal fade" id="notice_modal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+    	<div class="modal-dialog">
+    		<div class="modal-content">
+
+    			<div id="notice">
+    				<div class="notice-wrapper">
+    					<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="btnclose icon-close"></i></button>
+    					<div class="title-wrapper">          
+    						<br>
+    						<div>
+    							<div>Thank You!</div>
+    							<h2>訂閱成功!</h2>
+    						</div>
+    					</div>
+    					<p>感謝您的喜愛與支持，<br>VERYYOU電子報訂閱成功!<br>每週定期給你最新VERYYOU消息與優惠❤
+    					</p>
+
+    					<div class="newsletter-form2" >
+    						<div class="button-group-2 button-row" style="margin:0">
+    							<div>
+    								<button type="submit" class="btn btn-confirm" data-dismiss="modal" >確認</button>
+    							</div>
+    						</div>
+    					</div>
+    				</div>
+    			</div>
+
+    		</div>        
+    	</div>    
+    </div>
+    <!--全館廣告-->
+    <script>
+        $(document).ready(function() {
+            var adsads = '<aside id="ads-header" class="ads-header" style="display:none"> <section style="background: #ffdedf;opacity:1;"> <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="btnclose3 icon-close"></i></button><div class="ad_img"> <a href="https://www.veryyou.com.tw/PDSaleDiscount.asp?pi=6899022201" style="display:block"><img src="https://photo.eyescream.com.tw/VeryYou/banner/AdsBanner/20191120/20191120-640x34.jpg"></a></div> </section> </aside><aside id="ads-footer" class="ads-footer"> <section> <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="btnclose3 icon-close"></i></button><div class="ad_img"> <a href=https://www.veryyou.com.tw/PDSaleDiscount.asp?pi=6899022201" style="display:block"><img src="https://photo.eyescream.com.tw/VeryYou/banner/AdsBanner/20191120/20191120-640x104-m.jpg"></a></div> </section> </aside>';
+            document.getElementById("footer").insertAdjacentHTML('beforeend',adsads);
+            $('head').append('<link rel="stylesheet" href="css/ads.css?v=2019102301" type="text/css" />');
+            $("#ads-header button.close").click(function() {
+                $("#ads-header").addClass("hidden");
+            });
+            $("#ads-footer button.close").click(function() {
+                $("#ads-footer").addClass("hidden");               
+            });         
+        });
+    </script>
+    <!-- 蓋板
+    <script>
+    	$(document).ready(function() {
+    		var popup = true; // false to disable popup
+    		if (popup)
+    			if (sessionStorage.getItem("meh") !== 'true') {
+    				sessionStorage.setItem("meh", "true");
+    				define("vu_modal", function(vupopup) {
+    					return {
+    						init_popup: function() {
+    							"use strict";
+    							var eles = '<div class="modal fade in index-popup wow animated fadeInDown" id="popup-default" tabindex="-1" role="dialog" aria-hidden="true" data-wow-duration="0.0s" data-wow-delay="0.0s"><div class="modal-dialog"><div class="modal-content"><div class="popup-default-content wow fadeIn" data-wow-duration="0.4s"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="btnclose3 icon-close"></i></button></div><div id="popgif" style="background:transparent;"><div style="display:inline-block;"><a href="https://www.veryyou.com.tw/PDSaleDiscount.asp?pi=6899012001"><img src=VeryYou/banner/popupbanner/20191009/2019100901.jpg></a></div></div></div></div></div></div>';
+    							require(["bmodal"], function() {
+    								document.getElementById("footer").insertAdjacentHTML('beforebegin',eles);
+    								$('head').append('<link rel="stylesheet" href="css/popup.css?v=2019112001" type="text/css" />');
+    								$("#popup-default").modal('show'), l('#popup-default');
+    							});// end of require
+    						}
+    					}
+    				});
+    				$(document).router({
+    					index_main: function() {//首頁
+    						require(["vu_modal"], function(vupopup) {
+    							vupopup.init_popup();
+    						});// end of require                		
+    					},
+    					product_list_main: function() {//分類頁及任選
+    						require(["vu_modal"], function(vupopup) {
+    							vupopup.init_popup();
+    						});// end of require     
+    					},/*
+    					common: function() {//全站
+    					},
+    					product_main: function() {//商品頁
+    					},
+    					checkout_main: function() {//結帳    						
+    					},
+    					member_main: function() {//會員中心  						
+    					},
+    					about_main: function() {//關於我們與FAQ等					
+    					}*/
+    				});
+
+    			} //localStorage or sessionStorage
+    			return false;
+    		});
+    	</script> -->
+    <!-- 蓋板 -->
+    <script>
+    	$(document).ready(function() {
+    		define("vu_modal", function(vupopup) {
+    			return {
+    				init_popup: function() {
+    					"use strict";
+    					var popup = true; // false to disable popup
+    					if (popup)
+    						if (sessionStorage.getItem("meh") !== 'true') {
+    							sessionStorage.setItem("meh", "true");
+    							var eles = '<div class="modal fade in index-popup wow animated fadeInDown" id="popup-default" tabindex="-1" role="dialog" aria-hidden="true" data-wow-duration="0.0s" data-wow-delay="0.0s"><div class="modal-dialog"><div class="modal-content"><div class="popup-default-content wow fadeIn" data-wow-duration="0.4s"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="btnclose3 icon-close"></i></button></div><div id="popgif" style="background:transparent;"><div style="display:inline-block;"><a href="https://www.veryyou.com.tw/PDSaleDiscount.asp?pi=6899012001"><img src=https://www.veryyou.com.tw/VeryYou/banner/popupbanner/2018051801.jpg></a></div></div></div></div></div></div>';
+    							require(["bmodal"], function() {
+    								document.getElementById("footer").insertAdjacentHTML('beforebegin',eles);
+    								$('head').append('<link rel="stylesheet" href="css/popup.css?v=2019112001" type="text/css" />');
+    								$("#popup-default").modal('show'), l('#popup-default');
+    							});// end of require
+    						} //localStorage or sessionStorage
+    						return false;
+    				}
+    			};
+    		});//end of define
+    		$(document).router({
+    			index_main: function() {//首頁
+    				require(["vu_modal"], function(vupopup) {
+    					vupopup.init_popup();
+    				});// end of require                		
+    			},
+    			product_list_main: function() {//分類頁及任選
+    				require(["vu_modal"], function(vupopup) {
+    					vupopup.init_popup();
+    				});// end of require     
+    			},/*
+    			common: function() {//全站
+    			},
+    			product_main: function() {//商品頁
+    			},
+    			checkout_main: function() {//結帳等
+    			},
+    			member_main: function() {//會員中心等
+    			},
+    			about_main: function() {//關於我們與FAQ等	
+    			}*/
+    		});
+    	});
+    	</script>
+    <!-- 蓋板
+    <script>
+    	$(document).ready(function() {
+    		define("vu_modal", function(vupopup) {
+    			return {
+    				init_popup: function() {
+    					"use strict";
+    					var eles = '<div class="modal fade in index-popup wow animated fadeInDown" id="popup-default" tabindex="-1" role="dialog" aria-hidden="true" data-wow-duration="0.0s" data-wow-delay="0.0s"><div class="modal-dialog"><div class="modal-content"><div class="popup-default-content wow fadeIn" data-wow-duration="0.4s"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="btnclose3 icon-close"></i></button></div><div id="popgif" style="background:transparent;"><div style="display:inline-block;"><a href="https://www.veryyou.com.tw/PDSaleDiscount.asp?pi=6899012001"><img src=VeryYou/banner/popupbanner/20191009/2019100901.jpg></a></div></div></div></div></div></div>';
+    					require(["bmodal"], function() {
+    						document.getElementById("footer").insertAdjacentHTML('beforebegin',eles);
+    						$('head').append('<link rel="stylesheet" href="css/popup.css?v=2019112001" type="text/css" />');
+    						$("#popup-default").modal('show'), l('#popup-default');
+    					});// end of require
+    				}
+    			};
+    		});//end of define
+    		$(document).router({
+    			index_main: function() {//首頁
+    				require(["vu_modal"], function(vupopup) {
+    					var popup = true; // false to disable popup
+    					if (popup)
+    						if (sessionStorage.getItem("meh") !== 'true') {
+    							sessionStorage.setItem("meh", "true");
+    							vupopup.init_popup();    							
+    						} //localStorage or sessionStorage
+    						return false;
+    				});// end of require                		
+    			},
+    			product_list_main: function() {//分類頁及任選
+    				require(["vu_modal"], function(vupopup) {
+    					var popup = true; // false to disable popup
+    					if (popup)
+    						if (sessionStorage.getItem("pigu") !== 'true') {
+    							sessionStorage.setItem("pigu", "true");
+    							vupopup.init_popup();    							
+    						} //localStorage or sessionStorage
+    						return false;
+    				});// end of require   
+    			},/*
+    			common: function() {//全站
+    			},
+    			product_main: function() {//商品頁
+    			},
+    			checkout_main: function() {//結帳等
+    			},
+    			member_main: function() {//會員中心等
+    			},
+    			about_main: function() {//關於我們與FAQ等	
+    			}*/
+    		});
+    	});
+    	</script> -->
