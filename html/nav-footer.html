@@ -165,7 +165,7 @@
     						if (sessionStorage.getItem("meh") !== 'true') {
     							sessionStorage.setItem("meh", "true");
     							var eles = '<div class="modal fade in index-popup wow animated fadeInDown" id="popup-default" tabindex="-1" role="dialog" aria-hidden="true" data-wow-duration="0.0s" data-wow-delay="0.0s"><div class="modal-dialog"><div class="modal-content"><div class="popup-default-content wow fadeIn" data-wow-duration="0.4s"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="btnclose3 icon-close"></i></button></div><div id="popgif" style="background:transparent;"><div style="display:inline-block;"><a href="https://www.veryyou.com.tw/PDSaleDiscount.asp?pi=6899012001"><img src=https://www.veryyou.com.tw/VeryYou/banner/popupbanner/2018051801.jpg></a></div></div></div></div></div></div>';
-    							require(["bmodal"], function() {
+    							require([/*"bmodal"*/"libs/bootstrap3modal.min"], function() {
     								document.getElementById("footer").insertAdjacentHTML('beforebegin',eles);
     								$('head').append('<link rel="stylesheet" href="css/popup.css?v=2019112001" type="text/css" />');
     								$("#popup-default").modal('show'), l('#popup-default');
