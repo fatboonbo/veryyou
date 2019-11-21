@@ -206,14 +206,23 @@
     			return {
     				init_popup: function() {
     					"use strict";
-    					$('head').append('<link rel="stylesheet" href="css/popup.css?v=2019112006" type="text/css" />');
-    					var eles = '<div class="modal fade in index-popup wow animated fadeInDown" id="popup-default" tabindex="-1" role="dialog" aria-hidden="true" data-wow-duration="0.0s" data-wow-delay="0.0s" style="visibility:invisible"><div class="modal-dialog"><div class="modal-content"><div class="popup-default-content wow fadeIn" data-wow-duration="0.4s"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="btnclose3 icon-close"></i></button></div><div id="popgif" style="background:transparent;"><div style="display:inline-block;"><a href="https://www.veryyou.com.tw/PDSaleDiscount.asp?pi=6899012001"><img src=https://www.veryyou.com.tw/VeryYou/banner/popupbanner/2018051801.jpg></a></div></div></div></div></div></div>';
-    					require([/*"bmodal"*/"libs/bootstrap3modal.min"], function() {
-    						document.getElementById("footer").insertAdjacentHTML('beforebegin',eles);
-    						if (document.getElementById("popup-default")) {
-    							$("#popup-default").modal('show'), l('#popup-default');
-    						}    						
-    					});// end of require
+    					$('head').append('<link rel="stylesheet" href="css/popup.css?v=2019112007" type="text/css" />');
+    					var eles = '<div class="modal fade in index-popup" id="popup-default" tabindex="-1" role="dialog" aria-hidden="true" style="display: none"><div class="modal-dialog"><div class="modal-content"><div class="popup-default-content" style="visibility:hidden"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="btnclose3 icon-close"></i></button></div><div id="popgif" style="background:transparent;"><div style="display:inline-block;"><a href="https://www.veryyou.com.tw/PDSaleDiscount.asp?pi=6899012001"><img src=https://www.veryyou.com.tw/VeryYou/banner/popupbanner/2018051801.jpg></a></div></div></div></div></div></div><div class="modal-backdrop fade in" style="display: none"></div>';
+    					document.getElementById("footer").insertAdjacentHTML('beforebegin',eles);
+    					$("#popup-default,.modal-backdrop").show();
+    					$(".popup-default-content").addClass("fadeindownpop");
+    					$("#popup-default,button.close").on("click",function(e) {
+    						$("#popup-default,.modal-backdrop").remove();              
+    					}).on("click",".modal-dialog", function(e) {
+    						e.stopPropagation();
+    					});
+    					
+    					//require([/*"bmodal"*/"libs/bootstrap3modal.min"], function() {
+    					//	document.getElementById("footer").insertAdjacentHTML('beforebegin',eles);
+    					//	if (document.getElementById("popup-default")) {
+    					//		$("#popup-default").modal('show');
+    					//	}    						
+    					//});// end of require
     				}
     			};
     		});//end of define
@@ -233,15 +242,13 @@
     				require(["vu_modal"], function(vupopup) {
     					var popup = true; // false to disable popup
     					if (popup)
-    						if (sessionStorage.getItem("pigu") !== 'true') {
-    							sessionStorage.setItem("pigu", "true");
+    						if (sessionStorage.getItem("meh") !== 'true') {
+    							sessionStorage.setItem("meh", "true");
     							vupopup.init_popup();    							
     						} //localStorage or sessionStorage
     						return false;
     				});// end of require   
     			},/*
-    			common: function() {//全站
-    			},
     			product_main: function() {//商品頁
     			},
     			checkout_main: function() {//結帳等
@@ -249,7 +256,33 @@
     			member_main: function() {//會員中心等
     			},
     			about_main: function() {//關於我們與FAQ等	
+    			},
+    			common: function() {//全站
     			}*/
     		});
     	});
     	</script>
+    	<!--
+    	<style>
+    		div#popup-default {
+    			width: auto;
+    			top: auto;
+    			left: auto;
+    			right: auto;
+    			left: 2em;
+    			overflow: hidden;
+    			bottom: 2em;
+    			border: 1em solid #e8c8c8;
+    		}
+    		div#popup-default ~.modal-backdrop.in {
+    			background:transparent;
+    			visibility: hidden;
+    		}
+    		.index-popup .modal-dialog {
+    			max-width: 350px;
+    		}
+    		body.modal-open {
+    			overflow: visible;
+    			padding-right: 0!important;
+    		}
+    	</style>-->
