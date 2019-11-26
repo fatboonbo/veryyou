@@ -206,7 +206,7 @@
     			return {
     				init_popup: function() {
     					"use strict";
-    					$('head').append('<link rel="stylesheet" href="css/popup.css?v=2019112007" type="text/css" />');
+    					$('head').append('<link rel="stylesheet" href="css/popup.css?v=2019112601" type="text/css" />');
     					var eles = '<div class="modal fade in index-popup" id="popup-default" tabindex="-1" role="dialog" aria-hidden="true" style="display: none"><div class="modal-dialog"><div class="modal-content"><div class="popup-default-content" style="visibility:hidden"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="btnclose3 icon-close"></i></button></div><div id="popgif" style="background:transparent;"><div style="display:inline-block;"><a href="https://www.veryyou.com.tw/PDSaleDiscount.asp?pi=6899012001"><img src=https://www.veryyou.com.tw/VeryYou/banner/popupbanner/2018051801.jpg></a></div></div></div></div></div></div><div class="modal-backdrop fade in" style="display: none"></div>';
     					document.getElementById("footer").insertAdjacentHTML('beforebegin',eles);
     					$("#popup-default,.modal-backdrop").show();
@@ -216,18 +216,12 @@
     					}).on("click",".modal-dialog", function(e) {
     						e.stopPropagation();
     					});
-    					
-    					//require([/*"bmodal"*/"libs/bootstrap3modal.min"], function() {
-    					//	document.getElementById("footer").insertAdjacentHTML('beforebegin',eles);
-    					//	if (document.getElementById("popup-default")) {
-    					//		$("#popup-default").modal('show');
-    					//	}    						
-    					//});// end of require
     				}
     			};
     		});//end of define
     		$(document).router({
-    			index_main: function() {//首頁
+    			//首頁
+    			index_main: function() {
     				require(["vu_modal"], function(vupopup) {
     					var popup = true; // false to disable popup
     					if (popup)
@@ -238,7 +232,8 @@
     						return false;
     				});// end of require                		
     			},
-    			product_list_main: function() {//分類頁及任選
+    			//分類頁及任選
+    			product_list_main: function() {
     				require(["vu_modal"], function(vupopup) {
     					var popup = true; // false to disable popup
     					if (popup)
@@ -249,15 +244,20 @@
     						return false;
     				});// end of require   
     			},/*
-    			product_main: function() {//商品頁
+    			//商品頁
+    			product_main: function() {
     			},
-    			checkout_main: function() {//結帳等
+    			//結帳等
+    			checkout_main: function() {
     			},
-    			member_main: function() {//會員中心等
+    			//會員中心等
+    			member_main: function() {
     			},
-    			about_main: function() {//關於我們與FAQ等	
+    			//關於我們與FAQ等	
+    			about_main: function() {
     			},
-    			common: function() {//全站
+    			//全站
+    			common: function() {
     			}*/
     		});
     	});
