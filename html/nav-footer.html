@@ -60,7 +60,32 @@
 				<div>Copyright© 2018 VERYYOU All right reserved.</div>
 			</section>
 		</div>
+<script>				
+			require.config({
+				shim: {
+					'facebook': {
+						exports: 'FB'
+					}
+				},
+				paths: {
+					//'facebook': 'https://connect.facebook.net/en_US/sdk'
+					'facebook': '\/\/connect.facebook.net\/en_US\/sdk'
+				}
+			})
 
+			require(['fb']);/*
+			//require(['facebook']);
+
+			define(['facebook'], function(){
+				FB.init({
+					appId      : '450703675359521',
+					version    : 'v5.0'
+				});
+				FB.getLoginStatus(function(response) {
+					console.log(response);
+				});
+			});*/
+		</script>
     <!-- modal notice -->
     <div class="modal fade" id="notice_modal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
     	<div class="modal-dialog">
