@@ -93,8 +93,32 @@
 				});
 			});*/
 		</script>
+<!--
 <div class="fb-customerchat"
  page_id="450703675359521">
+</div>-->
+<div id="fb-root"></div>
+<script>
+window.fbAsyncInit = function() {
+  FB.init({
+    xfbml            : true,
+    version          : 'v5.0'
+  });
+};
+
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/zh_TW/sdk/xfbml.customerchat.js';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- Your customer chat code -->
+<div class="fb-customerchat"
+  attribution=install_email
+  page_id="450703675359521"
+  theme_color="#d696bb">
 </div>
     <!-- modal notice -->
     <div class="modal fade" id="notice_modal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
