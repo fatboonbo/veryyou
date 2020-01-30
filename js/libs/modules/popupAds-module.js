@@ -11,7 +11,7 @@
                         '<ul class="popupAd_slide">' +
                         '</ul>' +
                         '</div>' + '</div>' +
-                        '<div class="modal-backdrop fade in hide"></div>');
+                        '<div class="modal-backdrop fade in hide" style="display:none"></div>');
                     //document.getElementById("footer").insertAdjacentHTML('beforeend', html);
                     document.getElementById('footer').insertAdjacentHTML("beforeBegin",html.join(''));
                 }
@@ -28,7 +28,7 @@
                         setTimeout(function() {
                             if (!$(".popupAD_wrapper").hasClass(atv)) {
                                 $(".popupAD_wrapper").addClass(atv).delay(5000);
-                                $(".modal-backdrop").addClass(sh);
+                                $(".modal-backdrop").show().addClass(sh).removeAttr("style");
                                 $(".arrow_down").addClass(opn);
                             }
                         }, 2000);
