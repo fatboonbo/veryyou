@@ -11,8 +11,8 @@
   display:none!important;
 }
 .popupAd_slide .alink:after,.popupAd_slide .alink:hover:after {content: none}
-.popupAD_wrapper~.modal-backdrop {display:none;}
-.popupAD_wrapper~.modal-backdrop.show {display: block}
+.modal-backdrop.hide {display:none;}
+.modal-backdrop.show {display: block}
 .popupAD_wrapper {
   position: fixed;
   bottom: 3.7em;
@@ -194,6 +194,9 @@ ul.popupAd_slide li {
 }
 .touchevents .sales-module div.cart-wrap {
   padding-bottom: 5em;
+}
+.is-open .popupAD_wrapper, .mobile-menu-open .popupAD_wrapper {
+  z-index: 9990;
 }
 @media (min-width: 1023px) {
   .backtotop {
