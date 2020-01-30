@@ -110,7 +110,7 @@
             subtitle = "減價商品。2 件再享 6 折", //副標
             bgcolor = "#010101", //底色
             textcolor = "#f5f5f5"; //文字顏色
-            adsWidth = "320px"; //PC版廣告大小
+            adsWidth = "320px"; //PC版廣告寬度
         var popupSlide = [{
                 "url_link": "index-main-20200115-full.html", //連結
                 "url_image": "sample/popupad-640x352-01.jpg" //圖片位置
@@ -118,10 +118,6 @@
             {
                 "url_link": "index-main-20200115-full.html",
                 "url_image": "sample/popupad-640x352-02.jpg"
-            },
-            {
-                "url_link": "index-main-20200115-full.html",
-                "url_image": "sample/popupad-640x352-03.jpg"
             },
             {
                 "url_link": "index-main-20200115-full.html",
@@ -139,10 +135,10 @@
             //首頁
             index_main: function() {
                 require(["libs/modules/popupAds-module"], function(vupopupAds) {
-                    $('head').append('<link rel="stylesheet" href="css/popupad.css?v=18" type="text/css" />');
+                    $('head').append('<link rel="stylesheet" href="css/popupad.css?v=17" type="text/css" />');
                     vupopupAds.init_popupAds();
                     setTimeout(function() {
-                        $('.popupAd_slide').append(popupSlide_data),console.log("append popupSlide_data");
+                        $('.popupAd_slide').append(popupSlide_data);
                         setTimeout(function() {
                             vupopupAds.init_slides();
                         }, 0);
