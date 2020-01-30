@@ -12,7 +12,8 @@
                         '</ul>' +
                         '</div>' + '</div>' +
                         '<div class="modal-backdrop fade in hide"></div>');
-                    document.getElementById("footer").insertAdjacentHTML('beforeend', html);
+                    //document.getElementById("footer").insertAdjacentHTML('beforeend', html);
+                    document.getElementById('footer').insertAdjacentHTML("beforeBegin",html.join(''));
                 }
 
                 function init_slides() {
