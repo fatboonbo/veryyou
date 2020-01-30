@@ -242,3 +242,8 @@ ul.popupAd_slide li {
   }
 
 }
+@media screen and (orientation:landscape) {
+  .popupAD_wrapper {
+    height: 100%;
+  }
+}
