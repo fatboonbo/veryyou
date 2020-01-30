@@ -15,7 +15,7 @@
 .modal-backdrop.show {display: block}
 .popupAD_wrapper {
   position: fixed;
-  bottom: 4.5em;
+  bottom: 3.7em;
   left:0;
   right:0;
   width:100%;
@@ -205,6 +205,7 @@ ul.popupAd_slide li {
   }
   .popupAD_wrapper {
     max-width: 350px;
+    bottom:4.5em;
   }
   ul.popupAd_slide {
     overflow-x: hidden !important;
