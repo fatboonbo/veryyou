@@ -260,7 +260,7 @@ window.fbAsyncInit = function() {
     		});
     	});
     	</script> -->
-    <!-- 蓋板 -->
+    <!-- 蓋板
     <script>
     	$(document).ready(function() {
     		define("vu_modal", function(vupopup) {
@@ -322,7 +322,7 @@ window.fbAsyncInit = function() {
     			}*/
     		});
     	});
-    	</script>
+    	</script> -->
     	<!--
     	<style>
     		div#popup-default {
@@ -347,3 +347,66 @@ window.fbAsyncInit = function() {
     			padding-right: 0!important;
     		}
     	</style>-->
+
+    <!--首頁輪播廣告-->
+    <script>
+    $(document).ready(function() {  
+        var title = "NEW YEAR SPECIAL! 新年購物趣", //主標
+            subtitle = "減價商品。2 件再享 6 折", //副標
+            bgcolor = "#010101", //底色
+            textcolor = "#f5f5f5"; //文字顏色
+            adsWidth = "320px"; //PC版廣告大小
+        var popupSlide = [{
+                "url_link": "index-main-20200115-full.html", //連結
+                "url_image": "sample/popupad-640x352-01.jpg" //圖片位置
+            },
+            {
+                "url_link": "index-main-20200115-full.html",
+                "url_image": "sample/popupad-640x352-02.jpg"
+            },
+            {
+                "url_link": "index-main-20200115-full.html",
+                "url_image": "sample/popupad-640x352-03.jpg"
+            },
+            {
+                "url_link": "index-main-20200115-full.html",
+                "url_image": "sample/popupad-640x352-03.jpg"
+            }
+        ];
+        var popupSlide_data = '';
+        $.each(popupSlide, function(key, value) {
+            popupSlide_data += '<li>';
+            popupSlide_data += '<a href="' + value.url_link + '" class="alink">';
+            popupSlide_data += '<img src="' + value.url_image + '"></a>';
+            popupSlide_data += '</li>';
+        });        
+        $(document).router({
+            //首頁
+            index_main: function() {
+                require(["libs/modules/popupAds-module"], function(vupopupAds) {
+                    $('head').append('<link rel="stylesheet" href="css/popupad.css?v=16" type="text/css" />');
+                    vupopupAds.init_popupAds();
+                    setTimeout(function() {
+                        $('.popupAd_slide').append(popupSlide_data),console.log("append popupSlide_data");
+                        setTimeout(function() {
+                            vupopupAds.init_slides();
+                        }, 0);
+                    }, 50);
+                    $("#popupAD_button").attr({
+                        "data-title": title,
+                        "data-subtitle": subtitle
+                    });
+                    $("#popupAD_button").css({
+                        "background-color": bgcolor,
+                        "color": textcolor
+                    });
+                    $(".no-touchevents #popupAD").css({
+                        "width": adsWidth,
+                        "maxWidth": adsWidth
+                    });
+                }); // end of require
+            },
+        });
+    }); //end of document ready
+    </script>
+    <!--首頁輪播廣告-->
