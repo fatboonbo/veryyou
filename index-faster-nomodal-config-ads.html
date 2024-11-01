@@ -11,10 +11,10 @@
 	<title>VARYYOU｜VARYYOU</title>
 	<meta name="theme-color" content="#000000"/>
 	<meta name="google-site-verification" content="uEiCZbNGa1YXL5BseiIbkFDuf26w31aXAwA4Hc1clww" />
-	<!--fb meta-->
+	<!--fb meta
 	<meta property="og:image" content="https://photo.eyescream.com.tw/VeryYou/banner/fbbanner/01.jpg" />
 	<meta property="og:image" content="https://photo.eyescream.com.tw/VeryYou/banner/fbbanner/02.jpg" />
-	<meta property="og:image" content="https://photo.eyescream.com.tw/VeryYou/banner/fbbanner/03.jpg" />
+	<meta property="og:image" content="https://photo.eyescream.com.tw/VeryYou/banner/fbbanner/03.jpg" />-->
 	<!-- Favicon -->
 	<link rel="icon" href="css/images/favicon.ico">
 	<!-- css -->
@@ -770,132 +770,6 @@
 	<script src="js/libs/require.min.mixed.js"></script>
 	<script src="js/config.js?v=20190102"></script>
 	
-	<script>
-		dataLayer = [];
-		dataLayer.push({
-			"userID": '',
-			"user membership level":''
-		});
-	</script>
-	<!-- Google Tag Manager -->
-	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-WQDS75X');</script>
-<!-- End Google Tag Manager -->
-<!-- Global site tag (gtag.js) - AdWords: 806944645 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-806944645"></script>
-<script>
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-
-	gtag('config', 'AW-806944645');
-</script>
-
-<script language="Javascript">
-	//$("img").lazyload();
-	$(document).ready(function () {
-		var strURL = "/Default.asp";
-		strURL = strURL.toLocaleLowerCase();
-		if (window.name == "" &&
-			(
-				strURL.indexOf("mycar.asp") >= 0 || strURL.indexOf("orderpay.asp") >= 0
-				|| strURL.indexOf("orderdata.asp") >= 0 || strURL.indexOf("orderfinish.asp") >= 0
-				| strURL.indexOf("ordercreditcard") >= 0 || strURL.indexOf("orderatm") >= 0
-				)
-			) {
-			alert("請勿使用多視窗操作");
-		window.close();
-	}
-	if (window.name == "")
-		window.name = "xxxx";
-});
-
-	function setCookie(c_name, value, exdays) {
-		var exdate = new Date();
-		exdate.setDate(exdate.getDate() + exdays);
-		var c_value = escape(value) + ((exdays == null) ? "" : "; expires=" + exdate.toUTCString());
-		document.cookie = c_name + "=" + c_value;
-	}
-
-	function getCookie(c_name) {
-		var i, x, y, ARRcookies = document.cookie.split(";");
-		for (i = 0; i < ARRcookies.length; i++) {
-			x = ARRcookies[i].substr(0, ARRcookies[i].indexOf("="));
-			y = ARRcookies[i].substr(ARRcookies[i].indexOf("=") + 1);
-			x = x.replace(/^\s+|\s+$/g, "");
-			if (x == c_name) {
-				return unescape(y);
-			}
-		}
-	}
-
-</script>
-<!--
-    <script>
-        var url = window.location.href;
-        try{
-            if ((url.toLowerCase().indexOf("http:") > -1 || url.toLowerCase().indexOf("//veryyou") > -1) && url.toLowerCase().indexOf(".local") < 0)
-            {
-                url = url.replace("//veryyou","//www.veryyou");
-                url = url.replace("http:","https:");
-                window.location = url;
-            }
-        }
-        catch(err){}
-    </script>
--->
-<!-- Google Tag Manager (noscript) -->
-<noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WQDS75X"
-        height="0" width="0" style="display: none; visibility: hidden"></iframe>
-</noscript>
-<!-- End Google Tag Manager (noscript) -->
-<!-- Facebook Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window,document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
- fbq('init', '168766263796118'); 
-fbq('track', 'PageView');
-</script>
-<noscript>
-    <img height="1" width="1"
-        src="https://www.facebook.com/tr?id=168766263796118&ev=PageView
-&noscript=1" />
-</noscript>
-<!-- End Facebook Pixel Code -->
-<script>
-
-function onPromoClick(obj, pos) {
-  dataLayer.push({
-    'event': 'promotionClick',
-    'ecommerce': {
-      'promoClick': {
-        'promotions': [
-         {
-           'id': $(obj).attr("gaid"),                         
-           'name': $(obj).attr("ganame"),
-           'creative': '',
-           'position': pos
-         }]
-      }
-    },
-    'eventCallback': function() {
-      document.location = $(obj).attr("galink");
-    }
-  });
-}
-    
-</script>
-
 <script>
     if ($("#cart-panel")) {
         $("#cart-panel").html($("#carinitDiv").html());
@@ -904,67 +778,10 @@ function onPromoClick(obj, pos) {
         
     }
 </script>
-<script src="https://www.veryyou.com.tw/js/eyescream.js?v=1" async=""></script>
-<script>
-    doSiteRetargeting();
-</script>
-
-
-<script type="text/javascript" src="//rec.scupio.com/recweb/js/rec.js">
-    {
-        "mid":143,
-        "pid":"home",
-        "uid":""
-    }
-</script>
 
 
 
-    <!-- js-->
-
-     <script>
-    dataLayer.push({
-      'event':'promoView',
-      'ecommerce': {
-        'promoView': {
-          'promotions': [  
-                {}
-           ]
-        }
-      }
-    });
-
-    dataLayer.push({
-      'event': 'productImpressions',
-      'ecommerce': {
-        'currencyCode': 'TWD',                       
-        'impressions': [
-          
-         ]
-      }
-    });
-   
-    function onproductClick(obj,pos) {
-      dataLayer.push({
-        'event': 'productClick',
-        'ecommerce': {
-          'click': {
-            'actionField': {'list': 'HomePage'},      
-            'products': [{
-              'name': $(obj).attr("ganame"),
-              'id': $(obj).attr("gaid"),
-              'price': $(obj).attr("gap"),
-              'brand': 'VERYYOU',
-              'category': $(obj).attr("gacat"),
-              'variant': $(obj).attr("gacolor"),
-              'position':pos
-             }]
-           }
-         }
-      });
-    }
-
-    </script>
+    
 
 
 
